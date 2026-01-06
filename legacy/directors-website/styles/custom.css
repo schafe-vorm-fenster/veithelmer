@@ -1,0 +1,568 @@
+html, body {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+body {
+	margin:0;
+	padding:0;
+	font-family:Verdana,Arial,Sans-serif;
+	background-color:#000;
+	color:#fff;
+	font-size:15px;
+	line-height:160%;
+	padding-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+	body {
+		font-size: 13px;
+	}
+}
+
+nav,header,.teaser,body.home nav ul li.mainmenu a {
+	font-size:13px;
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	CONTENT
+ */
+
+p {
+	text-align:justify;
+}
+
+@media screen and (max-width: 767px) {
+p {
+	text-align:left;
+}
+}
+
+a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+a:hover {
+	color:#EEE;
+}
+
+th,td {
+	vertical-align:top;
+	padding-bottom:5px;
+}
+
+th {
+	font-weight:400;
+	padding-right:15px;
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	LOGO
+ */
+#logo img {
+	max-width:100%;
+	height:auto;
+}
+
+.carousel {
+	display:none;
+}
+
+body.home .carousel {
+	display:block;
+	visibility:hidden;
+}
+
+@media screen and (max-width: 767px) {
+	body.home .carousel {
+		display:none;
+	}
+}
+
+.carousel-caption {
+	z-index:10;
+}
+
+
+@media (max-width: 767px) {
+	.carousel .item {
+		height:193px;
+	}
+	
+	.carousel .item.active {
+		height:193px;
+		margin-top:-24px;
+	}
+}
+
+@media (min-width: 768px) {
+	.carousel .item {
+		height:68px;
+	}
+	
+	.carousel .item.active {
+		height:68px;
+		margin-top:-24px;
+	}
+}
+
+
+@media (min-width: 992px) {
+	.carousel .item {
+		height:89px;
+	}
+	
+	.carousel .item.active {
+		height:89px;
+		margin-top:-24px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.carousel .item {
+		height:108px;
+	}
+	
+	.carousel .item.active {
+		height:108px;
+		margin-top:-24px;
+	}
+}
+
+.carousel-inner > .item > img {
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+nav {
+	margin-top:2%;
+	text-align:center;
+}
+
+body.home nav {
+	margin-top:3%;
+}
+
+nav ul {
+	margin:0;
+	padding:0;
+}
+
+nav ul li.mainmenu {
+	padding:0;
+}
+
+nav ul li .carousel .carousel-caption {
+	top:0;
+	bottom:auto;
+	left:0;
+	right:0;
+	width:100%;
+	padding:0!important;
+}
+
+nav ul li .carousel .carousel-caption img {
+	width:100%;
+	height:auto;
+}
+
+body.home nav ul li:hover ul,body.home nav ul li:hover .carousel {
+	visibility:hidden;
+}
+
+nav ul li ul,nav ul li .carousel {
+	display:none;
+}
+
+body.home nav ul li:hover ul,body.home nav ul li:hover .carousel {
+	visibility:visible;
+}
+
+nav ul li:hover ul {
+	display:block;
+}
+
+body.home nav ul li:hover .carousel {
+	display:block;
+}
+
+nav ul,nav ul li {
+	list-style:none;
+	padding:0;
+	margin:0;
+	z-index:300;
+}
+
+nav ul li a {
+	display:block;
+	width:100%;
+	background-color:#1F1F1F;
+	color:#fff;
+	border:1px #ccc solid;
+	border-right:none;
+	padding:4px 1px;
+	text-decoration:none;
+}
+
+nav ul li:hover a {
+	text-decoration:none;
+	background-color:#8D5315;
+}
+
+nav ul li:hover ul li a {
+	background-color:#1F1F1F;
+}
+
+nav ul li:hover ul li a:hover {
+	text-decoration:none;
+	background-color:#8D5315;
+}
+
+nav ul li.last a {
+	border-right:1px #ccc solid;
+}
+
+nav ul li ul li a {
+	border:1px #ccc solid;
+	border-top:none;
+}
+
+nav ul li .carousel {
+	border:1px #ccc solid;
+	border-bottom:none;
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	SMARTPHINE MENU
+ */
+#logo a {
+}
+
+@media screen and (max-width: 767px) {
+	#logo {
+		z-index:400;
+		margin-top:7px;
+	}
+	
+	#logo a {
+		margin-left:inherit;
+	}
+	
+	#menutoggle {
+		position:fixed;
+		top:10px;
+		right:15px;
+		height:35px;
+		width:40px;
+		z-index:300;
+	}
+	
+	#menutoggle .row-menu {
+		margin:0;
+	}
+	
+	#menutoggle .btn-default {
+		width:40px;
+		background:rgba(255,255,255,0.2);
+		border-color:transparent;
+	}
+	
+	#menutoggle.open button {
+		background:rgba(255,255,255,0.5);
+		color:#333;
+	}
+	
+	nav#menu {
+		margin:0;
+		padding:0;
+		position:fixed;
+		right:-250px;
+		top:0;
+		bottom:0;
+		background-color:#000;
+		height:100%;
+		width:240px;
+		z-index:100;
+		-webkit-box-shadow:-1px 0 8px 2px rgba(0,0,0,0.58);
+		-moz-box-shadow:-1px 0 8px 2px rgba(0,0,0,0.58);
+		box-shadow:-1px 0 8px 2px rgba(0,0,0,0.58);
+		-webkit-transform:translateZ(0);
+		opacity:.95;
+	}
+	
+	nav ul {
+		margin-top:60px;
+	}
+	
+	nav ul.languagemenu, body.home nav ul.languagemenu {
+		margin-top:0px;
+	}
+	
+	nav ul.footermenu, body.home nav ul.footermenu {
+		margin-top:0;
+	}
+	
+
+	nav ul.languagemenu .first,nav ul.footermenu .first {
+		padding-right:7.5px;
+	}
+
+	nav ul.languagemenu .first a,nav ul.footermenu .first a{
+		text-align: right;
+	}
+	
+	nav ul.languagemenu .last,nav ul.footermenu .last {
+		padding-left:7.5px;
+	}
+
+	nav ul.languagemenu .last a,nav ul.footermenu .last a{
+text-align: left;
+	}
+	
+	.languagemenu .last a {
+		width:auto;
+	}
+	
+	nav ul li ul,nav ul li:hover ul,body.home nav ul li ul,body.home nav ul li:hover ul {
+		display:none;
+	}
+	
+	nav ul li.mainmenu {
+		padding-right:15px;
+		padding-left:15px;
+	}
+	
+	nav ul li.mainmenu a {
+		border:1px #fff solid;
+		margin-bottom:10px;
+		padding:3px;
+		font-size:110%;
+	}
+	
+	.languagemenu .first a {
+		width:auto;
+	}
+	
+	.languagemenu .last a {
+		width:auto;
+	}
+	
+	/* SMARTPHONE HOME MENU */
+	body.home #menutoggle {
+		display:none;
+	}
+	
+	body.home nav#menu {
+		position:relative;
+		top:auto;
+		left:auto;
+		right:auto;
+		bottom:auto;
+		background-color:#000;
+		height:auto;
+		width:auto;
+	}
+	
+	body.home nav#menu.container {
+		padding-right:0;
+		padding-left:0;
+		margin-right:auto;
+		margin-left:auto;
+	}
+	
+	body.home nav ul {
+		margin-top:15px;
+	}
+	
+	body.home nav ul li.mainmenu {
+		padding-right:15px;
+		padding-left:15px;
+	}
+	
+	body.home nav ul li.mainmenu a {
+		margin-bottom:15px;
+	}
+	
+	nav ul li .carousel {
+		display:none;
+	}
+	
+	body.home nav ul li .carousel {
+		display:block;
+		visibility:visible;
+	}
+	
+		nav ul.languagemenu li.mainmenu a,nav ul.footermenu li.mainmenu  a, body.home nav ul.languagemenu li.mainmenu a,body.home nav ul.footermenu li.mainmenu  a{
+border: none;
+background-color: transparent;
+margin: 0;
+padding: 3px;
+	}
+
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	REGULAR MENU
+ */
+@media (min-width: 768px) {
+	.col-sm-1-8 {
+		width:14.36%;
+	}
+	
+	#menutoggle {
+		display:none;
+	}
+	
+	nav ul li.mainmenu {
+		margin-left:-1px;
+	}
+	
+	nav ul li.mainmenu.first {
+		margin-left:0;
+	}
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	LOGO
+ */
+@media (min-width: 768px) {
+	#servicemenu ul li a {
+		padding-left:15px;
+	}
+}
+
+header {
+	margin-top:2%;
+}
+
+body.home header {
+	margin-top:3%;
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	FOOTER
+ */
+header ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+header ul li {
+	margin:0;
+	padding:0;
+	list-style:none;
+	float:right;
+}
+
+header .right {
+	text-align:right;
+}
+
+header .right ul {
+	padding-top:6px;
+}
+
+;
+header .right a {
+	padding:10px 13px;
+}
+
+header a {
+	color:#fff;
+	text-decoration:none;
+}
+
+/*	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >>
+ *	FOOTER
+ */
+section#content {
+	position:absolute;
+	top:140px;
+	width:100%;
+	padding-bottom:40px;
+}
+
+@media screen and (max-width: 767px) {
+	section#content {
+		top:0;
+		position:relative;
+	}
+}
+
+section#content .container .row {
+}
+
+section#content .visual {
+}
+
+.visual img {
+	width:100%;
+	height:auto;
+	border:1px solid #ccc;
+}
+
+h1 {
+	font-size:20px;
+}
+
+h2 {
+	font-size:18px;
+}
+
+h3 {
+	font-size:16px;
+}
+
+.content .pagetitle,#content .pagetitle {
+	font-size:24px;
+	margin-top:-4px;
+}
+
+.teaser a {
+	background-color:#1f1f1f;
+	border:1px #ccc solid;
+	display:block;
+	text-align:center;
+	text-decoration:none;
+	margin-bottom:30px;
+}
+
+.teaser a img {
+	border-bottom:1px #ccc solid;
+}
+
+.teaser a:hover {
+	background-color:#8D5315;
+}
+
+.teaser a span {
+	padding:3px;
+	display:block;
+}
+
+nav li.active a {
+	background-color:#8D5315;
+}
+
+@media screen and (max-width: 767px) {
+	.visual {
+		margin-bottom:15px;
+	}
+	
+	header {
+		height:50px;
+	}
+	
+	.content .pagetitle,#content .pagetitle {
+		font-size:20px;
+		margin-top:5px;
+		margin-bottom:20px;
+	}
+}
+
+.csc-textpic h3 {
+	margin-top: 0;
+}
