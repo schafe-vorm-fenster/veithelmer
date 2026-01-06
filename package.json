@@ -1,0 +1,25 @@
+{
+  "name": "veithelmer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "kanban:start": "./scripts/start-services.sh",
+    "kanban:stop": "./scripts/stop-services.sh",
+    "kanban:check": "./scripts/check-status.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schafe-vorm-fenster/veithelmer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/schafe-vorm-fenster/veithelmer/issues"
+  },
+  "homepage": "https://github.com/schafe-vorm-fenster/veithelmer#readme",
+  "packageManager": "pnpm@10.27.0"
+}
