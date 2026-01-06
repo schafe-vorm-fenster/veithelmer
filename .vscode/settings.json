@@ -1,13 +1,1 @@
-{
-  "mcpServers": {
-    "vibe_kanban": {
-      "command": "/Users/jan-henrik.hempel/.nvm/versions/node/v24.12.0/bin/pnpm",
-      "args": [
-        "dlx",
-        "vibe-kanban@latest",
-        "--mcp"
-      ],
-      "autoApprove": []
-    }
-  }
-}
+{}

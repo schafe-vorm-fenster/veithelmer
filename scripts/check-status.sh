@@ -5,40 +5,49 @@ PORT_FILE=$(find /var/folders -name "vibe-kanban.port" 2>/dev/null | head -n 1)
 
 echo "--- Vibe Kanban Service Check ---"
 
+# Load .env if present
+if [ -f ".env" ]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+
 # 1. Check Main Server (via Port)
+DASHBOARD_STATUS="🔴 DOWN"
 if [ -f "$PORT_FILE" ]; then
     PORT=$(cat "$PORT_FILE")
     if lsof -i :$PORT > /dev/null; then
-        echo "✅ Vibe Kanban Server is RUNNING (Port: $PORT)"
+        DASHBOARD_STATUS="🟢 RUNNING (Port: $PORT)"
     else
-        echo "⚠️  Port file exists ($PORT), but process is NOT running."
+        # Stale file check
+        echo "⚠️  Port file exists ($PORT) but port is closed."
     fi
-else
-    echo "❌ Vibe Kanban Server port file not found (Server likely STOPPED)"
 fi
+echo "$DASHBOARD_STATUS - Vibe Kanban Dashboard"
 
-# 2. Check MCP Server
-# The MCP server runs as a process invoked by pnpm dlx or npx. We grep for the process name.
+# 2. Check MCP Server (Managed by VS Code)
+MCP_STATUS="🔴 NOT RUNNING"
+
+# Check for the MCP process (started by VS Code via mcp.json)
 if pgrep -f "vibe-kanban.*--mcp" > /dev/null; then
-    echo "✅ Vibe Kanban MCP Server is RUNNING"
-else
-    echo "❌ Vibe Kanban MCP Server is STOPPED"
+    MCP_STATUS="🟢 RUNNING"
+elif ps -ef | grep "vibe-kanban" | grep "\-\-mcp" | grep -v grep > /dev/null; then
+    MCP_STATUS="🟢 RUNNING"
 fi
+echo "$MCP_STATUS - Vibe Kanban MCP (VS Code managed)"
 
 # 3. Check Gemini Access
 echo ""
-echo "--- Gemini Access Check ---"
+echo "--- Prerequisites ---"
 
 # Check for API Key env var (common method)
 if [ -n "$GEMINI_API_KEY" ]; then
-    echo "✅ GEMINI_API_KEY environment variable is SET."
+    echo "✅ GEMINI_API_KEY is active."
 else
-    echo "⚠️  GEMINI_API_KEY environment variable is NOT SET."
+    echo "❌ GEMINI_API_KEY is missing."
 fi
 
-# Check for Google Cloud CLI (gcloud) or generic 'gemini' command if applicable
+# Check for CLI
 if command -v gemini &> /dev/null; then
-    echo "✅ 'gemini' CLI command found at $(which gemini)"
+    echo "✅ 'gemini' CLI found."
 else
-    echo "ℹ️  'gemini' CLI command not found in PATH."
+    echo "⚠️  'gemini' CLI not found (Optional)."
 fi
