@@ -47,7 +47,7 @@ All content will be migrated to a **Markdown \+ Frontmatter** structure.
 
 **Folder Naming Convention**: `/content/films/[film-slug]/`
 
-Each film requires a .md file in both /de/ and /en/ located within the specified folder structure, utilizing the following Frontmatter:
+Each film requires localized .md files (`index_de.md` and `index_en.md`) located within the specified folder structure, utilizing the following Frontmatter:
 
 * **Fields**: Title, description, director, cast, release year, duration.  
 * **Image Handling**: A film image matching the Markdown filename, linked in Frontmatter for teaser use.  
