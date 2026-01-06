@@ -1,0 +1,573 @@
+@import url('blueprint/screen.css');
+/*
+
+THEME NAME: Sandbox
+THEME URI: http://www.plaintxt.org/themes/sandbox/
+DESCRIPTION: Rich with powerful and dynamic semantic class selectors, Sandbox is a canvas for CSS artists
+VERSION: 1.6.1
+AUTHOR: <a href="http://andy.wordpress.com/">Andy Skelton</a> &amp; <a href="http://www.plaintxt.org/">Scott Allan Wallick</a>
+AUTHOR URI:
+TAGS: sandbox, microformats, hcard, hatom, xoxo, widgets, blank slate, starter theme, minimalist, developer
+*/
+
+/* Two-column with sidebar on left from the /examples/ folder  */
+/*@import url('examples/3c-r.css');*/
+
+body {
+line-height:1.5;
+background-image: url("../../../images/v5_top.jpg");
+  background-attachment: scroll;
+  background-position: top center;
+  background-repeat: repeat-x;
+  background-color:#90a6ce;
+text-align: center:
+}
+
+
+#camelhead{
+    bottom: 0;
+    height: 410px;
+}
+
+
+.entry-content p img {
+	max-width: 49%;
+	float: left;
+}
+
+
+#wrapper{
+	width: 90%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+/* Just some example content */
+div.skip-link {
+position:absolute;
+right:1em;
+top:1em;
+}
+div#access {
+background-color: rgba(255,255,255,0.6);
+border-top-left-radius: 10px; 
+border-top-right-radius: 10px; 
+	
+	width:100%;
+}
+
+
+div#navmenu {
+/* diplay:block;
+background:url("../../../images/whitebg-oo.png") repeat-x top left; */
+height:37px;
+padding-left:115px;
+}
+
+
+div#menu ul,div#menu ul ul {
+line-height:1;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+div#menu ul a {
+display:block;
+margin-right:1em;
+padding:0.2em 0.5em;
+text-decoration:none;
+}
+
+#whitebg {
+	display: none;
+background:url("../../../images/whitebg.png") repeat scroll 0 0 transparent;
+min-height:450px;
+margin:0 1px;
+position:absolute;
+width:934px;
+z-index:-1;
+}
+@import url('blueprint/screen.css');
+/*
+THEME NAME: Sandbox
+THEME URI: http://www.plaintxt.org/themes/sandbox/
+DESCRIPTION: Rich with powerful and dynamic semantic class selectors, Sandbox is a canvas for CSS artists
+VERSION: 1.6.1
+AUTHOR: <a href="http://andy.wordpress.com/">Andy Skelton</a> &amp; <a href="http://www.plaintxt.org/">Scott Allan Wallick</a>
+AUTHOR URI:
+TAGS: sandbox, microformats, hcard, hatom, xoxo, widgets, blank slate, starter theme, minimalist, developer
+*/
+
+/* Two-column with sidebar on left from the /examples/ folder  */
+/*@import url('examples/3c-r.css');*/
+
+body {
+line-height:1.5;
+background-image: url("../../../images/v5_top.jpg");
+  background-attachment: scroll;
+  background-position: top center;
+  background-repeat: repeat-x;
+  background-color:#90a6ce;
+
+}
+
+
+
+/* Just some example content */
+div.skip-link {
+position:absolute;
+right:1em;
+top:1em;
+}
+
+
+
+div#menu ul,div#menu ul ul {
+line-height:1;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+div#menu ul a {
+display:block;
+margin-right:1em;
+padding:0.2em 0.5em;
+text-decoration:none;
+}
+
+#whitebg-ro {
+background:url("../../../images/whitebg-ro.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+right:-37px;
+top:0;
+position:absolute;
+width:37px;
+}
+#whitebg-roo {
+background:url("../../../images/whitebg-ro.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+right:0;
+top:-37px;
+position:absolute;
+width:37px;
+}
+
+#whitebg-ru{
+background:url("../../../images/whitebg-ru.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+right:-37px;
+bottom:0;
+position:absolute;
+width:37px;
+}
+#whitebg-ruu{
+background:url("../../../images/whitebg-ru.png") repeat scroll 0 0 transparent;
+text-align:center;
+margin-top:1em;
+height:37px;
+display:block;
+right:0;
+bottom:-37px;
+position:absolute;
+width:37px;
+}
+#whitebg-rm {
+background:url("../../../images/whitebg-rs.png") repeat scroll 0 0 transparent;
+height:380px;
+display:block;
+right:-37px;
+top:37px;
+position:absolute;
+width:37px;
+}
+#whitebg-uu{
+background:url("../../../images/whitebg-uu.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+bottom:-37px;
+left:37px;
+position:absolute;
+text-align:center;
+width:860px;
+}
+#whitebg-oo{
+background:url("../../../images/whitebg-oo.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+top:-37px;
+left:37px;
+position:absolute;
+width:860px;
+}
+
+
+#whitebg-lo {
+background:url("../../../images/whitebg-lo.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+left:-37px;
+top:0;
+position:absolute;
+width:37px;
+}
+#whitebg-loo {
+background:url("../../../images/whitebg-lo.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+left:0px;
+top:-37px;
+position:absolute;
+width:37px;
+}
+
+#whitebg-lu {
+background:url("../../../images/whitebg-lu.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+left:-37px;
+bottom:0;
+position:absolute;
+width:37px;
+}
+#whitebg-luu {
+background:url("../../../images/whitebg-lu.png") repeat scroll 0 0 transparent;
+height:37px;
+display:block;
+left:0;
+bottom:-37px;
+position:absolute;
+width:37px;
+}
+#whitebg-lm {
+background:url("../../../images/whitebg-ls.png") repeat scroll 0 0 transparent;
+height:380px;
+display:block;
+left:-37px;
+top:37px;
+position:absolute;
+width:37px;
+}
+
+
+
+
+div#menu ul ul ul a {
+font-style:italic;
+}
+
+/*
+div#menu ul li ul {
+left:-999em;
+position:absolute;
+}*/
+
+div#menu ul li:hover ul {
+left:auto;
+}
+
+.entry-title,.entry-meta {
+clear:both;
+margin-bottom:3px;
+}
+div#primary{
+/*what the hell is this? */
+}
+div#container {
+padding: 0 !important;
+min-height:400px;
+width:100%;
+background-color: rgba(255,255,255,0.9);
+border-bottom-left-radius: 10px; 
+border-bottom-right-radius: 10px; 
+}
+
+div#container-home {
+margin-top:1em;
+min-height:600px;
+
+}
+div#container-right-home {
+margin-top:1em;
+overflow:hidden;
+}
+
+
+div#container img {
+padding-left: 0px;
+padding-right: 0px;
+margin-bottom: 1em;
+margin-right: 1%;
+}
+
+form#commentform .form-label {
+margin:1em 0 0;
+}
+
+form#commentform span.required {
+background:#fff;
+color:#c30;
+}
+
+form#commentform,form#commentform p {
+padding:0;
+}
+
+input#author,input#email,input#url,textarea#comment {
+padding:0.2em;
+}
+
+div.comments ol li {
+margin:0 0 3.5em;
+}
+
+textarea#comment {
+height:13em;
+margin:0 0 0.5em;
+overflow:auto;
+width:66%;
+}
+
+.alignright,img.alignright{
+float:right;
+margin:1em 0 0 1em;
+}
+
+.alignleft,img.alignleft{
+float:left;
+margin:1em 1em 0 0;
+}
+
+.aligncenter,img.aligncenter{
+display:block;
+margin:1em auto;
+text-align:center;
+}
+
+div.gallery {
+clear:both;
+height:180px;
+margin:1em 0;
+width:100%;
+}
+
+p.wp-caption-text{
+font-style:italic;
+}
+
+div.gallery dl{
+margin:1em auto;
+overflow:hidden;
+text-align:center;
+}
+
+div.gallery dl.gallery-columns-1 {
+width:100%;
+}
+
+div.gallery dl.gallery-columns-2 {
+width:49%;
+}
+
+div.gallery dl.gallery-columns-3 {
+width:33%;
+}
+
+div.gallery dl.gallery-columns-4 {
+width:24%;
+}
+
+div.gallery dl.gallery-columns-5 {
+width:19%;
+}
+
+div#nav-above {
+margin-bottom:1em;
+}
+
+div#nav-below {
+margin-top:1em;
+}
+
+div#nav-images {
+height:150px;
+margin:1em 0;
+}
+
+div.navigation {
+height:1.25em;
+}
+
+div.navigation div.nav-next {
+float:right;
+text-align:right;
+}
+
+
+
+
+div.sidebar input#s {
+width:7em;
+}
+
+div.sidebar li {
+list-style:none;
+margin:0 0 2em;
+}
+
+div.sidebar li form {
+margin:0.2em 0 0;
+padding:0;
+}
+
+div.sidebar ul ul {
+margin:0 0 0 1em;
+}
+
+div.sidebar ul ul li {
+list-style:disc;
+margin:0;
+}
+
+div.sidebar ul ul ul {
+margin:0 0 0 0.5em;
+}
+
+div.sidebar ul ul ul li {
+list-style:circle;
+}
+
+div#menu ul li,div.gallery dl,div.navigation div.nav-previous {
+float:left;
+}
+
+div#header{
+height:290px;
+text-align:center;
+background:url("../../../images/logo.png");
+}
+div#camel {text-align:center;background:url("../../../images/v5_bottom.jpg");margin-top:-250px;position:absolute; left:0px;min-height:600px;width:100%;z-index:-10;overflow:hidden;}
+div#footer {
+text-align:center;}
+
+input#author,input#email,input#url,div.navigation div {
+width:50%;
+}
+
+div.gallery *,div.sidebar div,div.sidebar h3,div.sidebar ul {
+margin:0;
+padding:0;
+}
+
+
+/*menu test*/
+
+ul.menu {
+list-style-type:none;
+width:auto;
+/*position:relative;*/
+display:block;
+/* height:37px; */
+font-size:1em;
+margin:0;
+padding:0;
+}
+
+ul.menu li {
+display:block;
+float:left;
+height:37px;
+margin:0;
+padding:0;
+
+}
+
+ul.menu li a {
+float:left;
+color:#13284a;
+font-weight:bold;
+text-decoration:none;
+/* height:37px; */
+padding:9px 25px 0;
+}
+
+
+
+ul.menu li a:hover {
+color:#fff;
+/*background:url("images/bg.png.html") repeat-x top left;*/
+}
+
+
+ul.menu .current-cat a {
+color:#fff;
+
+}
+ul.menu .current_page_item a {
+color:#fff;
+
+}
+
+/*GREEN*/
+ul.menu.green{
+background-color:#629600;
+}
+ul.menu.green li a:hover, .menu.green li.current {
+background-color:#7AB900;
+}
+
+
+
+
+@charset "utf-8";
+/* CSS Document */
+
+
+.pagebar{
+position:relative;
+top:-13px;
+text-align:center;
+
+}
+
+.this-page{
+font-weight:bold;
+color:white;
+}
+
+
+div#facebook iframe{
+background-color:white;
+}http://wp.baikonur.com/wp-admin/theme-editor.php?file=/kunden/283237_10119/webseiten/wordpress/wp-content/themes/sandbox/style.css&theme=Sandbox&a=te&scrollto=8150
+
+div#entry-content{
+margin-top:13px;
+}
+div#content{
+	margin: 1em 2em;
+}
+#homeright{
+overflow:hidden;
+margin-top:1.6em;
+}
+
+.comments-link{
+font-size:200%;
+}
+
+
+div.clear{
+clear:left;
+}
+#whitebg-uu div{margin-top:0.8em;}
+.spalte {  text-align:left; float:left; }
+
+.sidebar h3{
+color:#fff;
+background-color:#999;
+
+}

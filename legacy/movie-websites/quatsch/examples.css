@@ -1,0 +1,629 @@
+@CHARSET "ISO-8859-1";
+/* Reset CSS
+ * --------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+	cursor:url(imgs/cursor.png);
+		font-family: 'Cabin Sketch', cursive;
+		
+
+}
+a{
+	text-decoration:none;
+}
+table {
+    border-spacing: 0;    
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+	font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 1.5em;
+    margin:0;
+    padding:0;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;
+}
+
+
+/* Custom CSS
+ * --------------------------------------- */
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+	color: #d1d512;
+}
+.wrap{
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	position: relative;
+}
+h1{
+	font-size: 1.5em;	
+}
+p{
+	font-size: 1em;
+	font-family: 'Cabin Sketch', cursive;
+}
+.intro p{
+	width: 50%;
+	margin: 0 auto;
+	font-size: 1.5em;
+}
+.section{
+	text-align:center;
+}
+#menu li {
+	display:inline-block;
+	margin-top: 5px;
+	font-size:1em;
+	letter-spacing:0.1em;
+	font-family: 'Cabin Sketch', cursive;
+	font-weight:400;
+	 
+}
+#menu li.active{
+	color:#e6981a;
+}
+#menu li a{
+	text-decoration:none;
+	color: #d1d512;
+}
+#menu li.active a:hover{
+	color:  #e6981a;
+}
+#menu li:hover{
+	background:#c85d9e;
+	color:#e6981a:
+	
+}
+#menu li a,
+#menu li.active a{
+	padding: 7px 10px;
+	display:block;
+}
+#menu li.active a{
+	color: #e6981a;
+}
+#menu{
+	position:fixed;
+	top:0;
+	left:0;
+	height: 30px;
+	z-index: 70;
+	width: 100%;
+	padding: 0;
+	margin:0;
+}
+.twitter-share-button{
+	position: fixed;
+	z-index: 99;
+	right: 149px;
+	top: 9px;
+}
+
+
+#examplesList{
+	display:none;
+	background: #282828;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 20px;
+	float: left;
+	position: absolute;
+	bottom: 29px;
+	right: 0;
+	width:638px;
+	text-align:left;
+}
+#examplesList ul{
+	padding:0;
+}
+#examplesList ul li{
+	display:block;
+	margin: 5px 0;
+}
+#examplesList ul li a{
+	color: #BDBDBD;
+	margin:0;
+}
+#examplesList ul li a:hover{
+	color: #f2f2f2;
+}
+#examplesList .column{
+	float: left;
+	margin: 0 20px 0 0;
+}
+#examplesList h3{
+	color: #f2f2f2;
+	font-size: 1.2em;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+	padding: 0 0 5px 0;
+}
+
+
+
+/* Demos Menu
+ * --------------------------------------- */
+ #demosMenu{
+	position:fixed;
+	bottom: 10px;
+	right:10px;
+	z-index: 999;
+ }
+ 
+ .right{
+	float:right;
+	width:49%;
+	text-align:left;
+	font-size:1em;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.3em;
+	color:rgba(255,255,255,1);
+}
+.left{
+	float:left;
+	width:49%;
+	text-align:right!important;
+	text-transform:uppercase;
+	font-size:1em;
+	line-height: 1.3em;
+	letter-spacing:1px;
+	font-family: 'Montserrat', sans-serif;
+	color:rgba(255,255,255,1);
+}
+.clear{clear:both;}
+
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 6em;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(0,0,0,1);
+		margin:0;
+		padding:0;
+	}
+	.intro p{
+		color: rgba(0,0,0,1);
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Fixed header and footer.
+	* --------------------------------------- */
+	#header, #footer{
+		position:fixed;
+		height: 30px;
+		display:block;
+		width: 100%;
+		background:#6f328a;
+		z-index:9;
+		text-align:center;
+		padding: 10px 0 0 0;
+		
+	}
+
+	#header{
+		top:0px;
+	}
+	#footer{
+		bottom:0px;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu {
+		bottom: 80px;
+	}
+	#infoMenu li a {
+		color: #fff;
+		z-index: 999;
+	}
+	
+	#section0{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_green.jpg);
+	}
+	
+	/* Defining each sectino background and styles 
+	* --------------------------------------- */
+	#section0
+	{
+		
+		padding: 0 0 0 0;
+	}
+	
+	
+		#section1
+	{
+		background-image: url(imgs/quatsch_web_bg_green.jpg);
+		padding: 0 0 0 0;
+		background-size: cover; 
+		
+			-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+
+	
+	
+	/* Defining each sectino background and styles 
+	* --------------------------------------- */
+	#section2
+	{
+		background-image: url(imgs/quatsch_web_bg2.jpg);
+		padding: 0 0 0 0;
+		background-size: cover; 
+		
+			-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+		#section3
+	{
+		background-image: url(imgs/quatsch_web_bg_green.jpg);
+		padding: 0 0 0 0;
+		background-size: cover; 
+		
+			-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+
+#section4{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_cast.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+
+#section5{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_lesen.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+	#section6{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_shake.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+	#section7{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_train.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+	#section8{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_win.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+		#section9{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_green.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+	#section10{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_win.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+		#section11{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_schule.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+		#section12{
+		background-size: cover;
+		background-image: url(imgs/quatsch_web_bg_win.jpg);
+		padding: 0 0 0 0;
+		
+		-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+	}
+	
+
+
+	#filmtext {
+	position:absolute;
+	align:center;
+	bottom:12%;
+	left:4%;
+	width:40%;
+	height:auto;
+	z-index:1;
+	text-align:left;
+	font-family: 'Cabin Sketch', sans-serif;
+	font-weight:400;
+	font-size:1.2em;
+	overflow:auto;
+	background-color:#d1d512;
+	opacity:0.9;
+	color:rgb(60,28,123);
+	padding: 1.5em;
+	line-height:1.5em;
+	
+	-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+-webkit-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+-moz-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+}
+
+#schule2 {
+	position:absolute;
+	align:center;
+	bottom:8%;
+	left:5%;
+	width:40%;
+	height:auto;
+	z-index:1;
+	text-align:left;
+	font-family: 'Cabin Sketch', sans-serif;
+	font-weight:400;
+	font-size:1.2em;
+	overflow:auto;
+	background-color:#d1d512;
+	opacity:0.9;
+	color:rgb(60,28,123);
+	padding: 1.5em;
+	line-height:1.5em;
+	
+	-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+-webkit-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+-moz-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+}
+
+	#filmtextpink {
+	position:absolute;
+	align:center;
+	bottom:12%;
+	left:4%;
+	width:40%;
+	height:auto;
+	z-index:1;
+	text-align:left;
+	font-family: 'Cabin Sketch', sans-serif;
+	font-weight:400;
+	font-size:1.2em;
+	overflow:auto;
+	background-color:#dd9c26;
+	opacity:0.9;
+	color:rgb(60,28,123);
+	padding: 1.5em;
+	line-height:1.5em;
+	
+	-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+-webkit-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+-moz-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+}
+
+#schule {
+	position:absolute;
+	align:center;
+	top:15%;
+	left:28%;
+	width:40%;
+	height:auto;
+	z-index:1;
+	text-align:center;
+	font-family: 'Cabin Sketch', sans-serif;
+	font-weight:700;
+	font-size:1.3em;
+	overflow:auto;
+	color:rgb(60,28,123);
+	padding: 1.5em;
+	line-height:1.5em;
+}
+
+#lesenhoeren {
+	position:absolute;
+	left:0;
+	top:35%;
+	width:100%;
+	height:Auto;
+	z-index:10000;
+	text-align:center;
+}
+
+#impressum {
+	position:absolute;
+	right:2%;
+	bottom:28%;
+	width:auto;
+	height:auto;
+	z-index:2;
+	color:rgba(255,229,0,1);
+	z-index:9999;
+	font-family: 'Montserrat', sans-serif;
+	font-size:0.8em;
+}
+
+#kinofinder {
+	position:absolute;
+	left:2%;
+	bottom:28%;
+	width:auto;
+	height:auto;
+	z-index:2;
+	color:rgba(255,229,0,1);
+	z-index:9999;
+	font-family: 'Montserrat', sans-serif;
+	font-size:0.8em;
+}
+
+#apDiv2 {
+	position:absolute;
+	left:1.5%;
+	top:8%;
+	width:auto;
+	height:auto;
+	z-index:2;
+	color:rgba(255,229,0,1);
+	z-index:9999;
+	font-family: 'Montserrat', sans-serif;
+	font-size:0.8em;
+}
+
+#logo {
+	position:absolute;
+	text-align:center;
+	top:12%;
+	width:100%;
+	
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+	left:15%;
+	top:18%;
+}
+
+.filmtextcolumn {
+	position: absolute;
+	text-align: center;
+	top: 15%;
+	left: 20%;
+	width: 60%;
+	height: 780px;
+	z-index: 1;
+	font-family: 'Cabin Sketch', sans-serif;
+	color: rgba(200,28,215,1.00);
+	font-weight: 400;
+	font-size: 1.4em;
+	overflow: auto;
+	padding: 1.5em;
+	line-height: 1.5em;
+}
+
+#textlarge {
+	position:absolute;
+	align:center;
+	top:8%;
+	left:5%;
+	width:50%;
+	height:auto;
+	z-index:1;
+	text-align:left;
+	font-family: 'Cabin Sketch', 'Arial', sans-serif;
+	font-weight:400;
+	font-size:1em;
+	overflow:auto;
+	background-color:#6E328A;
+	opacity:0.9;
+	color:rgb(255,255,255);
+	padding: 1.5em;
+	line-height:1.5em;
+	
+	-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+-webkit-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+-moz-box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+box-shadow: 10px 10px 35px -6px rgba(0,0,0,0.7);
+
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+    -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 30px; /* Firefox */
+    column-gap: 30px;
+}
+

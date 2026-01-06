@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../standard/styles.css"><title>Tuvalu - A journey into the world of dreams</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript1.1">
+
+var locationAfterPreload = "Inhaltl.html" // URL of the page after preload finishes
+var lengthOfPreloadBar = 150 // Length of preload bar (in pixels)
+var heightOfPreloadBar = 15 // Height of preload bar (in pixels)
+// Put the URLs of images that you want to preload below (as many as you want)
+var yourImages = new Array("../bilder/denisbkl.jpg","../bilder/blinddkl.jpg","../bilder/evaschakl.jpg","../bilder/dachsckl.jpg","../bilder/ausguckl.jpg","../bilder/evadenkl.jpg","../bilder/destrokl.jpg","../bilder/evadekl2.jpg")
+// Do not modify anything beyond this point!
+if (document.images) {
+var dots = new Array() 
+dots[0] = new Image(1,1)
+dots[0].src = "../bilder/pre1.gif" // default preloadbar color (note: You can substitute it with your image, but it has to be 1x1 size)
+dots[1] = new Image(1,1)
+dots[1].src = "../bilder/pre2.gif" // color of bar as preloading progresses (same note as above)
+var preImages = new Array(),coverage = Math.floor(lengthOfPreloadBar/yourImages.length),currCount = 0
+var loaded = new Array(),i,covered,timerID
+var leftOverWidth = lengthOfPreloadBar%coverage
+}
+function loadImages() { 
+for (i = 0; i < yourImages.length; i++) { 
+	preImages[i] = new Image()
+	preImages[i].src = yourImages[i]
+}
+for (i = 0; i < preImages.length; i++) { 
+	loaded[i] = false
+}
+checkLoad()
+}
+function checkLoad() {
+if (currCount == preImages.length) { 
+	location.replace(locationAfterPreload)
+	return
+}
+for (i = 0; i <= preImages.length; i++) {
+	if (loaded[i] == false && preImages[i].complete) {
+		loaded[i] = true
+		eval("document.img" + currCount + ".src=dots[1].src")
+		currCount++	}
+}
+timerID = setTimeout("checkLoad()",10) 
+}
+// end hiding -->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" background="../bilder/bg.jpg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr align="center"> 
+    <td> 
+      <p><img src="../bilder/loading.gif" width="86" height="23" border="0"></p>
+      <p> 
+        <script language="javascript1.1">
+<!-- begin hiding
+// It is recommended that you put a link to the target URL just in case if the visitor wants to skip preloading
+// for some reason, or his browser doesn't support JavaScript image object.
+if (document.images) {
+var preloadBar = ''
+for (i = 0; i < yourImages.length-1; i++) {
+	preloadBar += '<img src="' + dots[0].src + '" width="' + coverage + '" height="' + heightOfPreloadBar + '" name="img' + i + '" align="absmiddle">'
+}
+preloadBar += '<img src="' + dots[0].src + '" width="' + (leftOverWidth+coverage) + '" height="' + heightOfPreloadBar + '" name="img' + (yourImages.length-1) + '" align="absmiddle">'
+document.write(preloadBar)
+loadImages()
+}
+// end hiding -->
+</script>
+      </p>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>
+
+<!-- Veit Helmer Footer -->
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="780">
+  <tr> 
+    <td align="left" valign="top" nowrap class="footer">
+		<a class="flag" title="Deutsch" href="/Tuvalu.11.0.html?&L=0" target="_top"><img src="/fileadmin/resources/img/lang_de_sw.gif" onmouseover="this.src='/fileadmin/resources/img/lang_de_col.gif';" onmouseout="this.src='/fileadmin/resources/img/lang_de_sw.gif';" width="22" height="12" alt="Deutsch" /></a><a class="flag" title="English" href="/Tuvalu.11.0.html?&L=1" target="_top"><img src="/fileadmin/resources/img/lang_en_sw.gif" onmouseover="this.src='/fileadmin/resources/img/lang_en_col.gif';" onmouseout="this.src='/fileadmin/resources/img/lang_en_sw.gif';" width="22" height="12" alt="English" /></a><a href="/imprint.10.0.html?&L=1" target="_top">Imprint&nbsp;&raquo;</a><a href="/Contact.9.0.html?&L=1" target="_top">Contact&nbsp;&raquo;</a>
+    </td>
+  </tr>
+</table>
+<!-- / Veit Helmer Footer -->
+
+</body>
+
+</html>
