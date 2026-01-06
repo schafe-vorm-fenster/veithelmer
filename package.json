@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "kanban:start": "./scripts/start-services.sh",
-    "kanban:stop": "./scripts/stop-services.sh",
+    "kanban:kill": "./scripts/kill-services.sh",
+    "kanban:restart": "pnpm kanban:kill && pnpm kanban:start",
     "kanban:check": "./scripts/check-status.sh"
   },
   "repository": {

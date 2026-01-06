@@ -4,62 +4,80 @@ This document outlines the tools and workflows for the Veit Helmer project, spec
 
 ## Project Management (Vibe Kanban)
 
-We use [Vibe Kanban](https://github.com/Start-Vibe/vibe-kanban) as our AI-powered project management tool. It integrates directly with VS Code via MCP (Model Context Protocol).
+We use [Vibe Kanban](https://github.com/BloopAI/vibe-kanban) as our AI-powered project management tool. It integrates with VS Code via MCP (Model Context Protocol) for GitHub Copilot.
 
-### Installation & Prerequisites
+### Architecture
 
-Ensure you have Node.js and PNPM installed.
-The project uses `vibe-kanban` via `pnpm dlx`, so no global installation is strictly necessary, but `pnpm install` in the root directory will ensure dependencies in `package.json` are respected if we add any.
+The setup consists of two components:
 
-### Managing the Server
+1. **Dashboard** (Web UI) - Started via terminal scripts, runs in background
+2. **MCP Server** (VS Code Integration) - Managed by VS Code via `.vscode/mcp.json`
 
-We have provided convenient scripts to manage the local Vibe Kanban server. This server provides the web dashboard for task management.
+### Prerequisites
 
-> **Note:** The VS Code integration (MCP) is configured in `.vscode/settings.json` and runs automatically when you open this workspace. The scripts below are primarily for running the standalone Dashboard or resetting the services.
+- Node.js and PNPM installed
+- VS Code Insiders (or VS Code 1.102+) with GitHub Copilot
+- `GEMINI_API_KEY` in `.env` file (for Vibe Kanban AI features)
 
-#### 1. Check Status
-To check if the Vibe Kanban server (and MCP integration) is running:
+### Quick Start
+
 ```bash
-pnpm run kanban:check
-```
-*Or run directly:* `./scripts/check-status.sh`
+# 1. Start the Dashboard
+pnpm kanban:start
 
-#### 2. Start Services
-To start the Vibe Kanban server in the background:
+# 2. Start MCP in VS Code
+#    Cmd+Shift+P → "MCP: List Servers" → Click "vibe_kanban" → Start
+```
+
+### Managing Services
+
+#### Dashboard (Terminal Scripts)
+
+| Command | Description |
+|---------|-------------|
+| `pnpm kanban:start` | Start the dashboard in background |
+| `pnpm kanban:kill` | Stop all Vibe Kanban processes |
+| `pnpm kanban:restart` | Restart the dashboard |
+| `pnpm kanban:check` | Check status of all services |
+
+#### MCP Server (VS Code)
+
+The MCP server is configured in `.vscode/mcp.json` and managed by VS Code:
+
+- **Start**: `Cmd+Shift+P` → `MCP: List Servers` → Click `vibe_kanban`
+- **Stop**: Same menu, click to stop
+- **Restart**: `Cmd+Shift+P` → `MCP: List Servers` → Restart option
+
+> **Note**: The MCP server requires the Dashboard to be running first.
+
+### Copilot Integration
+
+Once both services are running, you can use Vibe Kanban tools in GitHub Copilot Chat:
+
+- `list_projects` - List all projects
+- `list_tasks` - List tasks in a project  
+- `create_task` - Create a new task
+- `update_task` - Update task status
+- `get_task` - Get task details
+
+### Troubleshooting
+
+**MCP shows "Stopped" after VS Code reload:**
+- This is normal. VS Code doesn't auto-start MCP servers.
+- Manually start via `MCP: List Servers` command.
+
+**Dashboard not responding:**
 ```bash
-pnpm run kanban:start
+pnpm kanban:restart
 ```
-*Or run directly:* `./scripts/start-services.sh`
 
-This command will:
-- Check if it's already running.
-- Start the server using `nohup`.
-- Log output to `vibe-kanban.log`.
-
-#### 3. Stop Services
-To stop all running Vibe Kanban instances:
+**Check overall status:**
 ```bash
-pnpm run kanban:stop
+pnpm kanban:check
 ```
-*Or run directly:* `./scripts/stop-services.sh`
-
-### Gemini Integration
-
-Vibe Kanban uses Gemini for its intelligence.
-Ensure you have your API key configured if you are running the server manually or if prompted by the tool.
-
-- **Environment Variable:** `GEMINI_API_KEY`
-
-### Script Reference
-
-| PNPM Command | Script Path | Description |
-|---|---|---|
-| `pnpm run kanban:start` | `./scripts/start-services.sh` | Starts the server in background. |
-| `pnpm run kanban:stop` | `./scripts/stop-services.sh` | Kills all vibe-kanban processes. |
-| `pnpm run kanban:check` | `./scripts/check-status.sh` | Reports status of port and processes. |
 
 ## Development
 
-- **Legacy Site:** Located in `legacy/`.
-- **New Content:** Drafts in `new-movies/`.
-- **Project Specs:** See `project-management/`.
+- **Legacy Site:** Located in `legacy/`
+- **New Content:** Drafts in `new-movies/`
+- **Project Specs:** See `project-management/`
