@@ -1,6 +1,6 @@
 ---
 title: CV / Filmography
-image: veit-helmer-portrait.jpg
+image: portrait.jpg
 alt: Veit Helmer, Copyright by Boryana Pandova
 ---
 
