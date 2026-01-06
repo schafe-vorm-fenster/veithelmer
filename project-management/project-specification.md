@@ -43,9 +43,11 @@ To ensure the modern reconstruction remains faithful to the original creative vi
 
 All content will be migrated to a **Markdown \+ Frontmatter** structure.
 
-### **5.1 Film Data Schema**
+### 5.1 Film Data Schema
 
-Each film requires a .md file in both /de/ and /en/ with the following Frontmatter:
+**Folder Naming Convention**: `/content/films/[film-slug]/`
+
+Each film requires a .md file in both /de/ and /en/ located within the specified folder structure, utilizing the following Frontmatter:
 
 * **Fields**: Title, description, director, cast, release year, duration.  
 * **Image Handling**: A film image matching the Markdown filename, linked in Frontmatter for teaser use.  
