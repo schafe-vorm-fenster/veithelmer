@@ -49,8 +49,13 @@ All content will be migrated to a **Markdown \+ Frontmatter** structure.
 
 Each film requires localized .md files (`index_de.md` and `index_en.md`) located within the specified folder structure, utilizing the following Frontmatter:
 
-* **Fields**: Title, description, director, cast, release year, duration.  
-* **Image Handling**: A film image matching the Markdown filename, linked in Frontmatter for teaser use.  
+* **Core Fields**: Title, description, director, cast, release year, duration.
+* **Extended Metadata**:
+    * **Country**: Origin country (e.g., "Germany / Azerbaijan").
+    * **Technical Specs**: Original format details (e.g., "35mm, Color, Dolby Digital").
+    * **Awards**: List of awards won.
+    * **Crew**: Key roles like Cinematography, Editing, Music, Production.
+* **Image Handling**: A film image matching the Markdown filename, linked in Frontmatter for teaser use.
 * **External Links**: Path or URL for films with dedicated microsites.
 
 ### **5.2 Static Page Extraction**
