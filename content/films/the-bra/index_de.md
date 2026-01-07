@@ -1,5 +1,7 @@
 ---
 title: Vom Lokführer, der die Liebe suchte...
+type: film
+language: de
 description: Ein Güterzug rollt durch eine weite Graslandschaft... Am Steuer ist Nurlan, der Lokführer. Er findet einen blauen Spitzen-BH an seiner Lok und macht sich auf die Suche nach der Besitzerin.
 director: Veit Helmer
 cast:

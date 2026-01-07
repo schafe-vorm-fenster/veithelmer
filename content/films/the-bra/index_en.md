@@ -1,5 +1,7 @@
 ---
 title: The Bra
+type: film
+language: en
 description: A lonely train driver finds a bra on his vehicle. He walks along the track to look for the owner. A poetic story about the search for love, set in the breathtaking landscapes of Azerbaijan.
 director: Veit Helmer
 cast:
