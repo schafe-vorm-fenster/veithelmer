@@ -1,19 +1,54 @@
 @import "tailwindcss";
 
+/* ============================================
+ * Veit Helmer Minimalist Design System
+ * Phase 6.1.2: Brand Identity
+ * ============================================ */
+
+/* Font Face Declarations - Inter (Self-hosted) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-Bold.woff2') format('woff2');
+}
+
 /* Design Tokens Extracted from Legacy Assets
  * Source: legacy/directors-website/styles/custom.css
  * Documentation: See DESIGN_TOKENS.md for full reference
  */
 
 @theme {
-  /* Colors - Legacy Palette */
+  /* Core Brand Colors - Minimalist Palette */
   --color-brand-black: #000;
+  --color-brand-white: #fff;
+  
+  /* Extended Palette - Legacy Support */
   --color-brand-darkgray: #1f1f1f;
   --color-brand-brown: #8d5315;
-  --color-brand-white: #fff;
   --color-brand-lightgray: #eee;
   --color-brand-mediumgray: #ccc;
   --color-brand-charcoal: #333;
+  
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   
   /* Effects */
   --shadow-base: -1px 0 8px 2px rgba(0, 0, 0, 0.58);
@@ -21,18 +56,62 @@
   --overlay-medium: rgba(255, 255, 255, 0.5);
 }
 
+/* ============================================
+ * Base Typography & Layout
+ * ============================================ */
+
 @layer base {
+  html {
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   body {
-    @apply bg-black text-white font-sans;
-    font-size: 15px;
+    @apply bg-black text-white;
+    font-family: var(--font-sans);
+    font-size: 16px;
     line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
   }
   
   a {
     @apply text-white underline;
+    text-underline-offset: 0.2em;
+    transition: opacity 0.2s ease;
   }
   
   a:hover {
-    @apply text-gray-200;
+    opacity: 0.8;
+  }
+  
+  strong, b {
+    font-weight: 700;
+  }
+  
+  em, i {
+    font-style: italic;
   }
 }

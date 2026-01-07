@@ -2,16 +2,20 @@
 layout: base.njk
 ---
 
-<header class="p-6 border-b border-gray-700">
-  <nav>
-    <h1 class="text-2xl font-bold">{{ title }}</h1>
+<header class="p-8 border-b border-white/10">
+  <nav class="container mx-auto max-w-6xl">
+    <div class="flex items-center justify-between">
+      <a href="/" class="no-underline">
+        <h1 class="text-3xl font-bold tracking-tight hover:opacity-80 transition-opacity">VEIT HELMER</h1>
+      </a>
+    </div>
   </nav>
 </header>
 
-<main class="container mx-auto px-6 py-8">
+<main class="container mx-auto max-w-6xl px-6 py-12">
   {{ content | safe }}
 </main>
 
-<footer class="p-6 mt-12 border-t border-gray-700 text-center text-sm text-gray-400">
-  <p>&copy; {{ year or "2026" }} Veithelmer. All rights reserved.</p>
+<footer class="p-8 mt-16 border-t border-white/10 text-center text-sm opacity-60">
+  <p>&copy; {{ year or "2026" }} Veit Helmer. All rights reserved.</p>
 </footer>
