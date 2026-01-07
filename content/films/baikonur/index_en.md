@@ -1,5 +1,7 @@
 ---
 title: Baikonur
+type: film
+language: en
 description: "Whatever falls from heaven, you may keep." So goes the unwritten law of the Kazakh steppes. A poetic love story between the Kazakh villager Iskander and a French space tourist who literally falls from the sky.
 director: Veit Helmer
 cast:

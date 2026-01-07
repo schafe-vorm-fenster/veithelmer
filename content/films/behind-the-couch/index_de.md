@@ -1,5 +1,7 @@
 ---
 title: Behind the Couch - Casting in Hollywood
+type: film
+language: de
 description: „BEHIND THE COUCH“ wagt einen schonungslosen und äußerst aufschlußreichen Blick hinter die Kulissen des Casting Prozesses in Hollywood.
 director: Veit Helmer
 release_year: 2005

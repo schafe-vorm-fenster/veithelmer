@@ -1,5 +1,7 @@
 ---
 title: Fiddlesticks
+type: film
+language: en
 description: The children of Bollersdorf and their coati Quatsch decide to set a few world records of their own to prove that their town is anything but average, driving away the market researchers who have taken over their lives.
 director: Veit Helmer
 cast:
