@@ -115,3 +115,30 @@
     font-style: italic;
   }
 }
+
+/* ============================================
+ * Component Styles - Phase 6.2.2
+ * Film Tiles & Interactive Components
+ * ============================================ */
+
+@layer components {
+  /* Film Tile Component */
+  .film-tile {
+    position: relative;
+    border-radius: 0; /* Borderless as per spec */
+  }
+  
+  .film-tile:hover {
+    /* Drop shadow on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 
+                0 10px 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Ensure smooth transitions for all interactive elements */
+  .film-tile,
+  .film-tile img,
+  .film-tile a {
+    transition-property: transform, opacity, box-shadow, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

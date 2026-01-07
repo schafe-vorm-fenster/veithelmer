@@ -1,0 +1,333 @@
+---
+layout: page.njk
+title: Component Library - Phase 6.2.2
+description: UI Component Library - Film Tiles, Buttons, and Controls
+permalink: /styleguide/
+---
+
+{% import "macros/filmTile.njk" as filmTile %}
+{% import "macros/buttons.njk" as buttons %}
+{% import "macros/languageToggle.njk" as lang %}
+
+<div class="space-y-20">
+  
+  {# Header #}
+  <section>
+    <h1 class="text-5xl font-bold mb-4">Component Library</h1>
+    <p class="text-xl opacity-80">Phase 6.2.2: Film Tiles, Buttons & Language Controls</p>
+    <p class="text-sm opacity-60 mt-2">Streaming service style UI components with hover interactions</p>
+  </section>
+
+  {# Film Tiles #}
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Film Tiles</h2>
+      <p class="opacity-80 mb-2">3:2 aspect ratio, borderless design with hover states</p>
+      <ul class="text-sm opacity-60 space-y-1">
+        <li>✓ Smooth scale-up to 105% on hover</li>
+        <li>✓ Z-index lift for layered effect</li>
+        <li>✓ Drop shadow appears on hover</li>
+        <li>✓ Title and year overlay on hover</li>
+        <li>✓ Optional category badge</li>
+      </ul>
+    </div>
+    
+    {# Single Film Tile Demo #}
+    <div class="p-8 border border-white/10 bg-white/5">
+      <h3 class="font-bold mb-6 text-sm uppercase tracking-wider opacity-60">Single Tile</h3>
+      <div class="max-w-sm">
+        {{ filmTile.filmTile(
+          title="Tuvalu",
+          year="1999",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Tuvalu",
+          url="/films/tuvalu/",
+          category="Feature"
+        ) }}
+      </div>
+    </div>
+    
+    {# Film Grid Demo #}
+    <div class="p-8 border border-white/10 bg-white/5">
+      <h3 class="font-bold mb-6 text-sm uppercase tracking-wider opacity-60">Grid Layout (Hover to see effects)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ filmTile.filmTile(
+          title="Tuvalu",
+          year="1999",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Tuvalu",
+          url="/films/tuvalu/",
+          category="Feature"
+        ) }}
+        {{ filmTile.filmTile(
+          title="Absurdistan",
+          year="2008",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Absurdistan",
+          url="/films/absurdistan/",
+          category="Feature"
+        ) }}
+        {{ filmTile.filmTile(
+          title="The Bra",
+          year="2018",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=The+Bra",
+          url="/films/the-bra/",
+          category="Feature"
+        ) }}
+        {{ filmTile.filmTile(
+          title="Baikonur",
+          year="2011",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Baikonur",
+          url="/films/baikonur/",
+          category="Documentary"
+        ) }}
+        {{ filmTile.filmTile(
+          title="Behind the Couch",
+          year="2003",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Behind+the+Couch",
+          url="/films/behind-the-couch/"
+        ) }}
+        {{ filmTile.filmTile(
+          title="Quatsch",
+          year="2004",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Quatsch",
+          url="/films/quatsch/",
+          category="Short"
+        ) }}
+      </div>
+    </div>
+  </section>
+
+  {# Buttons #}
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Buttons & Controls</h2>
+      <p class="opacity-80 mb-2">Minimalist, icon-driven, monochrome buttons</p>
+      <ul class="text-sm opacity-60 space-y-1">
+        <li>✓ Icon-driven design with accessible labels</li>
+        <li>✓ Monochrome color scheme (black/white)</li>
+        <li>✓ Smooth hover transitions</li>
+        <li>✓ Focus states for keyboard navigation</li>
+      </ul>
+    </div>
+    
+    {# Icon Buttons #}
+    <div class="p-8 border border-white/10 bg-white/5 space-y-6">
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Icon Buttons</h3>
+        <div class="flex items-center gap-4 flex-wrap">
+          {{ buttons.arrowButton('/films/', 'View films', 'right') }}
+          {{ buttons.arrowButton('/back/', 'Go back', 'left') }}
+          {{ buttons.playButton('/trailer/', 'Play trailer') }}
+          {{ buttons.closeButton('Close') }}
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Button Sizes</h3>
+        <div class="flex items-center gap-4">
+          {{ buttons.iconButton(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+            'Small info button',
+            '#',
+            'sm'
+          ) }}
+          {{ buttons.iconButton(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+            'Medium info button',
+            '#',
+            'md'
+          ) }}
+          {{ buttons.iconButton(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+            'Large info button',
+            '#',
+            'lg'
+          ) }}
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Text Buttons</h3>
+        <div class="flex items-center gap-4 flex-wrap">
+          {{ buttons.textButton('View All Films', '/films/') }}
+          {{ buttons.textButton('Learn More', '/about/') }}
+          {{ buttons.textButton('Watch Trailer', '/trailer/', '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>') }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Language Toggle #}
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Language Toggle</h2>
+      <p class="opacity-80 mb-2">Bilingual site navigation (German/English)</p>
+      <ul class="text-sm opacity-60 space-y-1">
+        <li>✓ Clear active state indication</li>
+        <li>✓ Smooth transitions on hover</li>
+        <li>✓ Accessible with ARIA labels</li>
+      </ul>
+    </div>
+    
+    <div class="p-8 border border-white/10 bg-white/5 space-y-8">
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Standard Toggle (German Active)</h3>
+        {{ lang.languageToggle('de', '/films/') }}
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Standard Toggle (English Active)</h3>
+        {{ lang.languageToggle('en', '/about/') }}
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Compact Toggle</h3>
+        {{ lang.languageToggleCompact('en') }}
+      </div>
+    </div>
+  </section>
+
+  {# Combined Example #}
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Combined Example</h2>
+      <p class="opacity-80">Film tiles with navigation buttons</p>
+    </div>
+    
+    <div class="p-8 border border-white/10 bg-white/5 space-y-6">
+      {# Section Header with Button #}
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Feature Films</h3>
+          <p class="text-sm opacity-60">Latest releases</p>
+        </div>
+        {{ buttons.arrowButton('/films/features/', 'View all feature films') }}
+      </div>
+      
+      {# Film Grid #}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {{ filmTile.filmTile(
+          title="The Bra",
+          year="2018",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=The+Bra",
+          url="/films/the-bra/",
+          category="Feature"
+        ) }}
+        {{ filmTile.filmTile(
+          title="Absurdistan",
+          year="2008",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Absurdistan",
+          url="/films/absurdistan/",
+          category="Feature"
+        ) }}
+        {{ filmTile.filmTile(
+          title="Tuvalu",
+          year="1999",
+          image="https://via.placeholder.com/600x400/1f1f1f/ffffff?text=Tuvalu",
+          url="/films/tuvalu/",
+          category="Feature"
+        ) }}
+      </div>
+    </div>
+  </section>
+
+  {# Interactive State Demo #}
+  <section class="space-y-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Interactive States</h2>
+      <p class="opacity-80">Hover and focus behaviors</p>
+    </div>
+    
+    <div class="p-8 border border-white/10 bg-white/5">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="pb-4 font-bold">Component</th>
+            <th class="pb-4 font-bold">Default</th>
+            <th class="pb-4 font-bold">Hover Effect</th>
+            <th class="pb-4 font-bold">Duration</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-b border-white/10">
+            <td class="py-4 font-bold">Film Tile</td>
+            <td class="py-4 opacity-60">Scale 100%, No shadow</td>
+            <td class="py-4 opacity-60">Scale 105%, Drop shadow, Overlay visible</td>
+            <td class="py-4 opacity-60">300ms ease-out</td>
+          </tr>
+          <tr class="border-b border-white/10">
+            <td class="py-4 font-bold">Icon Button</td>
+            <td class="py-4 opacity-60">Black bg, White border</td>
+            <td class="py-4 opacity-60">White bg, Black text</td>
+            <td class="py-4 opacity-60">200ms ease-out</td>
+          </tr>
+          <tr class="border-b border-white/10">
+            <td class="py-4 font-bold">Text Button</td>
+            <td class="py-4 opacity-60">Transparent bg, White text</td>
+            <td class="py-4 opacity-60">White bg, Black text</td>
+            <td class="py-4 opacity-60">200ms ease-out</td>
+          </tr>
+          <tr>
+            <td class="py-4 font-bold">Language Toggle</td>
+            <td class="py-4 opacity-60">60% opacity inactive</td>
+            <td class="py-4 opacity-60">100% opacity, Subtle bg</td>
+            <td class="py-4 opacity-60">200ms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {# Technical Specifications #}
+  <section class="space-y-6 p-8 border border-white/10 bg-white/5">
+    <h2 class="text-3xl font-bold mb-4">✅ Phase 6.2.2 Complete</h2>
+    
+    <div class="space-y-4">
+      <div>
+        <h3 class="font-bold mb-2">Film Tile Component</h3>
+        <ul class="space-y-1 text-sm opacity-80">
+          <li>✓ 3:2 aspect ratio (as specified)</li>
+          <li>✓ Borderless design</li>
+          <li>✓ 105% scale on hover with smooth transition</li>
+          <li>✓ Z-index lift for layered effect</li>
+          <li>✓ Drop shadow on hover</li>
+          <li>✓ Title and year overlay appear on hover</li>
+          <li>✓ Optional category badge</li>
+          <li>✓ Accessible with proper ARIA labels</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-2">Button Components</h3>
+        <ul class="space-y-1 text-sm opacity-80">
+          <li>✓ Icon-driven design</li>
+          <li>✓ Monochrome color scheme</li>
+          <li>✓ Multiple sizes (sm, md, lg)</li>
+          <li>✓ Invert colors on hover (black → white)</li>
+          <li>✓ Focus states with ring indicator</li>
+          <li>✓ Accessible labels and titles</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-2">Language Toggle</h3>
+        <ul class="space-y-1 text-sm opacity-80">
+          <li>✓ Standard and compact variants</li>
+          <li>✓ Clear active state indication</li>
+          <li>✓ Smooth hover transitions</li>
+          <li>✓ ARIA labels for accessibility</li>
+          <li>✓ Current page context support</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-6 p-4 bg-black/50">
+      <p class="text-sm opacity-60 mb-2">Component Files:</p>
+      <code class="text-xs font-mono block space-y-1">
+        <div>src/_includes/macros/filmTile.njk</div>
+        <div>src/_includes/macros/buttons.njk</div>
+        <div>src/_includes/macros/languageToggle.njk</div>
+        <div>src/css/main.css (component styles)</div>
+      </code>
+    </div>
+  </section>
+
+</div>
