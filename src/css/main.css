@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design Tokens Extracted from Legacy Assets
+ * Source: legacy/directors-website/styles/custom.css
+ * Documentation: See DESIGN_TOKENS.md for full reference
+ */
+
+@layer base {
+  :root {
+    /* Colors - Legacy Palette */
+    --color-brand-black: #000;
+    --color-brand-darkgray: #1f1f1f;
+    --color-brand-brown: #8d5315;
+    --color-brand-white: #fff;
+    --color-brand-lightgray: #eee;
+    --color-brand-mediumgray: #ccc;
+    --color-brand-charcoal: #333;
+    
+    /* Effects */
+    --shadow-base: -1px 0 8px 2px rgba(0, 0, 0, 0.58);
+    --overlay-light: rgba(255, 255, 255, 0.2);
+    --overlay-medium: rgba(255, 255, 255, 0.5);
+  }
+
+  body {
+    @apply bg-black text-white font-sans;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  a {
+    @apply text-white underline;
+  }
+  
+  a:hover {
+    @apply text-gray-200;
+  }
+}
