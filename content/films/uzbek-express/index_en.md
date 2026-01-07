@@ -1,5 +1,7 @@
 ---
 title: Uzbek Express!
+type: film
+language: en
 description: Passengers rush to the express train. The sight of a couple locked in an intimate kiss inspires the engineer to abandon the train and to make a fundamental change in his life.
 director: Veit Helmer and Students of Mannon Uigur Filmschool
 cast:

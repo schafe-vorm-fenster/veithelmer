@@ -1,5 +1,7 @@
 ---
 title: Surprise!
+type: film
+language: en
 description: A man gathers together an arsenal of lethal weapons around his lover’s bed. It looks as if he wants to kill her, while she is fast asleep!
 director: Veit Helmer
 cast:

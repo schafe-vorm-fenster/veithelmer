@@ -1,0 +1,181 @@
+---
+layout: page.njk
+---
+
+{# Hero Section: Video Player or Poster #}
+<section class="hero-section -mx-6 -mt-12 mb-12" aria-label="Film hero">
+  <div class="relative w-full bg-brand-darkgray" style="aspect-ratio: 16/9;">
+    
+    {% set filmSlug = page.filePathStem.split('/').slice(-2)[0] %}
+    
+    {% if trailer_video %}
+      {# Priority 1: Video Player #}
+      <video 
+        class="w-full h-full object-cover"
+        poster="{{ '/content/films/' + filmSlug + '/' + (trailer_poster or poster_image) if trailer_poster or poster_image else '' }}"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="{{ '/content/films/' + filmSlug + '/' + trailer_video }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% elif poster_image %}
+      {# Priority 2: Poster Image #}
+      <img 
+        src="{{ '/content/films/' + filmSlug + '/' + poster_image }}" 
+        alt="{{ title }}"
+        class="w-full h-full object-cover"
+      />
+    {% else %}
+      {# Fallback: Dark placeholder #}
+      <div class="w-full h-full flex items-center justify-center text-white/20">
+        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+        </svg>
+      </div>
+    {% endif %}
+    
+  </div>
+</section>
+
+{# Quick Info Block #}
+<section class="quick-info mb-12" aria-label="Film information">
+  <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-tight">
+    {{ title }}
+  </h1>
+  
+  <div class="flex flex-wrap items-center gap-4 text-lg opacity-80 mb-8">
+    {% if release_year %}
+      <span class="font-semibold">{{ release_year }}</span>
+    {% endif %}
+    
+    {% if duration %}
+      <span class="text-white/40">•</span>
+      <span>{{ duration }}</span>
+    {% endif %}
+    
+    {% if country %}
+      <span class="text-white/40">•</span>
+      <span>{{ country }}</span>
+    {% endif %}
+  </div>
+  
+  {# Microsite Button #}
+  {% if external_links and external_links.length > 0 %}
+    {% set microsite = external_links[0] %}
+    <a 
+      href="{{ microsite.url }}" 
+      class="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-brand-brown hover:text-white transition-colors duration-200"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Visit Microsite →
+    </a>
+  {% endif %}
+</section>
+
+{# Information Grid: Two Columns #}
+<section class="information-grid grid md:grid-cols-3 gap-12" aria-label="Film details">
+  
+  {# Left Column: Synopsis (2/3 width) #}
+  <div class="md:col-span-2">
+    <h2 class="text-2xl font-bold mb-6 tracking-tight">Synopsis</h2>
+    <div class="prose prose-invert prose-lg max-w-none leading-relaxed opacity-90">
+      {{ content | safe }}
+    </div>
+  </div>
+  
+  {# Right Column: Metadata (1/3 width) #}
+  <aside class="md:col-span-1">
+    <h2 class="text-2xl font-bold mb-6 tracking-tight">Details</h2>
+    
+    <dl class="space-y-6 text-sm">
+      
+      {# Director #}
+      {% if director %}
+      <div>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Director</dt>
+        <dd class="text-base">{{ director }}</dd>
+      </div>
+      {% endif %}
+      
+      {# Cast #}
+      {% if cast and cast.length > 0 %}
+      <div>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Cast</dt>
+        <dd class="text-base">
+          <ul class="space-y-1">
+            {% for actor in cast %}
+              <li>{{ actor }}</li>
+            {% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+      
+      {# Crew #}
+      {% if crew and crew.length > 0 %}
+      <div>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-2">Crew</dt>
+        <dd class="text-base space-y-2">
+          {% for member in crew %}
+            <div>
+              <span class="text-white/60 text-xs">{{ member.role }}</span><br>
+              <span>{{ member.name }}</span>
+            </div>
+          {% endfor %}
+        </dd>
+      </div>
+      {% endif %}
+      
+      {# Technical Specs #}
+      {% if technical_specs %}
+      <div>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Technical</dt>
+        <dd class="text-base">{{ technical_specs }}</dd>
+      </div>
+      {% endif %}
+      
+      {# Awards #}
+      {% if awards and awards.length > 0 %}
+      <div>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Awards</dt>
+        <dd class="text-base">
+          <ul class="space-y-1">
+            {% for award in awards %}
+              <li class="leading-snug">
+                {% if award is string %}
+                  {{ award }}
+                {% else %}
+                  {# Handle object format like {festival: award} #}
+                  {% for key, value in award %}
+                    {{ key }}: {{ value }}
+                  {% endfor %}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+      
+    </dl>
+  </aside>
+  
+</section>
+
+{# Navigation Back to Homepage #}
+<section class="navigation-back mt-16 pt-12 border-t border-white/10" aria-label="Navigation">
+  <a 
+    href="/"
+    class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-200"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+    </svg>
+    <span>Back to Film Archive</span>
+  </a>
+</section>

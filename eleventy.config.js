@@ -1,8 +1,6 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
-const matter = require('gray-matter');
 
 module.exports = function(eleventyConfig) {
   // CSS processing with Tailwind v4 via eleventy.before hook
@@ -32,32 +30,26 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/js");
   
-  // Copy film assets
-  eleventyConfig.addPassthroughCopy({ "content/films": "assets/films" });
+  // Copy film assets preserving directory structure
+  eleventyConfig.addPassthroughCopy("content/films/**/poster.jpg");
+  eleventyConfig.addPassthroughCopy("content/films/**/trailer.mp4");
+  eleventyConfig.addPassthroughCopy("content/films/**/trailer.jpg");
   
-  // Films Collection - Load from content directory
-  eleventyConfig.addCollection("films", function() {
-    const filmFiles = glob.sync("content/films/*/index_en.md");
-    
-    const films = [];
-    filmFiles.forEach(filePath => {
-      try {
-        const content = fs.readFileSync(filePath, "utf-8");
-        const parsed = matter(content);
-        const slug = path.basename(path.dirname(filePath));
-        
-        films.push({
-          data: parsed.data,
-          content: parsed.content,
-          fileSlug: slug,
-          url: `/films/${slug}/`
-        });
-      } catch (error) {
-        console.warn(`⚠️  Skipping ${filePath}: ${error.message}`);
-      }
-    });
-    
-    return films;
+  // Films collection (all locales)
+  eleventyConfig.addCollection("films", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("content/films/*/index_*.md");
+  });
+  
+  // English films only
+  eleventyConfig.addCollection("films_en", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("content/films/*/index_en.md")
+      .sort((a, b) => (b.data.release_year || 0) - (a.data.release_year || 0));
+  });
+  
+  // German films only
+  eleventyConfig.addCollection("films_de", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("content/films/*/index_de.md")
+      .sort((a, b) => (b.data.release_year || 0) - (a.data.release_year || 0));
   });
   
   // Filter to categorize films by duration (Feature >60min, Short <=60min)
@@ -97,15 +89,27 @@ module.exports = function(eleventyConfig) {
   // Watch targets for live reload
   eleventyConfig.addWatchTarget("src/css/");
   eleventyConfig.addWatchTarget("src/js/");
+  eleventyConfig.addWatchTarget("content/");
+  
+  // Ignore phase reports and documentation files in root
+  eleventyConfig.ignores.add("PHASE_*.md");
+  eleventyConfig.ignores.add("*.md");
+  eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("project-management/**");
+  eleventyConfig.ignores.add("legacy/**");
+  eleventyConfig.ignores.add("legacy-archives/**");
+  eleventyConfig.ignores.add("scripts/**");
+  eleventyConfig.ignores.add("**/TRAILER_SOURCE.md");
+  eleventyConfig.ignores.add("**/POSTER_SOURCES.md");
   
   // Set input/output directories
   return {
     dir: {
-      input: "src",
+      input: ".",
       output: "_site",
-      includes: "_includes",
-      layouts: "_layouts",
-      data: "_data"
+      includes: "src/_includes",
+      layouts: "src/_layouts",
+      data: "src/_data"
     },
     templateFormats: ["njk", "md", "html"],
     htmlTemplateEngine: "njk",
