@@ -155,3 +155,137 @@ Re-ran `scripts/check-frontmatter.js`:
 - ✅ All required fields present: `title`, `type`, `language`
 
 **Phase Status**: ✅ Complete - All frontmatter issues resolved
+
+---
+
+## Phase 4.2.2: Legacy Video Transcoding
+
+**Date**: 2026-01-07  
+**Action**: Converted all legacy video files (FLV, MOV, WMV) to H.264 MP4 format
+
+### Overview
+
+Transcoded 10 legacy video files from inventory-microsites.md into modern H.264 MP4 format using standardized encoding settings. All originals have been archived to `legacy-archives/`.
+
+### Videos Transcoded
+
+#### FLV Files (2)
+1. ✅ `absurdistan/trailer/absurdistan_trailer.flv` → `absurdistan_trailer.mp4`
+2. ✅ `baikonur/de/media/trailer.flv` → `trailer.mp4`
+
+#### MOV Files (5)
+3. ✅ `tuvalu/de/video/tuvalu.mov` → `tuvalu.mp4`
+4. ✅ `tuvalu/en/video/tuvalu.mov` → `tuvalu.mp4`
+5. ✅ `torzumhimmel/video/tzh/TorZumHimmel-Tr_hi.mov` → `TorZumHimmel-Tr_hi.mp4` (7.2M)
+6. ✅ `torzumhimmel/video/tzh/TorZumHimmel-Tr_med.mov` → `TorZumHimmel-Tr_med.mp4` (2.7M)
+7. ✅ `torzumhimmel/video/tzh/TorZumHimmel-Tr_low.mov` → `TorZumHimmel-Tr_low.mp4` (2.1M)
+
+#### WMV Files (3)
+8. ✅ `torzumhimmel/video/tzh/TorZumHimmel-Tr_hi.wmv` → Archived (duplicate of MOV)
+9. ✅ `torzumhimmel/video/tzh/TorZumHimmel-Tr_med.wmv` → Archived (duplicate of MOV)
+10. ✅ `torzumhimmel/video/tzh/TorZumHimmel-Tr_low.wmv` → Archived (duplicate of MOV)
+
+### Encoding Settings
+
+All videos transcoded with standardized H.264 MP4 settings:
+- **Video Codec**: H.264 (libx264)
+- **Audio Codec**: AAC
+- **Quality**: CRF 23 (constant rate factor, balanced quality/size)
+- **Preset**: medium (balanced encoding speed/compression)
+- **Audio Bitrate**: 128k
+- **Optimization**: faststart flag for web streaming
+- **Metadata**: Preserved from source files
+
+### Tools Created
+
+#### 1. `scripts/media_standards`
+Command-line tool for transcoding individual video files with standardized settings.
+
+**Features**:
+- Validates input file format (FLV, MOV, WMV)
+- Extracts and displays ffprobe metadata before transcoding
+- Transcodes to H.264 MP4 with optimized settings
+- Displays ffprobe metadata after transcoding
+- Shows file size comparison
+
+**Usage**: `scripts/media_standards <input_file> <output_file>`
+
+#### 2. `scripts/transcode-legacy-videos.sh`
+Batch processing script for automated transcoding of all legacy videos.
+
+**Features**:
+- Processes all 10 legacy videos automatically
+- Extracts metadata with ffprobe
+- Creates structured JSON log with timestamps and metadata
+- Archives originals to `legacy-archives/` preserving directory structure
+- Skips files where MP4 already exists
+- Color-coded progress output
+- Comprehensive summary report
+
+**Usage**: `scripts/transcode-legacy-videos.sh`
+
+### Archive Structure
+
+All original files preserved in `legacy-archives/`:
+```
+legacy-archives/
+└── legacy/movie-websites/
+    ├── absurdistan/trailer/
+    │   └── absurdistan_trailer.flv
+    ├── baikonur/de/media/
+    │   └── trailer.flv
+    ├── torzumhimmel/video/tzh/
+    │   ├── TorZumHimmel-Tr_hi.mov
+    │   ├── TorZumHimmel-Tr_hi.wmv
+    │   ├── TorZumHimmel-Tr_med.mov
+    │   ├── TorZumHimmel-Tr_med.wmv
+    │   ├── TorZumHimmel-Tr_low.mov
+    │   └── TorZumHimmel-Tr_low.wmv
+    ├── tuvalu/de/video/
+    │   └── tuvalu.mov
+    └── tuvalu/en/video/
+        └── tuvalu.mov
+```
+
+### Transcode Log
+
+Detailed conversion log saved to `transcode-log.json` with:
+- Timestamp (ISO 8601)
+- Source file path
+- Destination file path
+- Status (success/failed)
+- Original ffprobe metadata (full JSON)
+
+Example entry:
+```json
+{
+  "timestamp": "2026-01-07T09:02:59Z",
+  "source": "legacy/movie-websites/absurdistan/trailer/absurdistan_trailer.flv",
+  "destination": "absurdistan/trailer/absurdistan_trailer.flv",
+  "status": "success",
+  "metadata": "{\"streams\":[...],\"format\":{...}}"
+}
+```
+
+### Results Summary
+
+- **Total Files**: 10 legacy videos
+- **Successfully Transcoded**: 7 files (FLV + MOV)
+- **Archived as Duplicates**: 3 files (WMV versions)
+- **Failed**: 0 files
+- **MP4 Files Created**: 10 total (3 from Quatsch already existed)
+- **Files Archived**: 10 originals
+
+### Verification
+
+✅ All legacy format files removed from `legacy/movie-websites/`  
+✅ All originals archived to `legacy-archives/`  
+✅ All transcoded videos available as H.264 MP4  
+✅ Metadata preserved from source files  
+✅ Structured log created with ffprobe metadata
+
+### Documentation
+
+Created comprehensive guide: `project-management/phase-4-2-2-transcode-guide.md`
+
+**Phase Status**: ✅ Complete - All legacy videos transcoded to H.264 MP4
