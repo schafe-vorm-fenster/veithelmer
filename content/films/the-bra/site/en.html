@@ -1,71 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name="apple-mobile-web-app-capable" content="no" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		
-		<!-- Favicons -->
-		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
-		
-		<!-- Meta and SEO -->
-		<title>The Bra - The New Comedy Without Dialogue</title>
-		<meta name="description" content="The new comedy without dialogue by award-winning director Veit Helmer: A lonely train driver finds a bra on his vehicle. He walks along the track to look for the owner." />
-		
-		<!-- Open Graph -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="The Bra" />
-		<meta property="og:description" content="The new comedy without dialogue by award-winning director Veit Helmer: A lonely train driver finds a bra on his vehicle. He walks along the track to look for the owner." />
-		<meta property="og:url" content="https://www.veithelmer.com/en/feature-films/the-bra/" />
-		<meta property="og:site_name" content="The Bra" />
-		<meta property="og:image" content="https://www.veithelmer.com/en/feature-films/the-bra/poster.jpg" />
-		
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="The Bra" />
-		<meta name="twitter:description" content="The new comedy without dialogue by award-winning director Veit Helmer: A lonely train driver finds a bra on his vehicle. He walks along the track to look for the owner." />
-		<meta name="twitter:image" content="https://www.veithelmer.com/en/feature-films/the-bra/poster.jpg" />
-		
-		<!-- Stylesheet -->
-		<link rel="stylesheet" href="assets/css/styles.css" />
-	</head>
-	<body>
-		<!-- Language Switcher -->
-		<div class="language-switcher">
-			<a href="de.html">DE</a> | 
-			<a href="en.html" class="active">EN</a>
-		</div>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+	
+	<!-- Meta and SEO -->
+	<title>THE BRA - The New Comedy Without Dialogue</title>
+	<meta name="description" content="Official website for the feature film THE BRA, a comedy by Veit Helmer." />
+	
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="assets/css/styles-full.css" />
+	
+	<style>
+	/* CSS-only accordion/toggle implementation */
+	.toggle-section { overflow: hidden; }
+	.toggle-body { 
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	}
+	.toggle-section input[type="checkbox"] { display: none; }
+	.toggle-section input[type="checkbox"]:checked ~ .toggle-body {
+		max-height: 5000px;
+	}
+	.toggle-icon { display: inline-block; transition: transform 0.3s ease; }
+	.toggle-section input[type="checkbox"]:checked ~ .toggle-head .toggle-icon {
+		transform: rotate(180deg);
+	}
+	
+	/* Smooth scroll */
+	html { scroll-behavior: smooth; }
+	</style>
+</head>
+<body>
+	<div class="language-switcher">
+		<a href="de.html">DE</a> | 
+		<a href="en.html" class="active">EN</a>
+	</div>
 
-		<div id="content" class="container">
-			<div class="row justify-content-center">
-				<div class="col-10 col-lg-8 pb-5">
-					<h1 class="invisible">The Bra</h1>
-					<img src="assets/img/the-bra.png" class="img-fluid" alt="The Bra - Film Logo" />
+	<header id="start">
+		<div class="container">
+			<h1>THE BRA</h1>
+			<img src="assets/img/the-bra.png" class="main-logo" alt="The Bra" />
+		</div>
+	</header>
+
+	<main>
+		<!-- Trailer Section -->
+		<section class="content-section" id="trailer">
+			<div class="container">
+				<h2>Trailer</h2>
+				<div class="video-container">
+					<video controls poster="../trailer.jpg">
+						<source src="../trailer.mp4" type="video/mp4" />
+						Your browser does not support the video element.
+					</video>
 				</div>
 			</div>
-			
-			<div class="row justify-content-center">
-				<div class="col-12">
-					<div class="video-container">
-						<video controls poster="../../trailer.jpg">
-							<source src="../../trailer.mp4" type="video/mp4" />
-							Your browser does not support the video element.
-						</video>
-					</div>
+		</section>
+
+		<!-- Synopsis Section -->
+		<section class="content-section" id="synopsis">
+			<div class="container">
+				<h2>Synopsis</h2>
+				<div class="text-content">
+					<p>A freight train rolls through a vast grassland stretching out before the Caucasus mountains. At the wheel: Nurlan, the train driver. Day in, day out, he steers his train through a densely populated suburb of Baku, where the rails are so close to the houses that Nurlan practically drives through the residents' anterooms and gardens. On his daily route, he passes men drinking tea as well as women hanging their laundry in the gentle breeze. As soon as the train approaches, the little orphan boy Aziz blows a whistle and the suburb's residents quickly get themselves and their belongings to safety. But this doesn't always work. Nurlan has already picked quite a few things off his locomotive: chicken feathers, toy balls, and even bedsheets. On the last day of work before his retirement, a particularly special farewell gift gets caught on Nurlan's engine: a fantastically beautiful blue lace bra. After his shift, Nurlan simply takes it with him to his home village in the mountains. His curiosity is piqued: Who might this small piece of fabric belong to? Driven by loneliness, Nurlan decides to take up the search for the owner of the bra.</p>
+					<p>THE BRA is a story told with great sensitivity and lightheartedness about the search for love. Once again, director Veit Helmer is drawn to the mountain landscape of Azerbaijan. In his masterfully imaginative visual language, he lives up to his reputation as a modern storyteller and stages THE BRA as an atmospheric comedy that manages entirely without dialogue and precisely for this reason captivates us.</p>
 				</div>
 			</div>
-		</div>
-		
-		<div class="row justify-content-center mt-5">
-			<div class="col-12 text-center">
-				<p>
-					<a href="https://www.veithelmer.com/en/footer-menu/imprint/" target="_blank" rel="noopener">Imprint and Privacy Policy</a>
-				</p>
+		</section>
+
+		<!-- Director Section -->
+		<section class="content-section" id="director">
+			<div class="container">
+				<h2>Director</h2>
+				<div class="text-content">
+					<h3>Veit Helmer</h3>
+					<p>Veit Helmer was born in 1968 in Hanover, Germany, and studied directing at the Munich University of Television and Film. His graduation film TUVALU premiered at Cannes in 1999 and won over 30 international awards. For ABSURDISTAN he received the German Film Prize in Bronze in 2008. With BAIKONUR he premiered in Venice in 2011. THE BRA is his fourth feature film.</p>
+				</div>
 			</div>
+		</section>
+
+		<!-- Cast Section -->
+		<section class="content-section" id="cast">
+			<div class="container">
+				<h2>Cast</h2>
+				
+				<div class="cast-member">
+					<h3>Miki Manojlović</h3>
+					<p class="role">as Train Driver Nurlan</p>
+					<p>Predrag "Miki" Manojlović was born in 1950 in Belgrade into an acting family. Until the early 1990s, he was a member of the ensemble at the National Theatre of the Serbian capital. Throughout his career, Miki Manojlović frequently collaborated with director Emir Kusturica, including in 1985 on the international success WHEN FATHER WAS AWAY ON BUSINESS. In 1995, he appeared in UNDERGROUND, which won the Palme d'Or at Cannes.</p>
+					<p class="filmography"><strong>Selected Filmography:</strong> THE BRA (2018), ON THE MILKY ROAD (2016), LARGO WINCH (2008), IRINA PALM (2007), UNDERGROUND (1995), WHEN FATHER WAS AWAY ON BUSINESS (1985)</p>
+				</div>
+
+				<div class="cast-member">
+					<h3>Denis Lavant</h3>
+					<p class="role">as Apprentice</p>
+					<p>Denis Lavant was born in 1961 in Neuilly-sur-Seine, France. He studied acting at the Conservatoire National Supérieur d'Art Dramatique in Paris. He became known for his collaboration with Leos Carax in films such as BOY MEETS GIRL (1984), MERDE (2008), and HOLY MOTORS (2012).</p>
+					<p class="filmography"><strong>Selected Filmography:</strong> THE BRA (2018), HOLY MOTORS (2012), MR. NOBODY (2009), MERDE (2008), LOVERS ON THE BRIDGE (1991)</p>
+				</div>
+
+				<div class="cast-member">
+					<h3>Paz Vega</h3>
+					<p class="role">as Maria</p>
+					<p>Paz Vega was born in 1976 in Seville, Spain. After her acting training at the Centro Andaluz de Teatro in Seville, she celebrated her breakthrough in SEX AND LUCIA (2001). She became internationally known through films such as SPANGLISH (2004) alongside Adam Sandler.</p>
+					<p class="filmography"><strong>Selected Filmography:</strong> THE BRA (2018), ACTS OF VENGEANCE (2017), GRACE OF MONACO (2014), SPANGLISH (2004), SEX AND LUCIA (2001)</p>
+				</div>
+
+				<div class="cast-member">
+					<h3>Chulpan Khamatova</h3>
+					<p class="role">as Aygül</p>
+					<p>Chulpan Khamatova was born in 1975 in Kazan, Russia. She studied at the Russian Academy of Theatre Arts in Moscow and became internationally known for her role in THE THIEF (1997). She won numerous awards, including the Silver Bear at the Berlinale.</p>
+					<p class="filmography"><strong>Selected Filmography:</strong> THE BRA (2018), GOOD BYE, LENIN! (2003), THE THIEF (1997)</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Credits Section -->
+		<section class="content-section" id="credits">
+			<div class="container">
+				<h2>Credits</h2>
+				<div class="credits-grid">
+					<div class="credit-item"><strong>Director:</strong> Veit Helmer</div>
+					<div class="credit-item"><strong>Screenplay:</strong> Veit Helmer</div>
+					<div class="credit-item"><strong>Cinematography:</strong> Giorgi Beridze</div>
+					<div class="credit-item"><strong>Editing:</strong> Peter R. Adam</div>
+					<div class="credit-item"><strong>Music:</strong> Matthias Raue</div>
+					<div class="credit-item"><strong>Production:</strong> Veit Helmer Filmproduktion</div>
+					<div class="credit-item"><strong>Year:</strong> 2018</div>
+					<div class="credit-item"><strong>Runtime:</strong> 90 minutes</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<p>&copy; 2018-2026 Veit Helmer Filmproduktion. All rights reserved.</p>
+			<p><a href="https://www.veithelmer.com/en/footer-menu/imprint/" target="_blank" rel="noopener">Imprint & Privacy Policy</a></p>
 		</div>
-	</body>
+	</footer>
+</body>
 </html>
