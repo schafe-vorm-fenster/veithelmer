@@ -1,0 +1,78 @@
+{# 
+  Video Player Component
+  Phase 6.2.3: Native HTML5 Video Player
+  
+  Simple HTML5 video player with native controls and play button overlay
+  - Poster image with centered play button
+  - Native browser controls once playing
+  - Supports H.264 MP4 files
+  - Cross-browser compatible (Chrome, Firefox, Safari)
+#}
+
+{# 
+  Video Player Macro
+  @param {string} src - Video source URL (MP4)
+  @param {string} [poster] - Poster image URL
+  @param {boolean} [autoplay] - Autoplay muted (default: false)
+  @param {boolean} [loop] - Loop video (default: false)
+  @param {string} [aspectRatio] - Aspect ratio (default: '16/9')
+  @param {string} [label] - Accessible label (default: 'Video player')
+#}
+{% macro videoPlayer(src, poster='', autoplay=false, loop=false, aspectRatio='16/9', label='Video player') %}
+  <div class="video-player-wrapper" data-video-player>
+    <div class="relative overflow-hidden bg-black" style="aspect-ratio: {{ aspectRatio }}">
+      {# Native Video Element with Controls #}
+      <video 
+        class="video-player w-full h-full"
+        {% if poster %}poster="{{ poster }}"{% endif %}
+        {% if autoplay %}autoplay muted{% endif %}
+        {% if loop %}loop{% endif %}
+        controls
+        playsinline
+        preload="metadata"
+        data-video-element
+        aria-label="{{ label }}"
+      >
+        <source src="{{ src }}" type="video/mp4">
+        <p class="text-white p-4">Your browser does not support the video tag. <a href="{{ src }}" class="underline">Download the video</a>.</p>
+      </video>
+      
+      {# Big Play Button Overlay (shown until play) #}
+      <button 
+        type="button"
+        class="play-overlay absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300 pointer-events-auto cursor-pointer group"
+        aria-label="Play video"
+        data-play-overlay
+      >
+        <div class="bg-white/10 backdrop-blur-sm rounded-full p-6 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-200">
+          <svg 
+            class="w-16 h-16 text-white drop-shadow-lg"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="currentColor"
+          >
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+{% endmacro %}
+
+{# 
+  Hero Video Player (Autoplay Muted Variant)
+  Specialized version for hero sections
+  @param {string} src - Video source URL
+  @param {string} [poster] - Poster image URL
+  @param {string} [aspectRatio] - Aspect ratio (default: '21/9' for cinematic)
+#}
+{% macro heroVideoPlayer(src, poster='', aspectRatio='21/9') %}
+  {{ videoPlayer(
+    src=src, 
+    poster=poster, 
+    autoplay=true, 
+    loop=true, 
+    aspectRatio=aspectRatio,
+    label='Hero video'
+  ) }}
+{% endmacro %}
