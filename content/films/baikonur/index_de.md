@@ -25,6 +25,7 @@ crew:
     name: Vincent Assmann
 poster_image: poster.jpg
 trailer_video: trailer.mp4
+trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
     url: /movie-websites/baikonur/de/index.html
