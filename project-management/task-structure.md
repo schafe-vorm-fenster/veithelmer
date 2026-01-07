@@ -23,6 +23,17 @@ _All tasks in this phase rely only on the legacy sources and inventories; no Ele
 - **Tools:** `diff`, custom Node checker, manual review in VS Code.
 - **Acceptance:** `migration_log.md` lists pass/fail per slug with remediation notes for discrepancies.
 
+### 2.3.1 Validate Content Migration & Legacy Cleanup
+**Story:** Compare legacy source folders (`legacy/directors-website`, `legacy/new-movies`) with the new `/content` structure and purge redundant files.
+- **Dependencies:** Phase 2 extraction/migration.
+- **Steps:**
+  1. Audit `legacy/directors-website/de` & `en` vs `/content/pages/`.
+  2. Audit `legacy/new-movies/*.md` vs `/content/films/*`.
+  3. Relocate unique assets from `legacy/directors-website/img/` if needed.
+  4. Delete confirmed redundant files (IMPORTANT: Keep `legacy/movie-websites` untouched).
+- **Tools:** `diff`, file manager.
+- **Acceptance:** Legacy folders are cleared of migrated material without content loss.
+
 ### 3.1.2 Select best Wayback snapshots for Flash sites
 **Story:** Curate the richest Wayback captures for `absurdistan`, `baikonur`, `torzumhimmel`, `tuvalu` (spec Sections 4.1–4.2).
 - **Dependencies:** Domain inventory from 3.1.1.
@@ -156,13 +167,6 @@ _Implements the complete, modern "Black & White" streaming-style experience usin
 - **Tools:** Nunjucks Macros, Tailwind.
 - **Acceptance:** A styleguide page renders the Film Tile and Buttons with correct interactive hover states.
 
-### 6.3.1 Implement Homepage "Streaming Grid"
-**Story:** Build the main index page grouping films by category.
-- **Dependencies:** 6.2.2 Components and Phase 2 Content.
-- **Steps:** Create `index.njk` that consumes the `films` collection, filters by category (Feature, Short, etc.), and renders sorted horizontal grids (flex row with overflow-scroll or grid wrap) under H2 headings.
-- **Tools:** Eleventy Collections, Nunjucks loops.
-- **Acceptance:** Homepage displays all films grouped correctly, sorted by year (newest first), with working links to detail pages.
-
 ### 6.2.3 Implement Cross-Browser Video Player component
 **Story:** Develop the custom HTML5 video player component for film pages.
 - **Dependencies:** 6.2.2 Components.
@@ -173,21 +177,48 @@ _Implements the complete, modern "Black & White" streaming-style experience usin
 - **Tools:** HTML5 Media API, CSS/Tailwind.
 - **Acceptance:** Player works in Chrome, Firefox, Safari (desktop/mobile) and successfully plays local H.264 files with custom UI.
 
+### 6.3.1 Implement Homepage "Streaming Grid"
+**Story:** Build the main index page as a modern "Streaming Archive" (spec Section 7.1), grouping films into interactive, chronological rows.
+- **Dependencies:** 6.2.2 Component Library and Phase 2 Content.
+- **Design Details:**
+  - **Layout:** One long-scrolling page with horizontal grids for each category (Feature, Short, Documentary, etc.).
+  - **Navigation:** Top menu anchor links to each category row.
+  - **Sorting:** Within each row, tiles are sorted by `year` (newest first).
+- **Steps:**
+  1. Create `index.njk` and iterate through the `films` collection using Nunjucks grouped by category.
+  2. Implement horizontal scroll containers for each category with smooth overflow styling (Spec 7.1).
+  3. Integrate the **Film Tile** macro from 6.2.2 for each entry.
+  4. Ensure category headings (H2) match the minimalist typography spec.
+- **Tools:** Eleventy Collections, Nunjucks.
+- **Acceptance:** Every film from `/content/films/` is displayed in the correct category row, sorted by year, using the interactive tiles from 6.2.2.
+
 ### 6.3.2 Implement Film Detail Pages
 **Story:** Build the dedicated view for each movie.
-- **Dependencies:** 6.3.1 Homepage.
+- **Dependencies:** 6.3.1 Homepage and 6.3.2 Metadata.
 - **Design Layout:**
   - **Hero:** Full-width trailer (muted autoplay if possible) or high-res poster.
   - **Info:** H1 Title (Large), Year, Duration, Genre to the right or below.
   - **Content:** Synopsis (left col), Crew/Cast info (right col).
   - **Interaction:** Prominent "Visit Microsite" button (if legacy site exists).
-- **Steps:** Create `film.njk` template featuring the Video Player (Task 4.2.4 spec) and definition lists for metadata.
+- **Steps:** Create `film.njk` template featuring the Video Player (Task 6.2.3) and definition lists for metadata.
 - **Tools:** Nunjucks.
 - **Acceptance:** Clicking a tile on Homepage opens a beautiful Detail page populated with frontmatter data.
 
+
+### 6.3.3 Implement Film Detail Metadata (LD+JSON)
+**Story:** Add Schema.org structured data to the film pages to enable Rich Snippets.
+- **Dependencies:** 6.3.1 Homepage.
+- **Steps:**
+  1. Map frontmatter to `https://schema.org/Movie` (name, director, datePublished, genre, description).
+  2. Implement a Nunjucks filter to convert duration (e.g., "90 min") to ISO 8601 (`PT1H30M`).
+  3. Integrate `VideoObject` if a trailer exists.
+- **Tools:** Nunjucks, Schema.org.
+- **Acceptance:** Valid LD+JSON block in `<head>` passing Google's Rich Results Test.
+
+
 ### 6.4.1 Implement Navigation & Localization Logic
 **Story:** Wire up the global navigation and language routing.
-- **Dependencies:** 6.3.2 Detail Pages.
+- **Dependencies:** 6.3.3 Detail Pages.
 - **Steps:** Implement sticky Top Menu (Logo left, Anchor links right), simple Footer, and `/de/` vs `/en/` subdirectory logic with `hreflang` generation.
 - **Tools:** Eleventy I18n plugin (or custom logic).
 - **Acceptance:** Switching language preserves the current view (Home DE -> Home EN) and navigation links jump to the correct page sections.
