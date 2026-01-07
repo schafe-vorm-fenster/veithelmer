@@ -1,122 +1,21 @@
 ---
-layout: page.njk
-title: Veit Helmer — Streaming Archive
+layout: base.njk
+title: Veit Helmer — Filmmaker
 description: Films by Veit Helmer — A visual poetry of places, people, and silent storytelling
+permalink: /
 ---
 
-{% from "macros/filmTile.njk" import filmTile %}
+{# Redirect root to /en/ #}
+<script>
+  window.location.href = '/en/';
+</script>
 
-{# Categorize films by type #}
-{% set categorizedFilms = collections.films | categorizeFilms %}
+<noscript>
+  <meta http-equiv="refresh" content="0; url=/en/">
+</noscript>
 
-{# Navigation Menu - Anchor Links #}
-<nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 mb-12">
-  <div class="container mx-auto px-6 py-4">
-    <div class="flex items-center justify-between">
-      <h1 class="text-2xl font-bold tracking-tight">Veit Helmer</h1>
-      <div class="flex gap-8 text-sm uppercase tracking-wider">
-        <a href="#features" class="hover:text-brand-brown transition-colors">Features</a>
-        <a href="#documentaries" class="hover:text-brand-brown transition-colors">Documentaries</a>
-        <a href="#shorts" class="hover:text-brand-brown transition-colors">Shorts</a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<main id="main-content" class="container mx-auto px-6 pb-20">
-  
-  {# Feature Films Section #}
-  {% if categorizedFilms.feature.length > 0 %}
-  <section id="features" class="mb-20 scroll-mt-20">
-    <h2 class="text-3xl font-bold mb-8 tracking-tight">Feature Films</h2>
-    
-    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
-      <div class="flex gap-6 w-max">
-        {% for film in categorizedFilms.feature %}
-        <div class="w-80 flex-shrink-0">
-          {{ filmTile(
-            title=film.data.title,
-            year=film.data.release_year,
-            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
-            url=film.url,
-            category="Feature"
-          ) }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  {% endif %}
-  
-  {# Documentary Films Section #}
-  {% if categorizedFilms.documentary.length > 0 %}
-  <section id="documentaries" class="mb-20 scroll-mt-20">
-    <h2 class="text-3xl font-bold mb-8 tracking-tight">Documentaries</h2>
-    
-    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
-      <div class="flex gap-6 w-max">
-        {% for film in categorizedFilms.documentary %}
-        <div class="w-80 flex-shrink-0">
-          {{ filmTile(
-            title=film.data.title,
-            year=film.data.release_year,
-            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
-            url=film.url,
-            category="Documentary"
-          ) }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  {% endif %}
-  
-  {# Short Films Section #}
-  {% if categorizedFilms.short.length > 0 %}
-  <section id="shorts" class="mb-20 scroll-mt-20">
-    <h2 class="text-3xl font-bold mb-8 tracking-tight">Short Films</h2>
-    
-    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
-      <div class="flex gap-6 w-max">
-        {% for film in categorizedFilms.short %}
-        <div class="w-80 flex-shrink-0">
-          {{ filmTile(
-            title=film.data.title,
-            year=film.data.release_year,
-            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
-            url=film.url,
-            category="Short"
-          ) }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  {% endif %}
-  
+<main id="main-content" class="container mx-auto max-w-6xl px-6 py-12 text-center">
+  <h1 class="text-4xl font-bold mb-8">Veit Helmer</h1>
+  <p class="mb-4">Redirecting to <a href="/en/" class="underline hover:text-brand-brown">English version</a>...</p>
+  <p><a href="/de/" class="underline hover:text-brand-brown">Deutsche Version</a></p>
 </main>
-
-<style>
-  {# Smooth horizontal scrolling #}
-  .horizontal-scroll-container {
-    scrollbar-width: thin;
-    scrollbar-color: #8d5315 #1f1f1f;
-  }
-  
-  .horizontal-scroll-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .horizontal-scroll-container::-webkit-scrollbar-track {
-    background: #1f1f1f;
-  }
-  
-  .horizontal-scroll-container::-webkit-scrollbar-thumb {
-    background: #8d5315;
-    border-radius: 4px;
-  }
-  
-  .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: #a16419;
-  }
-</style>

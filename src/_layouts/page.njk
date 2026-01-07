@@ -2,19 +2,38 @@
 layout: base.njk
 ---
 
-<header role="banner" class="p-8 border-b border-white/10">
-  <nav role="navigation" aria-label="Main navigation" class="container mx-auto max-w-6xl">
+{% set currentLocale = locale or page | getLocale %}
+{% set alternateLocale = 'de' if currentLocale == 'en' else 'en' %}
+
+{# Sticky Top Navigation #}
+<nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800" role="navigation" aria-label="Main navigation">
+  <div class="container mx-auto max-w-6xl px-6 py-4">
     <div class="flex items-center justify-between">
-      <a href="/" class="no-underline" aria-label="Veit Helmer - Home">
-        <h1 class="text-3xl font-bold tracking-tight hover:opacity-80 transition-opacity duration-200">VEIT HELMER</h1>
+      {# Logo - Left #}
+      <a href="{{ '/' + currentLocale + '/' }}" class="no-underline" aria-label="Veit Helmer - Home">
+        <h1 class="text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity duration-200">VEIT HELMER</h1>
       </a>
-      {# Navigation menu will be added in future phases #}
-      <div class="flex items-center gap-6" aria-label="Site navigation">
-        {% block navigation %}{% endblock %}
+      
+      {# Navigation Links & Language Switcher - Right #}
+      <div class="flex items-center gap-8 text-sm uppercase tracking-wider">
+        <a href="{{ '/' + currentLocale + '/#features' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.features' | t(currentLocale) }}</a>
+        <a href="{{ '/' + currentLocale + '/#documentaries' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.documentaries' | t(currentLocale) }}</a>
+        <a href="{{ '/' + currentLocale + '/#shorts' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.shorts' | t(currentLocale) }}</a>
+        
+        {# Language Switcher #}
+        <span class="text-white/40">|</span>
+        <a 
+          href="{{ page.url | alternateUrl(alternateLocale) }}" 
+          class="font-semibold hover:text-brand-brown transition-colors"
+          hreflang="{{ alternateLocale }}"
+          aria-label="Switch to {{ alternateLocale | upper }}"
+        >
+          {{ alternateLocale | upper }}
+        </a>
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>
 
 <main id="main-content" role="main" class="container mx-auto max-w-6xl px-6 py-12 flex-grow">
   {% block content %}
@@ -22,9 +41,10 @@ layout: base.njk
   {% endblock %}
 </main>
 
+{# Simple Footer #}
 <footer role="contentinfo" class="p-8 mt-16 border-t border-white/10 text-center text-sm opacity-60">
   <div class="container mx-auto max-w-6xl">
-    <p>&copy; {{ year | default(2026) }} Veit Helmer. All rights reserved.</p>
+    <p>&copy; {{ year | default(2026) }} Veit Helmer. {{ 'footer.copyright' | t(currentLocale) }}</p>
     {% block footerContent %}{% endblock %}
   </div>
 </footer>
