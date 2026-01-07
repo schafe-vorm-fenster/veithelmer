@@ -2,6 +2,8 @@
 layout: page.njk
 ---
 
+{% set currentLocale = locale or language or (page | getLocale) %}
+
 {% block head %}
 {# Schema.org Movie structured data for Rich Snippets #}
 <script type="application/ld+json">
@@ -91,7 +93,7 @@ layout: page.njk
       target="_blank"
       rel="noopener noreferrer"
     >
-      Visit Microsite →
+      {{ 'film.visitMicrosite' | t(currentLocale) }} →
     </a>
   {% endif %}
 </section>
@@ -101,7 +103,7 @@ layout: page.njk
   
   {# Left Column: Synopsis (2/3 width) #}
   <div class="md:col-span-2">
-    <h2 class="text-2xl font-bold mb-6 tracking-tight">Synopsis</h2>
+    <h2 class="text-2xl font-bold mb-6 tracking-tight">{{ 'film.synopsis' | t(currentLocale) }}</h2>
     <div class="prose prose-invert prose-lg max-w-none leading-relaxed opacity-90">
       {{ content | safe }}
     </div>
@@ -109,14 +111,14 @@ layout: page.njk
   
   {# Right Column: Metadata (1/3 width) #}
   <aside class="md:col-span-1">
-    <h2 class="text-2xl font-bold mb-6 tracking-tight">Details</h2>
+    <h2 class="text-2xl font-bold mb-6 tracking-tight">{{ 'film.details' | t(currentLocale) }}</h2>
     
     <dl class="space-y-6 text-sm">
       
       {# Director #}
       {% if director %}
       <div>
-        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Director</dt>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">{{ 'film.director' | t(currentLocale) }}</dt>
         <dd class="text-base">{{ director }}</dd>
       </div>
       {% endif %}
@@ -124,7 +126,7 @@ layout: page.njk
       {# Cast #}
       {% if cast and cast.length > 0 %}
       <div>
-        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Cast</dt>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">{{ 'film.cast' | t(currentLocale) }}</dt>
         <dd class="text-base">
           <ul class="space-y-1">
             {% for actor in cast %}
@@ -138,7 +140,7 @@ layout: page.njk
       {# Crew #}
       {% if crew and crew.length > 0 %}
       <div>
-        <dt class="text-white/60 uppercase tracking-wider text-xs mb-2">Crew</dt>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-2">{{ 'film.crew' | t(currentLocale) }}</dt>
         <dd class="text-base space-y-2">
           {% for member in crew %}
             <div>
@@ -153,7 +155,7 @@ layout: page.njk
       {# Technical Specs #}
       {% if technical_specs %}
       <div>
-        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Technical</dt>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">{{ 'film.technical' | t(currentLocale) }}</dt>
         <dd class="text-base">{{ technical_specs }}</dd>
       </div>
       {% endif %}
@@ -161,7 +163,7 @@ layout: page.njk
       {# Awards #}
       {% if awards and awards.length > 0 %}
       <div>
-        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">Awards</dt>
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-1">{{ 'film.awards' | t(currentLocale) }}</dt>
         <dd class="text-base">
           <ul class="space-y-1">
             {% for award in awards %}
@@ -189,12 +191,12 @@ layout: page.njk
 {# Navigation Back to Homepage #}
 <section class="navigation-back mt-16 pt-12 border-t border-white/10" aria-label="Navigation">
   <a 
-    href="/"
+    href="{{ '/' + currentLocale + '/' }}"
     class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-200"
   >
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
     </svg>
-    <span>Back to Film Archive</span>
+    <span>{{ 'footer.backToArchive' | t(currentLocale) }}</span>
   </a>
 </section>

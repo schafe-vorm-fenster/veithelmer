@@ -105,6 +105,44 @@ module.exports = function(eleventyConfig) {
     return result;
   });
 
+  // I18n filter to get translated strings
+  eleventyConfig.addFilter("t", function(key, locale) {
+    const i18n = require('./src/_data/i18n.json');
+    const lang = locale || 'en';
+    const keys = key.split('.');
+    let value = i18n[lang];
+    
+    for (const k of keys) {
+      if (value && value[k]) {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+    
+    return value;
+  });
+  
+  // Filter to get alternate language URL
+  eleventyConfig.addFilter("alternateUrl", function(url, targetLocale) {
+    if (!url) return '/';
+    
+    // Replace /de/ with /en/ or vice versa
+    if (targetLocale === 'de') {
+      return url.replace(/^\/en\//, '/de/');
+    } else {
+      return url.replace(/^\/de\//, '/en/');
+    }
+  });
+  
+  // Filter to extract locale from URL or page data
+  eleventyConfig.addFilter("getLocale", function(page) {
+    if (page.url && page.url.startsWith('/de/')) {
+      return 'de';
+    }
+    return 'en';
+  });
+
   // Filter to generate Schema.org Movie structured data
   eleventyConfig.addFilter("generateMovieSchema", function(data, page) {
     const filmSlug = page.filePathStem.split('/').slice(-2)[0];

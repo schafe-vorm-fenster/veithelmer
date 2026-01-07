@@ -1,0 +1,54 @@
+{
+  "en": {
+    "locale": "en",
+    "lang": "en",
+    "dir": "/en/",
+    "label": "English",
+    "nav": {
+      "features": "Features",
+      "documentaries": "Documentaries",
+      "shorts": "Shorts",
+      "home": "Home"
+    },
+    "footer": {
+      "copyright": "All rights reserved.",
+      "backToArchive": "Back to Film Archive"
+    },
+    "film": {
+      "synopsis": "Synopsis",
+      "details": "Details",
+      "director": "Director",
+      "cast": "Cast",
+      "crew": "Crew",
+      "technical": "Technical",
+      "awards": "Awards",
+      "visitMicrosite": "Visit Microsite"
+    }
+  },
+  "de": {
+    "locale": "de",
+    "lang": "de",
+    "dir": "/de/",
+    "label": "Deutsch",
+    "nav": {
+      "features": "Spielfilme",
+      "documentaries": "Dokumentarfilme",
+      "shorts": "Kurzfilme",
+      "home": "Startseite"
+    },
+    "footer": {
+      "copyright": "Alle Rechte vorbehalten.",
+      "backToArchive": "Zurück zum Filmarchiv"
+    },
+    "film": {
+      "synopsis": "Synopsis",
+      "details": "Details",
+      "director": "Regie",
+      "cast": "Besetzung",
+      "crew": "Team",
+      "technical": "Technisch",
+      "awards": "Auszeichnungen",
+      "visitMicrosite": "Zur Microsite"
+    }
+  }
+}

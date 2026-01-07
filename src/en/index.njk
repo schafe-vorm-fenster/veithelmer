@@ -1,0 +1,110 @@
+---
+layout: page.njk
+title: Veit Helmer — Filmmaker
+description: Films by Veit Helmer — A visual poetry of places, people, and silent storytelling
+locale: en
+permalink: /en/
+---
+
+{% from "macros/filmTile.njk" import filmTile %}
+
+{# Categorize films by type #}
+{% set categorizedFilms = collections.films_en | categorizeFilms %}
+
+<main id="main-content" class="container mx-auto px-6 pb-20">
+  
+  {# Feature Films Section #}
+  {% if categorizedFilms.feature.length > 0 %}
+  <section id="features" class="mb-20 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-8 tracking-tight">{{ 'nav.features' | t(locale) }}</h2>
+    
+    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
+      <div class="flex gap-6 w-max">
+        {% for film in categorizedFilms.feature %}
+        <div class="w-80 flex-shrink-0">
+          {{ filmTile(
+            title=film.data.title,
+            year=film.data.release_year,
+            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            url=film.url,
+            category="Feature"
+          ) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  {# Documentary Films Section #}
+  {% if categorizedFilms.documentary.length > 0 %}
+  <section id="documentaries" class="mb-20 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-8 tracking-tight">{{ 'nav.documentaries' | t(locale) }}</h2>
+    
+    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
+      <div class="flex gap-6 w-max">
+        {% for film in categorizedFilms.documentary %}
+        <div class="w-80 flex-shrink-0">
+          {{ filmTile(
+            title=film.data.title,
+            year=film.data.release_year,
+            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            url=film.url,
+            category="Documentary"
+          ) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  {# Short Films Section #}
+  {% if categorizedFilms.short.length > 0 %}
+  <section id="shorts" class="mb-20 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-8 tracking-tight">{{ 'nav.shorts' | t(locale) }}</h2>
+    
+    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
+      <div class="flex gap-6 w-max">
+        {% for film in categorizedFilms.short %}
+        <div class="w-80 flex-shrink-0">
+          {{ filmTile(
+            title=film.data.title,
+            year=film.data.release_year,
+            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            url=film.url,
+            category="Short"
+          ) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+</main>
+
+<style>
+  {# Smooth horizontal scrolling #}
+  .horizontal-scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #8d5315 #1f1f1f;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #1f1f1f;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #8d5315;
+    border-radius: 4px;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #a16419;
+  }
+</style>
