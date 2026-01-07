@@ -44,6 +44,13 @@ _All tasks in this phase rely only on the legacy sources and inventories; no Ele
 - **Tools:** Text editor, optional OCR, research notebooks.
 - **Acceptance:** Research notes enumerate all textual content with provenance references.
 
+### 3.2.3 Extensive Ruffle Screenshot Capture
+**Story:** Execute legacy SWF websites locally using Ruffle to capture a comprehensive visual history of the interactive elements.
+- **Dependencies:** Domain inventory (3.1.1) and Ruffle setup.
+- **Steps:** Set up local server for `legacy/movie-websites/`, run SWFs in Ruffle, navigate extensively (menus, sub-pages, animations), take screenshots of every state, and save to `legacy/movie-websites/[slug]/ruffle/`.
+- **Tools:** Ruffle (https://ruffle.rs/), `npx serve`.
+- **Acceptance:** `ruffle/` folders contain comprehensive visual audits of the legacy interaction design.
+
 ### 4.1.2 Define JPEXS export rules
 **Story:** Document a repeatable SWF extraction recipe (spec Section 8.1).
 - **Dependencies:** SWF list in `inventory-microsites.md`.
