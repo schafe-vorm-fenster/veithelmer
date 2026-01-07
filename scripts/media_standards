@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+#
+# media_standards - Transcode legacy video files to H.264 MP4 format
+#
+# Usage: media_standards <input_file> <output_file>
+#
+# This script converts FLV, MOV, and WMV files to H.264 MP4 with standardized settings:
+# - Video codec: H.264 (libx264)
+# - Audio codec: AAC
+# - Quality: CRF 23 (balanced quality/size)
+# - Preset: medium (balanced speed/compression)
+# - Metadata: Preserved from source
+#
+# Prerequisites: ffmpeg, ffprobe
+
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Check for required tools
+if ! command -v ffmpeg &> /dev/null; then
+    echo -e "${RED}Error: ffmpeg is not installed${NC}"
+    echo "Install with: brew install ffmpeg"
+    exit 1
+fi
+
+if ! command -v ffprobe &> /dev/null; then
+    echo -e "${RED}Error: ffprobe is not installed${NC}"
+    echo "Install with: brew install ffmpeg"
+    exit 1
+fi
+
+# Usage check
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <input_file> <output_file>"
+    echo ""
+    echo "Example: $0 video.flv video.mp4"
+    exit 1
+fi
+
+INPUT="$1"
+OUTPUT="$2"
+
+# Validate input file exists
+if [ ! -f "$INPUT" ]; then
+    echo -e "${RED}Error: Input file not found: $INPUT${NC}"
+    exit 1
+fi
+
+# Validate input file extension
+INPUT_EXT="${INPUT##*.}"
+INPUT_EXT_LOWER=$(echo "$INPUT_EXT" | tr '[:upper:]' '[:lower:]')
+
+if [[ ! "$INPUT_EXT_LOWER" =~ ^(flv|mov|wmv)$ ]]; then
+    echo -e "${YELLOW}Warning: Input file extension .$INPUT_EXT is not FLV, MOV, or WMV${NC}"
+fi
+
+# Create output directory if needed
+OUTPUT_DIR=$(dirname "$OUTPUT")
+mkdir -p "$OUTPUT_DIR"
+
+echo -e "${GREEN}Transcoding: $INPUT → $OUTPUT${NC}"
+echo ""
+
+# Extract and display metadata before transcoding
+echo "==== Source Metadata ===="
+ffprobe -v quiet -print_format json -show_format -show_streams "$INPUT" 2>&1
+
+echo ""
+echo "==== Starting Transcode ===="
+
+# Transcode to H.264 MP4
+# -i: input file
+# -c:v libx264: use H.264 video codec
+# -preset medium: balanced encoding speed/compression
+# -crf 23: constant rate factor (quality), 23 is default/good quality
+# -c:a aac: use AAC audio codec
+# -b:a 128k: audio bitrate
+# -movflags +faststart: optimize for web streaming
+# -map_metadata 0: copy all metadata from source
+ffmpeg -i "$INPUT" \
+    -c:v libx264 \
+    -preset medium \
+    -crf 23 \
+    -c:a aac \
+    -b:a 128k \
+    -movflags +faststart \
+    -map_metadata 0 \
+    -y \
+    "$OUTPUT"
+
+# Verify output was created
+if [ ! -f "$OUTPUT" ]; then
+    echo -e "${RED}Error: Output file was not created${NC}"
+    exit 1
+fi
+
+echo ""
+echo "==== Output Metadata ===="
+ffprobe -v quiet -print_format json -show_format -show_streams "$OUTPUT" 2>&1
+
+echo ""
+echo -e "${GREEN}✓ Transcode complete${NC}"
+echo "Input:  $INPUT"
+echo "Output: $OUTPUT"
+echo "Size:   $(du -h "$INPUT" | cut -f1) → $(du -h "$OUTPUT" | cut -f1)"
