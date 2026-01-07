@@ -1,0 +1,161 @@
+/* The Bra - Standalone Microsite Styles */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	max-width: 100vw;
+	overflow-x: hidden;
+	background-color: #b05780;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body {
+	position: relative;
+	background-image: url('../img/background.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 1rem;
+}
+
+.container {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.text-center {
+	text-align: center;
+}
+
+[class*="col-"] {
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+}
+
+.col-10 {
+	width: 83.333333%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.pb-5 {
+	padding-bottom: 3rem;
+}
+
+.mt-5 {
+	margin-top: 3rem;
+}
+
+/* Responsive */
+@media (min-width: 992px) {
+	.col-lg-8 {
+		width: 66.666667%;
+	}
+}
+
+@media (max-width: 768px) {
+	.col-10 {
+		width: 100%;
+	}
+}
+
+/* Image handling */
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Invisible heading for accessibility */
+.invisible {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Video container */
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	height: 0;
+	overflow: hidden;
+	background: #000;
+}
+
+.video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Links */
+a {
+	color: #fff;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+a:hover {
+	opacity: 0.8;
+	text-decoration: underline;
+}
+
+p {
+	margin: 0 0 1rem;
+	color: #fff;
+}
+
+/* Language switcher */
+.language-switcher {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+}
+
+.language-switcher a {
+	color: #fff;
+	margin: 0 0.5rem;
+	font-weight: bold;
+}
+
+.language-switcher a.active {
+	text-decoration: underline;
+}
