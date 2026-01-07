@@ -109,7 +109,7 @@ Rebuilding legacy microsites (*Absurdistan*, *Tor zum Himmel*, etc.) is a priori
 
 ### **8.1 Reverse Engineering Process**
 
-1. **Decompilation**: Use **JPEXS Free Flash Decompiler** to export JPG/PNG assets and **SVG** vector shapes.  
+1. **Decompilation**: Use **JPEXS Free Flash Decompiler** to export JPG/PNG assets and **SVG** vector shapes. For detailed export settings, naming conventions, and metadata handling, see [asset_extraction_report.md](asset_extraction_report.md).  
 2. **Logic Extraction**: Analyze ActionScript to understand menu and animation behaviors.  
 3. **Emulation**: Use **Ruffle** during development to study the original interaction.
 
