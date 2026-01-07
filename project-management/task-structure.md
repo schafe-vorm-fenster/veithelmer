@@ -1,127 +1,152 @@
-This document provides a sequence for a **Multi-Agent Coding System** to migrate and modernize the Veit Helmer digital archive. The structure follows a **Definition -> Inventory -> Execution -> Quality Assurance** pattern to ensure no data is lost and all modern standards are met.
+This document translates the remaining Kanban cards for the Veit Helmer archive rewrite into actionable development stories. For strategic context see [project-specification.md](project-specification.md); for encoding and asset rules see [media_standards.md](media_standards.md).
+
+## Completed Groundwork (Phase 1 – Analysis)
+- `1.1.*` schema/folder structure finalized (spec Section 5.1).
+- `1.2.1`, `1.2.2`, `1.2.4` media protocols defined and documented.
+- `1.3.*`, `2.1.*`, `2.2.1`, `2.2.2`, `3.1.1`, `4.2.1`, `4.1.1`, `5.1.1-5.1.4`, `5.2.*` inventories and schemas delivered.
+
+The remaining work now follows the requested flow: **Phase 2 content extraction & research → Phase 3 website setup → Phase 4 implementation & deployment → Phase 5 final validation.**
 
 ---
 
-## 1. Project Initialization and Content Architecture Definition
+## Phase 2 – Content Extraction & Research
+_All tasks in this phase rely only on the legacy sources and inventories; no Eleventy runtime is required yet._
 
-## 1.1 Define Global Schema and Film-Bundle Standards
+### 2.2.3 Quality-check extracted HTML microsites
+**Story:** Ensure every HTML-based microsite under `/content/films/[slug]/` matches its legacy counterpart (spec Section 2.2).
+- **Dependencies:** Completion of 2.2.2 exports.
+- **Steps:**
+  1. For `the-bra`, `behindthecouch`, `quatsch`, `vom-lokfuehrer-der-die-liebe-suchte`, `tuvalu`, diff the Markdown vs. `legacy/movie-websites/[slug]/` HTML.
+  2. Run a Node script that parses frontmatter and asserts all Section 5.1 keys exist (`cast`, `crew`, `category`, `poster_image`, `trailer_video`).
+  3. Confirm `poster.jpg` (or localized variants) sits beside each Markdown file with descriptive alt text.
+  4. Document findings in `migration_log.md` with source/target references.
+- **Tools:** `diff`, custom Node checker, manual review in VS Code.
+- **Acceptance:** `migration_log.md` lists pass/fail per slug with remediation notes for discrepancies.
 
-* **Step 1 (Structure Definition):** Establish the exact folder naming convention: `/content/films/[film-slug]/`.
-* **Step 2 (Localization Definition):** Define the bilingual Markdown file names: `index_de.md` and `index_en.md` for localized content.
-* **Step 3 (Schema Definition):** Set the strict Frontmatter schema including: `title`, `language`, `director`, `cast`, `release_year`, `duration`, `category` (Feature, Short, Commercial, Documentary), `poster_image`, and `trailer_video`.
-* **Step 4 (Internal Documentation):** Create a `.guidelines.md` file in the root directory that serves as the "source of truth" for all other agents throughout the project.
+### 3.1.2 Select best Wayback snapshots for Flash sites
+**Story:** Curate the richest Wayback captures for `absurdistan`, `baikonur`, `torzumhimmel`, `tuvalu` (spec Sections 4.1–4.2).
+- **Dependencies:** Domain inventory from 3.1.1.
+- **Steps:** Query the Wayback CDX API (1999–2015), rank snapshots by `compressed_length`, fetch the top two per domain, and record URLs/timestamps plus thumbnail notes in `project-management/inventory-flash-wayback.md`.
+- **Tools:** Browser + Ruffle, `curl`/`wget`, Markdown tables.
+- **Acceptance:** Inventory lists primary/secondary snapshots per domain with notes on available UI states.
 
-## 1.2 Setup Media Transformation Protocols
+### 3.2.1 Validate research completeness for screenshots
+**Story:** Capture every primary UI state required to rebuild the Flash sites.
+- **Dependencies:** Snapshot shortlist (3.1.2).
+- **Steps:** Grab ≥3 PNGs per film (hero, menu, subpage), store them under `legacy/movie-websites/[slug]/research/`, and describe coordinates/colors/typography in `visual_mapping.md`.
+- **Tools:** Ruffle/browser screenshots, ImageMagick, Markdown notes.
+- **Acceptance:** `visual_mapping.md` references each PNG and documents layout characteristics.
 
-* **Step 1 (Video Protocol):** Define the FFmpeg command for H.264 MP4 conversion: `ffmpeg -i input.flv -c:v libx264 -crf 23 -c:a aac trailer.mp4`.
-* **Step 2 (Image Protocol):** Set requirements for `eleventy-img` to generate 10px Base64 blur-up placeholders and localized `srcset`.
-* **Step 3 (Privacy & Fonts):** Enforce local hosting of all WOFF2 fonts and assets to ensure GDPR compliance.
-* **Step 4 (Documentation):** Create a `media_standards.md` file detailing these technical specs for the Media Technician Agent.
+### 3.2.2 Confirm textual coverage of archived materials
+**Story:** Transcribe every slogan/quote visible in archived Flash states so narrative copy is preserved.
+- **Dependencies:** Screenshot set from 3.2.1.
+- **Steps:** Transcribe text per scene, cite snapshot IDs, add notes to each film’s research entry, and flag any gaps needing interviews.
+- **Tools:** Text editor, optional OCR, research notebooks.
+- **Acceptance:** Research notes enumerate all textual content with provenance references.
 
-## 1.3 Quality Check: Architecture Validation
+### 4.1.2 Define JPEXS export rules
+**Story:** Document a repeatable SWF extraction recipe (spec Section 8.1).
+- **Dependencies:** SWF list in `inventory-microsites.md`.
+- **Steps:** Install JPEXS, capture screenshots of the settings for bitmap/vector export, define naming conventions (`background`, `button`, `animation-*`), and add the procedure to `asset_extraction_report.md`.
+- **Tools:** JPEXS Free Flash Decompiler, Ruffle for previews.
+- **Acceptance:** Report contains a “How to export” section with exact menu paths/settings and naming rules.
 
-* **Step 1 (Verification):** Validate that the schema covers all film types found in the legacy repo (Features, Shorts, Docs).
-* **Step 2 (Logic Check):** Verify the schema allows for 1:1 bilingual mapping without data loss.
+### 4.1.3 Decompile and categorize Flash assets
+**Story:** Apply the JPEXS workflow to every SWF to recover assets.
+- **Dependencies:** 4.1.2 procedure.
+- **Steps:** Process `absurdistan.swf`, `player.swf`, `torzumhimmel*.swf`, `tuvalu/intro.swf`, etc.; export PNG/JPG/SVG assets into `/content/films/[slug]/assets/`, tag them with source metadata, and checksum the files.
+- **Tools:** JPEXS, `shasum`.
+- **Acceptance:** `asset_extraction_report.md` lists each exported asset with slug, type, and checksum; missing assets are flagged.
 
----
+### 4.1.4 Produce the asset extraction report
+**Story:** Summarize the recovered Flash assets for downstream designers.
+- **Dependencies:** Completed exports from 4.1.3.
+- **Steps:** Aggregate counts per film + asset type, add notes about quality or gaps, and link to the stored files.
+- **Tools:** Markdown tables, helper script (optional) to count files.
+- **Acceptance:** Report includes `Film | Asset Type | Count | Notes | Source SWF` and highlights unresolved gaps.
 
-## 2. Legacy HTML Content Extraction
+### 4.2.2 Transcode FLV/MOV legacy videos
+**Story:** Convert every legacy video (FLV/MOV/WMV) into H.264 MP4 per [media_standards.md](media_standards.md).
+- **Dependencies:** Video inventory from `inventory-microsites.md`.
+- **Steps:** Install FFmpeg, run the standard command for each source, log command/output, store MP4s as `/content/films/[slug]/trailer.mp4`, archive originals under `/legacy-archives/`.
+- **Tools:** FFmpeg, shell scripts, `ffprobe` for verification.
+- **Acceptance:** Every source file has a corresponding MP4 with metadata recorded in the conversion log.
 
-## 2.1 Extract Global Static Pages (Bio & Legal)
+### 4.2.3 Organize transcoded videos and generate posters
+**Story:** Integrate the converted MP4s into the film bundles.
+- **Dependencies:** 4.2.2 conversions.
+- **Steps:** Move MP4s into film folders, update both language Markdown files with `trailer_video`, extract poster frames via `ffmpeg -ss 00:00:01 -i trailer.mp4 -frames:v 1 poster.jpg`, and record the linkage in `migration_log.md`.
+- **Tools:** FFmpeg, Node script for frontmatter edits.
+- **Acceptance:** Bundles include MP4 + poster assets with alt text, and the log confirms the updates.
 
-* **Step 1 (Inventory):** Locate all biography and legal HTML files in `legacy/directors-website/de/` and `/en/`.
-* **Step 2 (Execute Transformation):** Convert content to `/content/pages/biography/index_de.md` and `index_en.md`.
-* **Step 3 (Asset Relocation):** Move biography images to the page folder, renaming them to meaningful names like `portrait.jpg`.
-* **Step 4 (Documentation):** Update a `migration_log.md` file marking the global pages as "Complete."
-
-## 2.2 Inventory and Extract HTML-based Movie Microsites
-
-* **Step 1 (Batch Inventory):** Create a checklist of all non-Flash film folders: `the-bra`, `behindthecouch`, `quatsch`, `vom-lokfuehrer-der-die-liebe-suchte`, and `tuvalu`.
-* **Step 2 (Iterative Extraction):** For each film in the checklist:
-* Create the folder `/content/films/[film-slug]/`.
-* Extract text and metadata into `index_de.md` and `index_en.md`.
-* Locate the poster/hero image and move it into the folder as `poster.jpg`.
-
-
-* **Step 3 (Batch Quality Check):** Cross-reference the extracted cast and synopses against the original HTML for 100% data retention.
-
----
-
-## 3. Digital Archeology and Flash Research
-
-## 3.1 Map and Document Legacy Flash Websites
-
-* **Step 1 (Inventory):** Identify domains requiring Wayback Machine research: `absurdistan-the-movie.com`, `baikonur-film.de`, and `tor-zum-himmel.de`.
-* **Step 2 (Archive Selection):** Locate snapshots with the highest file sizes from 1999–2015 to ensure Flash asset availability.
-* **Step 3 (Visual Capture):** Capture high-resolution screenshots of navigation, sub-pages, and interaction states.
-* **Step 4 (Layout Documentation):** Create a `visual_mapping.md` for each film documenting element coordinates, typography, and hex colors.
-
-## 3.2 Quality Check: Research Completeness
-
-* **Step 1 (Validation):** Ensure all text visible in the archive (slogans, quotes) is recorded in the film's research notes.
-* **Step 2 (Verification):** Confirm screenshots cover every primary UI state needed for modern reconstruction.
-
----
-
-## 4. Flash Asset Decompilation and Modernization
-
-## 4.1 Batch Decompilation of Flash Assets
-
-* **Step 1 (Inventory):** Create a comprehensive list of all `.swf` files located in `legacy/movie-websites/`.
-* **Step 2 (Export Rules):** Define JPEXS rules: Export JPG/PNG for bitmaps and SVG for vector shapes.
-* **Step 3 (Iterative Decompilation):** For each `.swf` file in the inventory:
-* Extract all embedded assets.
-* Identify and rename background, UI buttons, and animations.
-* Place them into the corresponding `/content/films/[film-slug]/assets/` folder.
-
-
-* **Step 4 (Reporting):** Create an `asset_extraction_report.md` listing the quantity and types of files recovered per movie.
-
-## 4.2 Transcode Legacy Video Formats
-
-* **Step 1 (Inventory):** Search the entire `legacy/` directory for all `.flv` files.
-* **Step 2 (Batch Transcoding):** Run the FFmpeg batch conversion script on the discovered inventory.
-* **Step 3 (Bundle Organization):** Move resulting `.mp4` files into their respective film bundles, naming them `trailer.mp4`.
-* **Step 4 (Verification):** Confirm all videos play in modern browsers with correct audio/video sync.
+### 5.1.5 Research and assemble new-movies metadata
+**Story:** Promote `Akiko`, `Gondola`, `Once Upon a Time in Shanghai` from raw notes to full bilingual bundles.
+- **Dependencies:** `new-movies/` drafts and research plan.
+- **Steps:** Gather external references (IMDb, press kits), write `index_de.md`/`index_en.md` with full frontmatter, capture/design posters, cite sources in comments.
+- **Tools:** Web research, Markdown editing, `pnpm run lint`.
+- **Acceptance:** Each film has localized Markdown, poster assets, and documented references.
 
 ---
 
-## 5. Content Enrichment and Gap Filling
+## Phase 3 – Website Setup (Greenfield 11ty/Tailwind Foundation)
+_Bootstraps a **fresh greenfield** Eleventy stack so later tasks have a clean platform. No legacy HTML/CSS/JS is copied—legacy files are referenced only to extract colors, font families, logos, or favicons._
 
-## 5.1 Research and Assemble "New Movies" Metadata
+### 6.1.1 Implement Eleventy + Tailwind + Nunjucks
+**Story:** Stand up the Eleventy stack described in spec Sections 6–7 as a brand-new codebase; legacy layouts are **not** ported line-for-line.
+- **Dependencies:** Phase 2 content bundles for sample data.
+- **Steps:** Configure `eleventy.config.js`, integrate Tailwind v4 via PostCSS, install GSAP/Ruffle hooks, scaffold base layouts, and render placeholder data in the streaming grid/detail views.
+- **Fresh build guardrails:**
+  - Start from an Eleventy starter or minimalist template; delete any scaffolding you don’t need.
+  - Only inspect legacy assets to pull palette values, font families, or iconography—do **not** copy existing HTML/CSS/JS into the new repo.
+  - Document any extracted palette/typography decisions in `visual_mapping.md` or design notes for traceability.
+- **Tools:** Eleventy 3.1+, Tailwind CLI, GSAP (`pnpm install gsap`), Ruffle (`pnpm install @ruffle-rs/ruffle`).
+- **Acceptance:** `pnpm run build` succeeds, producing base layouts ready for real content.
 
-* **Step 1 (Inventory):** List films from the `new-movies/` folder: `Akiko`, `Gondola`, and `Shanghai`.
-* **Step 2 (Research Execution):** Perform external web research (IMDb/YouTube) to find missing synopses, cast lists, and release dates.
-* **Step 3 (Bundle Creation):** Create bilingual Markdown bundles for these films, including a `poster.jpg` discovered during research.
-* **Step 4 (Documentation):** Update `film_database_status.md` indicating these films are now "Ready."
+---
 
-## 5.2 Final Library Audit and Categorization
+## Phase 4 – Website Implementation & Deployment
+_Refines the greenfield platform, enforces policies, and wires up production delivery without reusing legacy markup. Legacy code may only be consulted for visual tokens (colors/fonts/logos/favicons)._ 
 
-* **Step 1 (Deep Audit):** Walk through every folder in `/content/films/`.
-* **Step 2 (Constraint Check):** Ensure every folder contains: `index_de.md`, `index_en.md`, `poster.jpg`, and a video or hero image.
-* **Step 3 (Category Verification):** Confirm each film is correctly assigned to Feature, Short, Commercial, or Documentary.
+### 1.2.3 Enforce local hosting of fonts & GDPR assets
+**Story:** Ensure all fonts/assets load from `/assets/` to meet GDPR obligations (spec Section 9).
+- **Dependencies:** Eleventy setup (6.1.1) so font usage is discoverable.
+- **Steps:** Audit the new CSS codebase for remote fonts (no legacy CSS allowed), download/convert to WOFF2, store under `assets/fonts/`, update CSS to use relative URLs, add stylelint/postcss checks that fail on external domains, and rerun `pnpm run build`.
+- **Tools:** Node/PostCSS, `curl`, stylelint.
+- **Acceptance:** Production build contains zero external font URLs; DevTools shows fonts served locally.
+
+### 4.2.4 Verify legacy video playback within Eleventy
+**Story:** Confirm every MP4 renders correctly inside the Eleventy templates.
+- **Dependencies:** Video integration (4.2.3) and base site (6.1.1).
+- **Steps:** Run `pnpm run dev`, open each film page, test `<video>` playback, verify codecs via DevTools/`ffprobe`, document any re-encode needs.
+- **Tools:** Browser, FFmpeg/ffprobe.
+- **Acceptance:** All videos reach `readyState 4`, playback is synchronized, and QA notes are appended to `media_standards.md` or equivalent.
+
+### 6.2.1 Asset pipeline + deployment automation
+**Story:** Implement the production pipeline (eleventy-img, SEO files, GitHub Pages deploy) outlined in spec Section 6.2/9.
+- **Dependencies:** Eleventy base (6.1.1) and local asset enforcement (1.2.3).
+- **Steps:** Integrate `@11ty/eleventy-img` for AVIF/WebP/JPEG outputs + blur-up placeholders, emit `sitemap.xml`, `robots.txt`, `hreflang` tags, and create `.github/workflows/deploy.yml` that runs tests/builds before publishing to GitHub Pages; ensure every template/stylesheet involved is authored fresh in this phase (no pasted legacy snippets).
+- **Tools:** `@11ty/eleventy-img`, GitHub Actions, `pnpm` scripts.
+- **Acceptance:** CI builds succeed with optimized assets and SEO files; deployed site serves only local resources.
 
 ---
 
-## 6. Website Implementation and Deployment
+## Phase 5 – Final Content & Production Validation
+_Cross-checks the live site against the curated content and compliance requirements._
 
-## 6.1 Implement 11ty Engine and UI
+### 5.2.1 Deep library audit against the live site
+**Story:** Verify every `/content/films/[slug]/` bundle is complete and correctly rendered post-build.
+- **Dependencies:** Deployment-ready build (Phase 4).
+- **Steps:** Script a Node audit to ensure each slug contains `index_de.md`, `index_en.md`, `poster.jpg`, and media assets; compare frontmatter categories with rendered category pages; log outcomes in `film_database_status.md`; spot-check localized pages in the built site.
+- **Tools:** Node (`fs`, `globby`), Eleventy output, browser for spot checks.
+- **Acceptance:** Audit reports zero missing assets (or documented exceptions) and the status file marks each film “Ready”.
 
-* **Step 1 (Base Implementation):** Setup Eleventy with Tailwind CSS v4 and Nunjucks templates.
-* **Step 2 (Homepage Logic):** Build the "Streaming Service" grid (Black background, white text) with release-year sorting.
-* **Step 3 (Detail Templates):** Create templates for film details using the standardized Markdown and Frontmatter data.
-* **Step 4 (Animation):** Implement GSAP for fluid transitions and Ruffle for legacy Flash emulation where required.
-
-## 6.2 Deployment and Performance Optimization
-
-* **Step 1 (Asset Pipeline):** Run the `eleventy-img` pipeline to generate all responsive assets.
-* **Step 2 (SEO & Locales):** Generate `sitemap.xml`, `robots.txt`, and `hreflang` tags.
-* **Step 3 (CI/CD):** Configure and execute the GitHub Actions workflow for GitHub Pages.
-* **Step 4 (Documentation):** Create a `handover_documentation.md` describing the site architecture and maintenance steps.
-
-## 6.3 Quality Check: Production Validation
-
-* **Step 1 (Crawl):** Perform a full site crawl to ensure zero broken links or missing images.
-* **Step 2 (Compliance):** Verify all fonts and assets are served locally (GDPR check).
+### 6.3.1 Production validation crawl
+**Story:** Perform an end-to-end crawl to catch broken links/assets and confirm GDPR compliance before launch.
+- **Dependencies:** Successful deployment (6.2.1) and content audit (5.2.1).
+- **Steps:** Run `pnpm run crawl` or `npx broken-link-checker` on the built site, verify via DevTools that fonts/videos load locally, document findings in `verification-results-1.3.2.md` (or new report), and resolve any issues.
+- **Tools:** Broken-link checker, browser DevTools, `curl --head` for assets.
+- **Acceptance:** Crawl passes; the report evidences local asset delivery and highlights any fixes applied.
 
 ---
+
+This phased plan keeps analysis and content extraction independent of implementation tooling, then layers platform setup, feature implementation, and final validation so each task only depends on work that already exists.
