@@ -19,5 +19,6 @@ crew:
   - role: Sounddesign
     name: Martin Frühmorgen
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 Reisende beeilen sich den Zug zu erreichen. Der Anblick eines Liebespaares veranlasst den Lokführer den Zug stehenzulassen und sein Leben grundsätzlich zu ändern.

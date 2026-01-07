@@ -13,6 +13,7 @@ crew:
   - role: Director
     name: Veit Helmer
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Movie Website
     url: /movie-websites/torzumhimmel/en/index.html

@@ -28,6 +28,7 @@ crew:
   - role: Production
     name: jip film & verleih
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 In the mountains of Georgia, a cable car connects a remote village with the valley town below. Iva works as a cable car attendant at the upper station, while Nino operates the gondola from the lower station. Every half hour, their cabins pass each other mid-journey, offering brief moments of connection.
 

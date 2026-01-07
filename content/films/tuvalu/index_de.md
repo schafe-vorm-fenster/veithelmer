@@ -34,6 +34,7 @@ crew:
   - role: Musik
     name: Jürgen Knieper
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Film-Website
     url: /movie-websites/tuvalu/de/index.html

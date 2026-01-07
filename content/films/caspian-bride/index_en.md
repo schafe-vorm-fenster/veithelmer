@@ -19,6 +19,7 @@ crew:
   - role: Music
     name: Rosid Behbudov
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 A lonesome man takes a ride to a dump in search for usable things.
 

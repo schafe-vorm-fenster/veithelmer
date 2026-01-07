@@ -14,6 +14,7 @@ crew:
   - role: Kamera
     name: Felix Leiberg
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 ONCE UPON A TIME IN SHANGHAI dokumentiert eine verschwindende Welt: ein dicht besiedeltes Viertel in Baku, Aserbaidschan, das vor Ort als „Schanghai" bekannt ist, wo die Eisenbahngleise nur wenige Meter von Wohngebäuden entfernt verlaufen. Hier spielt sich das Leben im intimen Raum zwischen Zuhause und Zug ab—Wäsche hängt über den Gleisen, Kinder spielen auf den Schienen, und Nachbarn treffen sich im Weg vorbeifahrender Lokomotiven.
 

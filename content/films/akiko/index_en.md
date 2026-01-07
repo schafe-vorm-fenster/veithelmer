@@ -31,6 +31,7 @@ crew:
   - role: Cinematography
     name: Andrés Aguiló
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 Young monkey Akiko escapes from the zoo and embarks on an adventurous journey through the city, where he encounters a diverse cast of animals. Together, they help Akiko in his mission to reunite with his family.
 

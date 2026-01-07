@@ -24,6 +24,7 @@ crew:
   - role: Editing
     name: Vincent Assmann
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Movie Website
     url: /movie-websites/baikonur/en/index.html
