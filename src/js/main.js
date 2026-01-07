@@ -5,7 +5,11 @@
  * Includes hooks for:
  * - GSAP animations
  * - Ruffle Flash emulation
+ * - Video Player (Phase 6.2.3)
  */
+
+// Video Player - Phase 6.2.3
+import { initVideoPlayers } from './videoPlayer.js';
 
 // GSAP Hook - Import and initialize when needed
 let gsap = null;
@@ -32,8 +36,11 @@ export async function initRuffle() {
   return ruffle;
 }
 
-// Auto-initialize Ruffle for any embedded Flash content
+// Auto-initialize components
 document.addEventListener('DOMContentLoaded', async () => {
+  // Initialize video players (Phase 6.2.3)
+  initVideoPlayers();
+  
   // Check for Flash/SWF embeds
   const flashElements = document.querySelectorAll('embed[type="application/x-shockwave-flash"], object[type="application/x-shockwave-flash"]');
   

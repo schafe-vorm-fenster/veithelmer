@@ -1,0 +1,239 @@
+---
+title: Video Player Demo
+layout: base
+---
+
+{% import "macros/videoPlayer.njk" as video %}
+{% import "macros/buttons.njk" as buttons %}
+
+<div class="min-h-screen bg-black text-white">
+  <div class="container mx-auto px-4 py-12 max-w-6xl">
+    
+    {# Header #}
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold mb-4">Video Player Component Demo</h1>
+      <p class="text-lg text-white/80 mb-2">Phase 6.2.3: Cross-Browser HTML5 Video Player</p>
+      <p class="text-sm text-white/60">Custom controls styled to match the minimalist design system</p>
+    </header>
+    
+    {# Standard Video Player #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Standard Video Player</h2>
+      <p class="text-white/80 mb-6">Full-featured player with custom controls: Play/Pause, Volume, Progress bar, Fullscreen</p>
+      
+      <div class="mb-8">
+        {{ video.videoPlayer(
+          src="/assets/films/once-upon-a-time-in-shanghai/trailer.mp4",
+          poster="/assets/films/once-upon-a-time-in-shanghai/trailer.jpg",
+          aspectRatio="16/9"
+        ) }}
+      </div>
+      
+      <div class="bg-white/5 rounded p-6 border border-white/10">
+        <h3 class="font-bold mb-3">Features:</h3>
+        <ul class="space-y-2 text-sm text-white/80">
+          <li>✓ Custom overlay controls (appear on hover)</li>
+          <li>✓ Play/Pause toggle (click video or spacebar)</li>
+          <li>✓ Volume/Mute control (M key)</li>
+          <li>✓ Seekable progress bar (click to jump)</li>
+          <li>✓ Time display (current/duration)</li>
+          <li>✓ Fullscreen support (F key)</li>
+          <li>✓ Keyboard controls (Space, M, F, Arrow keys)</li>
+          <li>✓ Loading indicator</li>
+        </ul>
+      </div>
+    </section>
+    
+    {# Hero Video Player (Autoplay) #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Hero Video Player (Autoplay Muted)</h2>
+      <p class="text-white/80 mb-6">Cinematic 21:9 aspect ratio, autoplay muted with loop - ideal for hero sections</p>
+      
+      <div class="mb-8">
+        {{ video.heroVideoPlayer(
+          src="/assets/films/gate-to-heaven/trailer.mp4",
+          poster="/assets/films/gate-to-heaven/poster.jpg",
+          aspectRatio="21/9"
+        ) }}
+      </div>
+      
+      <div class="bg-white/5 rounded p-6 border border-white/10">
+        <h3 class="font-bold mb-3">Hero Configuration:</h3>
+        <ul class="space-y-2 text-sm text-white/80">
+          <li>✓ Autoplay muted (browser-friendly)</li>
+          <li>✓ Loops automatically</li>
+          <li>✓ Click to unmute/restart</li>
+          <li>✓ Cinematic 21:9 aspect ratio</li>
+          <li>✓ Controls appear on hover</li>
+        </ul>
+      </div>
+    </section>
+    
+    {# Multiple Players #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Multiple Players on Same Page</h2>
+      <p class="text-white/80 mb-6">Each player operates independently</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold mb-4">Gondola Trailer</h3>
+          {{ video.videoPlayer(
+            src="/assets/films/gondola/trailer.mp4",
+            poster="/assets/films/gondola/poster.jpg",
+            aspectRatio="16/9"
+          ) }}
+        </div>
+        
+        <div>
+          <h3 class="font-bold mb-4">Fiddlesticks Trailer</h3>
+          {{ video.videoPlayer(
+            src="/assets/films/fiddlesticks/trailer.mp4",
+            poster="/assets/films/fiddlesticks/poster.jpg",
+            aspectRatio="16/9"
+          ) }}
+        </div>
+      </div>
+    </section>
+    
+    {# Technical Specifications #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Technical Specifications</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {# Browser Support #}
+        <div class="bg-white/5 rounded p-6 border border-white/10">
+          <h3 class="font-bold mb-4">Browser Support</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>✓ Chrome (desktop & mobile)</li>
+            <li>✓ Firefox (desktop & mobile)</li>
+            <li>✓ Safari (desktop & iOS)</li>
+            <li>✓ Edge (Chromium)</li>
+            <li>✓ Modern mobile browsers</li>
+          </ul>
+        </div>
+        
+        {# Video Format #}
+        <div class="bg-white/5 rounded p-6 border border-white/10">
+          <h3 class="font-bold mb-4">Video Format</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>✓ MP4 container (H.264)</li>
+            <li>✓ AAC audio codec</li>
+            <li>✓ Progressive download</li>
+            <li>✓ Metadata preloading</li>
+            <li>✓ Poster frame support</li>
+          </ul>
+        </div>
+        
+        {# Controls #}
+        <div class="bg-white/5 rounded p-6 border border-white/10">
+          <h3 class="font-bold mb-4">Custom Controls</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>✓ Play/Pause (center overlay)</li>
+            <li>✓ Volume/Mute button</li>
+            <li>✓ Progress bar (seekable)</li>
+            <li>✓ Time display (MM:SS)</li>
+            <li>✓ Fullscreen toggle</li>
+            <li>✓ Loading spinner</li>
+          </ul>
+        </div>
+        
+        {# Accessibility #}
+        <div class="bg-white/5 rounded p-6 border border-white/10">
+          <h3 class="font-bold mb-4">Accessibility</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>✓ ARIA labels on controls</li>
+            <li>✓ Keyboard navigation</li>
+            <li>✓ Focus indicators</li>
+            <li>✓ Screen reader support</li>
+            <li>✓ Semantic HTML5</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    {# Usage Examples #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Usage Examples</h2>
+      
+      <div class="bg-white/5 rounded p-6 border border-white/10">
+        <h3 class="font-bold mb-4">Import the Macro:</h3>
+        <pre class="bg-black/50 p-4 rounded overflow-x-auto text-sm"><code>{% raw %}{% import "macros/videoPlayer.njk" as video %}{% endraw %}</code></pre>
+        
+        <h3 class="font-bold mb-4 mt-6">Standard Player:</h3>
+        <pre class="bg-black/50 p-4 rounded overflow-x-auto text-sm"><code>{% raw %}{{ video.videoPlayer(
+  src="/path/to/video.mp4",
+  poster="/path/to/poster.jpg",
+  aspectRatio="16/9"
+) }}{% endraw %}</code></pre>
+        
+        <h3 class="font-bold mb-4 mt-6">Hero Player (Autoplay):</h3>
+        <pre class="bg-black/50 p-4 rounded overflow-x-auto text-sm"><code>{% raw %}{{ video.heroVideoPlayer(
+  src="/path/to/video.mp4",
+  poster="/path/to/poster.jpg",
+  aspectRatio="21/9"
+) }}{% endraw %}</code></pre>
+        
+        <h3 class="font-bold mb-4 mt-6">All Parameters:</h3>
+        <pre class="bg-black/50 p-4 rounded overflow-x-auto text-sm"><code>{% raw %}{{ video.videoPlayer(
+  src="/video.mp4",          // Required: Video URL
+  poster="/poster.jpg",       // Optional: Poster image
+  autoplay=false,             // Optional: Autoplay (muted)
+  controls=true,              // Optional: Show controls
+  loop=false,                 // Optional: Loop video
+  aspectRatio="16/9",         // Optional: Aspect ratio
+  label="Video description"   // Optional: Accessible label
+) }}{% endraw %}</code></pre>
+      </div>
+    </section>
+    
+    {# Keyboard Shortcuts #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Keyboard Shortcuts</h2>
+      
+      <div class="bg-white/5 rounded p-6 border border-white/10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-bold mb-3">Playback:</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li><kbd class="bg-white/10 px-2 py-1 rounded">Space</kbd> or <kbd class="bg-white/10 px-2 py-1 rounded">K</kbd> - Play/Pause</li>
+              <li><kbd class="bg-white/10 px-2 py-1 rounded">M</kbd> - Mute/Unmute</li>
+              <li><kbd class="bg-white/10 px-2 py-1 rounded">F</kbd> - Fullscreen</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-3">Seeking:</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li><kbd class="bg-white/10 px-2 py-1 rounded">←</kbd> - Rewind 5 seconds</li>
+              <li><kbd class="bg-white/10 px-2 py-1 rounded">→</kbd> - Forward 5 seconds</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    {# Design System Alignment #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-6">Design System Alignment</h2>
+      
+      <div class="bg-white/5 rounded p-6 border border-white/10">
+        <h3 class="font-bold mb-4">Minimalist Style:</h3>
+        <ul class="space-y-2 text-sm text-white/80">
+          <li>✓ White icons on transparent overlay</li>
+          <li>✓ Subtle hover states (white/20 background)</li>
+          <li>✓ Clean, borderless design</li>
+          <li>✓ Smooth 200-300ms transitions</li>
+          <li>✓ Backdrop blur effects</li>
+          <li>✓ Drop shadows for depth</li>
+          <li>✓ Monochrome color scheme</li>
+          <li>✓ Focus rings for accessibility</li>
+        </ul>
+      </div>
+    </section>
+    
+    {# Back Button #}
+    <div class="flex justify-center">
+      {{ buttons.arrowButton("/styleguide/", "Back to Styleguide", "left") }}
+    </div>
+    
+  </div>
+</div>
