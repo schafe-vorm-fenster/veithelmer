@@ -76,7 +76,23 @@
                   </div>
                   <div class="flex-spanner"></div>
                   <div id="trailer-wrapper">
-                     <div id="trailer-cnt"> <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xHASL9eNPTU?rel=0&amp;showinfo=0&amp;wmode=transparent&amp;wmode=opaque&amp;autoplay=1" frameborder="0" allowfullscreen=""></iframe> </div>
+                     <div id="trailer-cnt">
+                        <div class="video-player-wrapper" data-video-player>
+                           <div class="relative overflow-hidden bg-black" style="aspect-ratio: 16/9; position: relative; width: 100%; height: 100%;">
+                              <video class="video-player" style="width: 100%; height: 100%;" poster="assets/trailer.jpg" controls playsinline preload="metadata" data-video-element aria-label="Trailer">
+                                 <source src="assets/trailer.mp4" type="video/mp4">
+                                 <p style="color: white; padding: 1rem;">Your browser does not support the video tag. <a href="assets/trailer.mp4" style="text-decoration: underline;">Download the video</a>.</p>
+                              </video>
+                              <button type="button" class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: opacity 0.3s; cursor: pointer;" aria-label="Play video" data-play-overlay>
+                                 <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(4px); border-radius: 50%; padding: 1.5rem;">
+                                    <svg style="width: 4rem; height: 4rem; color: white; filter: drop-shadow(0 4px 3px rgba(0,0,0,0.7));" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                       <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                 </div>
+                              </button>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                   <div class="flex-spanner"></div>
                   <div id="regie-desk"> <img src="assets/head_regie_blue.png" class="a-head" data-section="regie" title="Profil Veit Helmer"> </div>
@@ -1202,4 +1218,33 @@
          </footer>
       </div>
    
+
+   <script>
+   // Video player interaction
+   document.addEventListener('DOMContentLoaded', function() {
+      const videoPlayer = document.querySelector('[data-video-element]');
+      const playOverlay = document.querySelector('[data-play-overlay]');
+      
+      if (videoPlayer && playOverlay) {
+         // Hide overlay when video plays
+         videoPlayer.addEventListener('play', function() {
+            playOverlay.style.display = 'none';
+         });
+         
+         // Show overlay when video pauses or ends
+         videoPlayer.addEventListener('pause', function() {
+            playOverlay.style.display = 'flex';
+         });
+         
+         videoPlayer.addEventListener('ended', function() {
+            playOverlay.style.display = 'flex';
+         });
+         
+         // Play video when overlay is clicked
+         playOverlay.addEventListener('click', function() {
+            videoPlayer.play();
+         });
+      }
+   });
+   </script>
 </body></html>
