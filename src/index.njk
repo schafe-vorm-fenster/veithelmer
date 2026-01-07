@@ -1,56 +1,122 @@
 ---
 layout: page.njk
-title: Welcome to Veithelmer
-description: Greenfield Eleventy + Tailwind base - Phase 6.1.1
+title: Veit Helmer — Streaming Archive
+description: Films by Veit Helmer — A visual poetry of places, people, and silent storytelling
 ---
 
-<div class="max-w-4xl">
-  <h1 class="text-4xl font-bold mb-6">Hello World</h1>
-  
-  <div class="prose prose-invert max-w-none">
-    <p class="text-xl mb-8 text-gray-300">
-      Welcome to the Veithelmer project! This is the technical baseline built with Eleventy 3.1+ and Tailwind CSS v4.
-    </p>
-    
-    <section class="mb-12 p-6 bg-brand-darkgray border border-gray-700 rounded">
-      <h2 class="text-2xl font-bold mb-4">✅ Phase 6.1.1 Complete</h2>
-      <ul class="list-disc list-inside space-y-2 text-gray-300">
-        <li>Eleventy 3.1+ configured with Nunjucks templates</li>
-        <li>Tailwind CSS v4 integrated via PostCSS</li>
-        <li>CSS processing via <code class="bg-gray-800 px-2 py-1 rounded">eleventy.before</code> hook</li>
-        <li>Build pipeline outputs to <code class="bg-gray-800 px-2 py-1 rounded">_site</code> directory</li>
-        <li>Design tokens from legacy system preserved</li>
-      </ul>
-    </section>
-    
-    <section class="mb-12">
-      <h3 class="text-xl font-bold mb-3">Design Tokens</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="text-center">
-          <div class="w-full h-20 bg-black border border-gray-700 mb-2"></div>
-          <p class="text-sm">Brand Black</p>
-        </div>
-        <div class="text-center">
-          <div class="w-full h-20 border border-gray-700 mb-2" style="background-color: #1f1f1f;"></div>
-          <p class="text-sm">Dark Gray</p>
-        </div>
-        <div class="text-center">
-          <div class="w-full h-20 border border-gray-700 mb-2" style="background-color: #8d5315;"></div>
-          <p class="text-sm">Brand Brown</p>
-        </div>
-        <div class="text-center">
-          <div class="w-full h-20 bg-white border border-gray-700 mb-2"></div>
-          <p class="text-sm text-black">Light Gray</p>
-        </div>
+{% from "macros/filmTile.njk" import filmTile %}
+
+{# Categorize films by type #}
+{% set categorizedFilms = collections.films | categorizeFilms %}
+
+{# Navigation Menu - Anchor Links #}
+<nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 mb-12">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold tracking-tight">Veit Helmer</h1>
+      <div class="flex gap-8 text-sm uppercase tracking-wider">
+        <a href="#features" class="hover:text-brand-brown transition-colors">Features</a>
+        <a href="#documentaries" class="hover:text-brand-brown transition-colors">Documentaries</a>
+        <a href="#shorts" class="hover:text-brand-brown transition-colors">Shorts</a>
       </div>
-    </section>
-    
-    <section>
-      <h3 class="text-xl font-bold mb-3">Build Command</h3>
-      <pre class="bg-gray-900 p-4 rounded overflow-x-auto"><code>pnpm run build</code></pre>
-      <p class="text-gray-300 mt-2">
-        This processes the Nunjucks template and generates Tailwind-processed CSS.
-      </p>
-    </section>
+    </div>
   </div>
-</div>
+</nav>
+
+<main id="main-content" class="container mx-auto px-6 pb-20">
+  
+  {# Feature Films Section #}
+  {% if categorizedFilms.feature.length > 0 %}
+  <section id="features" class="mb-20 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-8 tracking-tight">Feature Films</h2>
+    
+    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
+      <div class="flex gap-6 w-max">
+        {% for film in categorizedFilms.feature %}
+        <div class="w-80 flex-shrink-0">
+          {{ filmTile(
+            title=film.data.title,
+            year=film.data.release_year,
+            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            url=film.url,
+            category="Feature"
+          ) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  {# Documentary Films Section #}
+  {% if categorizedFilms.documentary.length > 0 %}
+  <section id="documentaries" class="mb-20 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-8 tracking-tight">Documentaries</h2>
+    
+    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
+      <div class="flex gap-6 w-max">
+        {% for film in categorizedFilms.documentary %}
+        <div class="w-80 flex-shrink-0">
+          {{ filmTile(
+            title=film.data.title,
+            year=film.data.release_year,
+            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            url=film.url,
+            category="Documentary"
+          ) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  {# Short Films Section #}
+  {% if categorizedFilms.short.length > 0 %}
+  <section id="shorts" class="mb-20 scroll-mt-20">
+    <h2 class="text-3xl font-bold mb-8 tracking-tight">Short Films</h2>
+    
+    <div class="horizontal-scroll-container overflow-x-auto overflow-y-hidden -mx-6 px-6 pb-6">
+      <div class="flex gap-6 w-max">
+        {% for film in categorizedFilms.short %}
+        <div class="w-80 flex-shrink-0">
+          {{ filmTile(
+            title=film.data.title,
+            year=film.data.release_year,
+            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            url=film.url,
+            category="Short"
+          ) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+</main>
+
+<style>
+  {# Smooth horizontal scrolling #}
+  .horizontal-scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #8d5315 #1f1f1f;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #1f1f1f;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #8d5315;
+    border-radius: 4px;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #a16419;
+  }
+</style>
