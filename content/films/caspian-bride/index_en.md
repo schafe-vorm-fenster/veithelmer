@@ -1,5 +1,7 @@
 ---
 title: Caspian Bride
+type: film
+language: en
 description: A lonesome man finds an old mannequin at a dump. He takes her home, but an accident in the oil fields leads him to his true love.
 director: Veit Helmer
 cast:

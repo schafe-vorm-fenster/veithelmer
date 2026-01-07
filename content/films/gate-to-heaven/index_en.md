@@ -1,5 +1,7 @@
 ---
 title: Gate to Heaven
+type: film
+language: en
 description: Veit Helmer's second feature film, an amusing and touching story about people living in the transit area of Frankfurt Airport.
 director: Veit Helmer
 cast:
