@@ -1,354 +1,233 @@
-# Phase 6.3.3 Completion Report
-## Film Detail Template Implementation
+# Phase 6.3.3 Completion Report: Film Detail Metadata (LD+JSON)
 
-**Status:** ✅ Complete  
-**Date:** 2026-01-07  
-**Task:** Implement universal Nunjucks template for film detail pages
+**Story**: Add Schema.org structured data to film pages to enable Rich Snippets.
 
----
+**Status**: ✅ **COMPLETE**
 
-## Objectives Achieved
-
-### ✅ UI/Layout Requirements
-
-#### Hero Section
-- ✅ **Responsive Full-Width Container**: 16:9 aspect ratio hero section
-- ✅ **Priority 1 - Video Player**: HTML5 video with autoplay (muted), loop, and playsinline
-- ✅ **Priority 2 - Poster Fallback**: High-resolution poster.jpg displays if video unavailable
-- ✅ **Graceful Degradation**: Placeholder SVG icon shown when neither video nor poster available
-
-#### Quick Info Block
-- ✅ **H1 Title**: Fluid typography (4xl-6xl) with responsive scaling
-- ✅ **Release Year**: Prominently displayed with bold font weight
-- ✅ **Duration**: Formatted display (e.g., "92 minutes")
-- ✅ **Country**: Display origin country with bullet separators
-
-#### Information Grid
-- ✅ **Two-Column Responsive Layout**: 3-column grid (2:1 ratio) on desktop, single column on mobile
-- ✅ **Left Column (2/3)**: Synopsis section with prose styling
-- ✅ **Right Column (1/3)**: Structured metadata using semantic `<dl>` elements
-
-#### Metadata Sidebar (Definition Lists)
-- ✅ **Director**: Single field display
-- ✅ **Cast**: Unordered list of actors
-- ✅ **Crew**: Structured display with role labels and names
-- ✅ **Technical Specs**: Single line display (format, color, audio)
-- ✅ **Awards**: Flexible rendering for both string and object formats
-
-#### Conversion Point
-- ✅ **"Visit Microsite" Button**: Conditional display based on `external_links` frontmatter
-- ✅ **Minimalist Design**: White background, black text, hover transitions
-- ✅ **Proper Linking**: Target blank with noopener/noreferrer security
+**Date**: 2026-01-07
 
 ---
 
-### ✅ Data & Logic Requirements
+## Implementation Summary
 
-#### Dynamic Mapping
-- ✅ **All Frontmatter Fields**: Complete support for Section 5.1 schema
-- ✅ **Flexible Awards Handling**: Supports both string arrays and object key-value pairs
-- ✅ **Optional Fields**: Graceful handling of missing metadata
-- ✅ **Asset Path Resolution**: Automatic film slug extraction from file path
+Successfully implemented Schema.org Movie structured data (LD+JSON) for all film pages across both English and German locales. The implementation provides comprehensive metadata that enables Google Rich Results and improved search visibility.
 
-#### Localization
-- ✅ **Language Context**: Respects `language` field in frontmatter
-- ✅ **Bilingual URLs**: `/en/films/{slug}/` and `/de/films/{slug}/` structure
-- ✅ **Directory Data File**: Automatic layout and permalink assignment via `films.11tydata.js`
+### Deliverables
 
-#### Navigation
-- ✅ **Back to Homepage**: Prominent link with SVG arrow icon
-- ✅ **Accessible Navigation**: Proper ARIA labels and semantic HTML
+1. **✅ Schema.org Movie Mapping**
+   - `name` (title)
+   - `description`
+   - `director` (as Person)
+   - `datePublished` (release_year)
+   - `duration` (ISO 8601 format)
+   - `countryOfOrigin` (as Country)
+   - `actor` (cast as array of Person)
+   - `image` (poster_image URL)
+   - `award` (awards array)
 
----
+2. **✅ ISO 8601 Duration Filter**
+   - Created `durationToISO8601` Nunjucks filter
+   - Converts "90 minutes" → "PT1H30M"
+   - Handles various duration formats (minutes, min, etc.)
 
-## Files Created
+3. **✅ VideoObject Integration**
+   - Embedded in `trailer` property when trailer exists
+   - Includes name, description, contentUrl
+   - Includes thumbnailUrl (trailer poster or fallback to poster)
+   - Includes uploadDate (release year)
 
-### Templates
-```
-src/_layouts/film.njk          # Main film detail template
-```
-
-### Data Files
-```
-content/films/films.11tydata.js  # Directory-level configuration for all films
-```
-
-### Configuration Updates
-```
-eleventy.config.js               # Enhanced with:
-  - Film collections (all, en, de)
-  - Asset passthrough copying
-  - Content directory processing
-  - Proper ignores for metadata files
-```
+4. **✅ Validation & Testing**
+   - Created automated validation script (`scripts/validate-schema.js`)
+   - Validates all 34 film pages (17 films × 2 locales)
+   - Tests Schema.org requirements and ISO 8601 formats
+   - All pages pass validation ✅
 
 ---
 
 ## Technical Implementation
 
-### Template Structure
+### 1. Eleventy Filter: `generateMovieSchema`
 
-#### 1. Hero Section
-- Full-bleed design (negative margins to break container)
-- 16:9 aspect ratio container
-- HTML5 `<video>` element with:
-  - `autoplay`: Automatic playback
-  - `muted`: Required for autoplay
-  - `loop`: Continuous playback
-  - `playsinline`: Mobile compatibility
-  - `poster`: Fallback image
+**Location**: `eleventy.config.js` (lines 104-194)
 
-#### 2. Quick Info Block
-- Fluid typography using Tailwind responsive classes
-- Conditional rendering with Nunjucks `{% if %}` blocks
-- Bullet separators with reduced opacity
-- External link button with hover states
+Generates complete Schema.org Movie object from frontmatter data.
 
-#### 3. Information Grid
-- CSS Grid with `md:grid-cols-3` breakpoint
-- Left column spans 2/3 width (`md:col-span-2`)
-- Right column spans 1/3 width (`md:col-span-1`)
-- Prose styling for markdown content
+**Features**:
+- Generates complete Schema.org Movie object
+- Converts duration to ISO 8601 format inline
+- Constructs proper URLs for images and videos
+- Handles optional fields gracefully
+- Returns formatted JSON string
 
-#### 4. Metadata Sidebar
-- Semantic `<dl>`, `<dt>`, `<dd>` elements
-- Consistent spacing with Tailwind utility classes
-- Uppercase labels with reduced opacity
-- Flexible crew role display
+### 2. Film Layout Integration
 
-#### 5. Awards Display Logic
+**Location**: `src/_layouts/film.njk` (lines 5-23)
+
 ```njk
-{% if award is string %}
-  {{ award }}
-{% else %}
-  {% for key, value in award %}
-    {{ key }}: {{ value }}
-  {% endfor %}
-{% endif %}
+{% block head %}
+{# Schema.org Movie structured data for Rich Snippets #}
+<script type="application/ld+json">
+{{ {
+  title: title,
+  description: description,
+  director: director,
+  release_year: release_year,
+  duration: duration,
+  country: country,
+  cast: cast,
+  poster_image: poster_image,
+  trailer_video: trailer_video,
+  trailer_poster: trailer_poster,
+  awards: awards
+} | generateMovieSchema(page) | safe }}
+</script>
+{% endblock %}
 ```
 
-### Data Configuration
+**Output Location**: Injected into `<head>` section via base.njk block system
 
-**films.11tydata.js:**
-```javascript
-module.exports = {
-  layout: "film.njk",
-  permalink: function(data) {
-    const lang = data.page.fileSlug.split('_')[1] || 'en';
-    const filmSlug = data.page.filePathStem.split('/').slice(-2)[0];
-    return `/${lang}/films/${filmSlug}/index.html`;
+### 3. Example Structured Data Output
+
+**Film**: Tuvalu (1999)
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Movie",
+  "name": "Tuvalu",
+  "description": "A place, far away from our world, in another time ...",
+  "director": {
+    "@type": "Person",
+    "name": "Veit Helmer"
   },
-  tags: "film"
-};
+  "datePublished": "1999-01-01",
+  "duration": "PT1H32M",
+  "countryOfOrigin": {
+    "@type": "Country",
+    "name": "Germany"
+  },
+  "actor": [
+    { "@type": "Person", "name": "Denis Lavant" },
+    { "@type": "Person", "name": "Chulpan Hamatova" }
+  ],
+  "image": "https://veithelmer.com/assets/films/tuvalu/poster.jpg",
+  "trailer": {
+    "@type": "VideoObject",
+    "name": "Tuvalu - Trailer",
+    "description": "Trailer for Tuvalu",
+    "contentUrl": "https://veithelmer.com/assets/films/tuvalu/trailer.mp4",
+    "uploadDate": "1999-01-01",
+    "thumbnailUrl": "https://veithelmer.com/assets/films/tuvalu/trailer.jpg"
+  },
+  "award": [
+    "Gent International Film festival: FIPRESCI-Award",
+    "Kiev International Film festival: Audience-Award"
+  ]
+}
 ```
 
-### Collections Configuration
+---
 
-**eleventy.config.js additions:**
-```javascript
-// All films (both languages)
-eleventyConfig.addCollection("films", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("content/films/*/index_*.md");
-});
+## Validation Results
 
-// English films only (sorted by year)
-eleventyConfig.addCollection("films_en", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("content/films/*/index_en.md")
-    .sort((a, b) => (b.data.release_year || 0) - (a.data.release_year || 0));
-});
-
-// German films only (sorted by year)
-eleventyConfig.addCollection("films_de", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("content/films/*/index_de.md")
-    .sort((a, b) => (b.data.release_year || 0) - (a.data.release_year || 0));
-});
+### Automated Validation
+```bash
+node scripts/validate-schema.js
 ```
 
----
-
-## Content Fixes Applied
-
-### YAML Frontmatter Corrections
-Fixed quote escaping issues in:
-- `content/films/baikonur/index_en.md` - Description with embedded quotes
-- `content/films/behind-the-couch/index_en.md` - Title in description
-- `content/films/tour-eiffel/index_en.md` - Colon in description
-
-### Added Missing Fields
-Automatically added to all films lacking them:
-- `type: film` - Required for filtering/categorization
-- `language: en` or `language: de` - Required for localization
+**Results**: 
+- ✅ 34 film pages validated
+- ✅ 0 validation errors
+- ✅ All required Schema.org fields present
+- ✅ All ISO 8601 durations correctly formatted
+- ✅ All VideoObject structures valid
 
 ---
 
-## Acceptance Criteria Validation
+## Testing Instructions
 
-### ✅ Film Tile Navigation
-- Film tiles can link to detail pages using generated URLs
-- Example: `/en/films/tuvalu/` → renders Tuvalu detail page
-- Permalink structure is consistent and predictable
-
-### ✅ All 20 Film Bundles Render
-**17 films × 2 languages = 34 pages generated:**
-
-**English Pages (17):**
-1. Absurdistan
-2. Akiko
-3. Baikonur
-4. Behind the Couch
-5. Bling Bling
-6. Caspian Bride (Qırğız gəlini)
-7. City Lives Berlin
-8. Fiddlesticks (Quatsch)
-9. Gate to Heaven (Tor zum Himmel)
-10. Gondola
-11. Once Upon a Time in Shanghai
-12. Strangers in Tokyo
-13. Surprise
-14. The Bra
-15. Tour Eiffel
-16. Tuvalu
-17. Uzbek Express
-
-**German Pages (17):**
-- Same films with German content
-
-**Note:** Task mentioned "17 legacy + 3 new" (20 total), but current repository contains 17 films. All existing films render correctly.
-
-### ✅ Video Autoplay
-- Videos set to `autoplay muted loop playsinline`
-- Poster images shown during load/when video unavailable
-- Graceful fallback chain: Video → Poster → SVG Placeholder
-
-### ✅ "Visit Microsite" Buttons
-- Conditional rendering: `{% if external_links and external_links.length > 0 %}`
-- Only appears for films with `external_links` frontmatter
-- Opens in new tab with proper security (`target="_blank" rel="noopener noreferrer"`)
-
----
-
-## Design System Compliance
-
-### Typography
-- **H1 Title**: `text-4xl md:text-5xl lg:text-6xl` - Fluid responsive scaling
-- **H2 Sections**: `text-2xl` - Consistent subsection headers
-- **Body Text**: `text-base` - Standard readable size
-- **Labels**: `text-xs` - Compact metadata labels
-
-### Spacing
-- **Hero Section**: `-mx-6 -mt-12 mb-12` - Full-bleed with controlled bottom margin
-- **Quick Info**: `mb-12` - Clear separation from grid
-- **Grid Gap**: `gap-12` - Generous whitespace between columns
-- **List Spacing**: `space-y-1` to `space-y-6` - Hierarchical rhythm
-
-### Colors
-- **Background**: `bg-black` (inherited from base)
-- **Text**: `text-white` (default)
-- **Reduced Opacity**: `text-white/60`, `text-white/40` - Labels and separators
-- **Button**: `bg-white text-black` with `hover:bg-brand-brown hover:text-white`
-
-### Accessibility
-- **ARIA Labels**: All sections properly labeled
-- **Semantic HTML**: Proper use of `<section>`, `<dl>`, `<aside>`
-- **Focus States**: Inherited from base layout
-- **Alt Text**: Video fallback messages
-
----
-
-## Build Statistics
-
-```
-[11ty] Copied 41 Wrote 59 files in 0.84 seconds (v3.1.2)
+### 1. Build Site
+```bash
+npm run build
 ```
 
-**Breakdown:**
-- 34 film detail pages (17 × 2 languages)
-- 25 other pages (styleguide, design test, etc.)
-- 41 static assets copied (film posters, trailers, CSS, JS, images)
-
----
-
-## Next Steps
-
-### Integration with Homepage (Phase 6.3.4)
-The template is ready for integration. Homepage film tiles should link to:
-```njk
-<a href="/{{ locale }}/films/{{ film.slug }}/">
+### 2. Validate Schema
+```bash
+node scripts/validate-schema.js
 ```
 
-### Recommended Enhancements (Future)
-1. **Video Player Component**: Replace basic HTML5 video with custom controls macro from Task 6.2.3
-2. **Gallery Section**: Add image gallery for films with multiple stills
-3. **Related Films**: Show similar films in same category
-4. **Share Buttons**: Social media sharing integration
-5. **Breadcrumb Navigation**: Add breadcrumb trail for better UX
-6. **Language Toggle**: Add language switcher to film pages
+### 3. View Generated HTML
+```bash
+cat _site/en/films/tuvalu/index.html | grep -A 60 'application/ld+json'
+```
+
+### 4. Test with Google Rich Results Test
+1. Visit: https://search.google.com/test/rich-results
+2. Enter film page URL or paste HTML
+3. Verify "Movie" Rich Result detected
+4. Check for any warnings or errors
 
 ---
 
-## Testing Recommendations
+## Acceptance Criteria
 
-### Manual Testing Checklist
-- [ ] Visit `/en/films/tuvalu/` in browser
-- [ ] Verify video autoplays (muted)
-- [ ] Check responsive layout on mobile (< 768px)
-- [ ] Test "Visit Microsite" button on Tuvalu
-- [ ] Verify awards display correctly
-- [ ] Test "Back to Film Archive" link
-- [ ] Check German version at `/de/films/tuvalu/`
-
-### Cross-Browser Testing
-- [ ] Chrome/Edge (Chromium)
-- [ ] Firefox
-- [ ] Safari (WebKit)
-- [ ] Mobile Safari (iOS)
-- [ ] Chrome Mobile (Android)
-
-### Performance Testing
-- [ ] Video preload strategy effective
-- [ ] Image lazy loading working
-- [ ] No layout shift (CLS) on load
-- [ ] Fast Time to Interactive (TTI)
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Map frontmatter to Schema.org Movie | ✅ | All fields mapped correctly |
+| ISO 8601 duration conversion | ✅ | Filter implemented and tested |
+| VideoObject for trailers | ✅ | Included when trailer_video exists |
+| Valid LD+JSON in `<head>` | ✅ | Properly formatted and escaped |
+| Pass validation script | ✅ | 34/34 pages valid |
+| Ready for Google Rich Results Test | ✅ | All requirements met |
 
 ---
 
-## Repository Changes Summary
+## Files Modified
 
-### Modified Files (4)
-1. **eleventy.config.js** - Collections, passthroughs, ignores
-2. **content/films/baikonur/index_en.md** - Fixed YAML quotes
-3. **content/films/behind-the-couch/index_en.md** - Fixed YAML quotes
-4. **content/films/tour-eiffel/index_en.md** - Fixed YAML quotes, added description quotes
+1. **`eleventy.config.js`**
+   - Added `durationToISO8601` filter
+   - Added `generateMovieSchema` filter
 
-### Created Files (2)
-1. **src/_layouts/film.njk** - Main template (163 lines)
-2. **content/films/films.11tydata.js** - Directory data configuration
+2. **`src/_layouts/film.njk`**
+   - Added `{% block head %}` with LD+JSON script
 
-### Bulk Modifications
-- Added `type: film` to 9 English film files
-- Added `type: film` to 8 German film files
-- Added `language: en` to 9 English film files
-- Added `language: de` to 8 German film files
+3. **`scripts/validate-schema.js`** (NEW)
+   - Automated Schema.org validation script
 
 ---
 
-## Known Issues / Limitations
+## Benefits & SEO Impact
 
-### None Currently Identified
+### Rich Snippets Enabled
+- Movie title with poster image
+- Director name and release year
+- Duration in human-readable format
+- Trailer playback in search results
 
-All requirements have been met. The template successfully:
-- Renders all 17 films in both languages
-- Handles missing fields gracefully
-- Supports flexible data structures (awards)
-- Provides excellent responsive design
-- Maintains streaming service aesthetic
+### Search Engine Benefits
+1. Enhanced visibility in search results
+2. Higher click-through rates
+3. Knowledge Graph integration
+4. Voice search optimization
+5. International support (EN/DE)
 
 ---
 
-## Conclusion
+## Dependencies Met
 
-**Status: ✅ Complete and Production Ready**
+✅ **Phase 6.3.1**: Homepage structure provides navigation to film pages
 
-The film detail template successfully implements a high-impact, immersive layout following the "Streaming Service" aesthetic (black background, white text). All 17 films render correctly across both English and German locales, with proper handling of metadata, awards, and external links.
+---
 
-The template is fully integrated with 11ty's collection system and ready for homepage integration in the next phase.
+## References
+
+- **Schema.org Movie**: https://schema.org/Movie
+- **VideoObject**: https://schema.org/VideoObject
+- **ISO 8601 Duration**: https://en.wikipedia.org/wiki/ISO_8601#Durations
+- **Google Rich Results Test**: https://search.google.com/test/rich-results
+
+---
+
+**Implementation Complete** 🎉
+**Validation Passed** ✅
+**Ready for Production** 🚀
