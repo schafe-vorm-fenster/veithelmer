@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruffle SWF Testing Interface - Veit Helmer Archive</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .subtitle {
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+            font-weight: 500;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 10px;
+            background: #1a1a1a;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: #666;
+        }
+        
+        button {
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background: #0052a3;
+        }
+        
+        button.secondary {
+            background: #444;
+        }
+        
+        button.secondary:hover {
+            background: #555;
+        }
+        
+        .viewer {
+            background: #000;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #ruffle-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        ruffle-player {
+            width: 100%;
+            height: 800px;
+            max-width: 1200px;
+        }
+        
+        .info {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .info h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .info ul {
+            margin-left: 20px;
+            color: #ccc;
+        }
+        
+        .info code {
+            background: #1a1a1a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #4a9eff;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .status.success {
+            background: #1a4d2e;
+            color: #4ade80;
+            display: block;
+        }
+        
+        .status.error {
+            background: #4d1a1a;
+            color: #f87171;
+            display: block;
+        }
+        
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .movie-card {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #333;
+            transition: all 0.2s;
+        }
+        
+        .movie-card:hover {
+            border-color: #0066cc;
+            background: #222;
+        }
+        
+        .movie-card h4 {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .movie-card .count {
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Ruffle SWF Testing Interface</h1>
+        <p class="subtitle">Phase 3.2.3: Extensive Screenshot Capture - Veit Helmer Archive</p>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="movie-select">Select Movie:</label>
+                <select id="movie-select">
+                    <option value="">-- Choose a movie --</option>
+                    <option value="absurdistan">Absurdistan</option>
+                    <option value="baikonur">Baikonur</option>
+                    <option value="behindthecouch">Behind the Couch</option>
+                    <option value="quatsch">Quatsch</option>
+                    <option value="the-bra">The Bra</option>
+                    <option value="torzumhimmel">Torzumhimmel</option>
+                    <option value="tuvalu">Tuvalu</option>
+                    <option value="vom-lokfuehrer-der-die-liebe-suchte">Vom Lokführer der die Liebe suchte</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="swf-select">Select SWF File:</label>
+                <select id="swf-select" disabled>
+                    <option value="">-- Select movie first --</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="custom-path">Or Enter Custom Path:</label>
+                <input type="text" id="custom-path" placeholder="e.g., absurdistan/absurdistan.swf">
+            </div>
+            
+            <button onclick="loadSWF()">Load SWF</button>
+            <button onclick="reloadSWF()" class="secondary">Reload</button>
+            <button onclick="clearViewer()" class="secondary">Clear</button>
+            
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="viewer">
+            <div id="ruffle-container">
+                <div style="color: #666; text-align: center;">
+                    <p style="font-size: 48px; margin-bottom: 10px;">📽️</p>
+                    <p>Select a movie and SWF file to begin testing</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📋 Screenshot Capture Instructions</h3>
+            <ul>
+                <li>Navigate through all interactive elements systematically</li>
+                <li>Capture: landing screen, menus, hover states, sub-pages, animations</li>
+                <li>Save screenshots to: <code>legacy/movie-websites/[slug]/ruffle/</code></li>
+                <li>Naming: <code>[slug]_[section]_[state]_[number].png</code></li>
+                <li><strong>Screenshot shortcuts:</strong> macOS: Cmd+Shift+4 | Windows: Win+Shift+S</li>
+                <li>See <code>PHASE_3.2.3_RUFFLE_CAPTURE_GUIDE.md</code> for full methodology</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        const swfFiles = {
+            'absurdistan': [
+                'absurdistan/absurdistan.swf',
+                'absurdistan/player.swf',
+                'absurdistan/index.html'
+            ],
+            'baikonur': [
+                'baikonur/de/template/global/jwplayer/player-licensed.swf'
+            ],
+            'behindthecouch': [
+                'behindthecouch/index.html (Check for SWF)'
+            ],
+            'quatsch': [
+                'quatsch/index.html'
+            ],
+            'the-bra': [
+                'the-bra/index.html (Check for SWF)'
+            ],
+            'torzumhimmel': [
+                'torzumhimmel/torzumhimmel.swf',
+                'torzumhimmel/torzumhimmel_en.swf'
+            ],
+            'tuvalu': [
+                'tuvalu/de/intro.swf',
+                'tuvalu/en/intro.swf',
+                'tuvalu/index.html'
+            ],
+            'vom-lokfuehrer-der-die-liebe-suchte': [
+                'vom-lokfuehrer-der-die-liebe-suchte/index.html'
+            ]
+        };
+        
+        let currentSWFPath = '';
+        
+        document.getElementById('movie-select').addEventListener('change', function(e) {
+            const movie = e.target.value;
+            const swfSelect = document.getElementById('swf-select');
+            
+            swfSelect.innerHTML = '<option value="">-- Select SWF file --</option>';
+            
+            if (movie && swfFiles[movie]) {
+                swfFiles[movie].forEach(file => {
+                    const option = document.createElement('option');
+                    option.value = file;
+                    option.textContent = file.split('/').pop();
+                    swfSelect.appendChild(option);
+                });
+                swfSelect.disabled = false;
+            } else {
+                swfSelect.disabled = true;
+            }
+            
+            clearStatus();
+        });
+        
+        function loadSWF() {
+            const customPath = document.getElementById('custom-path').value;
+            const swfSelect = document.getElementById('swf-select').value;
+            
+            const path = customPath || swfSelect;
+            
+            if (!path) {
+                showStatus('Please select or enter a SWF path', 'error');
+                return;
+            }
+            
+            currentSWFPath = path;
+            
+            if (path.endsWith('.html')) {
+                window.open(path, '_blank');
+                showStatus('Opening HTML file in new tab', 'success');
+                return;
+            }
+            
+            if (!path.endsWith('.swf')) {
+                showStatus('File must be a .swf or .html file', 'error');
+                return;
+            }
+            
+            const container = document.getElementById('ruffle-container');
+            container.innerHTML = '';
+            
+            const player = document.createElement('ruffle-player');
+            player.setAttribute('src', path);
+            container.appendChild(player);
+            
+            showStatus(`Loading: ${path}`, 'success');
+        }
+        
+        function reloadSWF() {
+            if (currentSWFPath) {
+                const customInput = document.getElementById('custom-path');
+                customInput.value = currentSWFPath;
+                loadSWF();
+            } else {
+                showStatus('No SWF loaded yet', 'error');
+            }
+        }
+        
+        function clearViewer() {
+            const container = document.getElementById('ruffle-container');
+            container.innerHTML = `
+                <div style="color: #666; text-align: center;">
+                    <p style="font-size: 48px; margin-bottom: 10px;">📽️</p>
+                    <p>Select a movie and SWF file to begin testing</p>
+                </div>
+            `;
+            currentSWFPath = '';
+            clearStatus();
+        }
+        
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+        
+        function clearStatus() {
+            const status = document.getElementById('status');
+            status.className = 'status';
+        }
+    </script>
+</body>
+</html>
