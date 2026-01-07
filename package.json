@@ -31,6 +31,8 @@
     "@ruffle-rs/ruffle": "^0.2.0-nightly.2026.1.7",
     "@tailwindcss/cli": "^4.0.0",
     "@tailwindcss/postcss": "^4.1.18",
+    "glob": "^13.0.0",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.14.2",
     "npm-run-all": "^4.1.5",
     "playwright": "^1.57.0",
