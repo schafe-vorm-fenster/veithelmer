@@ -5,6 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i src/css/main.css -o _site/css/main.css --minify",
+    "build:11ty": "npx @11ty/eleventy",
+    "build": "npm run build:css && npm run build:11ty",
+    "watch:css": "npx tailwindcss -i src/css/main.css -o _site/css/main.css --watch",
+    "watch:11ty": "npx @11ty/eleventy --serve",
+    "dev": "npm-run-all --parallel watch:*",
+    "start": "npm run dev",
     "kanban:start": "./scripts/start-services.sh",
     "kanban:kill": "./scripts/kill-services.sh",
     "kanban:restart": "pnpm kanban:kill && pnpm kanban:start",
@@ -22,5 +29,14 @@
     "url": "https://github.com/schafe-vorm-fenster/veithelmer/issues"
   },
   "homepage": "https://github.com/schafe-vorm-fenster/veithelmer#readme",
-  "packageManager": "pnpm@10.27.0"
+  "packageManager": "pnpm@10.27.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@ruffle-rs/ruffle": "^0.2.0-nightly.2026.1.7",
+    "autoprefixer": "^10.4.23",
+    "gsap": "^3.14.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
 }
