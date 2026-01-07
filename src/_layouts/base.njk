@@ -1,17 +1,66 @@
 <!DOCTYPE html>
-<html lang="{{ locale or 'en' }}">
+<html lang="{{ locale or 'en' }}" class="bg-black text-white">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or "Veithelmer" }}</title>
-  <meta name="description" content="{{ description or '' }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  {# Primary Meta Tags #}
+  <title>{{ title | default("Veit Helmer - Filmmaker") }}</title>
+  <meta name="title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
+  <meta name="description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker known for Tuvalu, Baikonur, and The Bra.") }}">
+  <meta name="author" content="Veit Helmer">
+  <meta name="keywords" content="{{ keywords | default("Veit Helmer, filmmaker, director, Tuvalu, Baikonur, The Bra, cinema, film") }}">
+  
+  {# Open Graph / Facebook #}
+  <meta property="og:type" content="{{ ogType | default("website") }}">
+  <meta property="og:url" content="{{ canonicalUrl | default("https://veithelmer.com" + page.url) }}">
+  <meta property="og:title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
+  <meta property="og:description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker.") }}">
+  <meta property="og:image" content="{{ ogImage | default("/assets/images/veithelmer-logo.jpg") }}">
+  <meta property="og:locale" content="{{ locale | default("en_US") }}">
+  <meta property="og:site_name" content="Veit Helmer">
+  
+  {# Twitter Card #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ canonicalUrl | default("https://veithelmer.com" + page.url) }}">
+  <meta name="twitter:title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
+  <meta name="twitter:description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker.") }}">
+  <meta name="twitter:image" content="{{ ogImage | default("/assets/images/veithelmer-logo.jpg") }}">
+  
+  {# Canonical URL #}
+  <link rel="canonical" href="{{ canonicalUrl | default("https://veithelmer.com" + page.url) }}">
+  
+  {# Favicon - Using logo as temporary favicon #}
+  <link rel="icon" type="image/jpeg" href="/assets/images/veithelmer-logo.jpg">
+  
+  {# Stylesheets #}
   <link rel="stylesheet" href="/css/main.css">
+  
+  {# Preload critical assets #}
+  <link rel="preload" href="/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  
+  {# Additional meta tags #}
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  
+  {# Extra head content from child templates #}
+  {% block head %}{% endblock %}
 </head>
-<body>
-  <div id="app" class="min-h-screen">
+<body class="antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black">
+    Skip to main content
+  </a>
+  
+  <div id="app" class="min-h-screen flex flex-col">
     {{ content | safe }}
   </div>
   
+  {# JavaScript #}
   <script type="module" src="/js/main.js"></script>
+  
+  {# Extra scripts from child templates #}
+  {% block scripts %}{% endblock %}
 </body>
 </html>

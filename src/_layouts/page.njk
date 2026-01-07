@@ -2,20 +2,29 @@
 layout: base.njk
 ---
 
-<header class="p-8 border-b border-white/10">
-  <nav class="container mx-auto max-w-6xl">
+<header role="banner" class="p-8 border-b border-white/10">
+  <nav role="navigation" aria-label="Main navigation" class="container mx-auto max-w-6xl">
     <div class="flex items-center justify-between">
-      <a href="/" class="no-underline">
-        <h1 class="text-3xl font-bold tracking-tight hover:opacity-80 transition-opacity">VEIT HELMER</h1>
+      <a href="/" class="no-underline" aria-label="Veit Helmer - Home">
+        <h1 class="text-3xl font-bold tracking-tight hover:opacity-80 transition-opacity duration-200">VEIT HELMER</h1>
       </a>
+      {# Navigation menu will be added in future phases #}
+      <div class="flex items-center gap-6" aria-label="Site navigation">
+        {% block navigation %}{% endblock %}
+      </div>
     </div>
   </nav>
 </header>
 
-<main class="container mx-auto max-w-6xl px-6 py-12">
-  {{ content | safe }}
+<main id="main-content" role="main" class="container mx-auto max-w-6xl px-6 py-12 flex-grow">
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
 </main>
 
-<footer class="p-8 mt-16 border-t border-white/10 text-center text-sm opacity-60">
-  <p>&copy; {{ year or "2026" }} Veit Helmer. All rights reserved.</p>
+<footer role="contentinfo" class="p-8 mt-16 border-t border-white/10 text-center text-sm opacity-60">
+  <div class="container mx-auto max-w-6xl">
+    <p>&copy; {{ year | default(2026) }} Veit Helmer. All rights reserved.</p>
+    {% block footerContent %}{% endblock %}
+  </div>
 </footer>
