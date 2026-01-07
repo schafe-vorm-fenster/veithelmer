@@ -41,6 +41,7 @@ crew:
   - role: Musik
     name: Cherilyn MacNeil, FM Einheit, Ingfried Hoffmann, Lars Löhn, Malcolm Arison, Pit Baumgartner, Shantel
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Film-Website
     url: /movie-websites/quatsch/index.html

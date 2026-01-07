@@ -35,6 +35,7 @@ crew:
   - role: Original Music
     name: Cyril Morin
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Movie Website
     url: /movie-websites/the-bra/html/index.html

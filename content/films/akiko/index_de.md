@@ -31,6 +31,7 @@ crew:
   - role: Kamera
     name: Andrés Aguiló
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 Der junge Affe Akiko entkommt aus dem Zoo und begibt sich auf eine abenteuerliche Reise durch die Stadt, wo er auf unterschiedlichste Tiere trifft. Gemeinsam helfen sie Akiko bei seiner Mission, seine Familie wiederzufinden.
 

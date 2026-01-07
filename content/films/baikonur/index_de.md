@@ -24,6 +24,7 @@ crew:
   - role: Montage
     name: Vincent Assmann
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Film-Website
     url: /movie-websites/baikonur/de/index.html

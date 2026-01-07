@@ -35,6 +35,7 @@ crew:
   - role: Originalmusik
     name: Cyril Morin
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Film-Website
     url: /movie-websites/vom-lokfuehrer-der-die-liebe-suchte/index.html

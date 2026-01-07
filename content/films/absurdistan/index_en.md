@@ -39,6 +39,7 @@ crew:
   - role: Production Design
     name: Erwin Prib
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 external_links:
   - name: Movie Website
     url: /movie-websites/absurdistan/index.html

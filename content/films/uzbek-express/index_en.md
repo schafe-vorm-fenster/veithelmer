@@ -19,5 +19,6 @@ crew:
   - role: Sound Design
     name: Martin Frühmorgen
 poster_image: poster.jpg
+trailer_video: trailer.mp4
 ---
 Passengers rush to the express train. The sight of a couple locked in an intimate kiss inspires the engineer to abandon the train and to make a fundamental change in his life ...
