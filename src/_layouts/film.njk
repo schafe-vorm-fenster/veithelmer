@@ -2,6 +2,25 @@
 layout: page.njk
 ---
 
+{% block head %}
+{# Schema.org Movie structured data for Rich Snippets #}
+<script type="application/ld+json">
+{{ {
+  title: title,
+  description: description,
+  director: director,
+  release_year: release_year,
+  duration: duration,
+  country: country,
+  cast: cast,
+  poster_image: poster_image,
+  trailer_video: trailer_video,
+  trailer_poster: trailer_poster,
+  awards: awards
+} | generateMovieSchema(page) | safe }}
+</script>
+{% endblock %}
+
 {# Hero Section: Video Player or Poster #}
 <section class="hero-section -mx-6 -mt-12 mb-12" aria-label="Film hero">
   <div class="relative w-full bg-brand-darkgray" style="aspect-ratio: 16/9;">
