@@ -40,6 +40,7 @@ crew:
     name: Erwin Prib
 poster_image: poster.jpg
 trailer_video: trailer.mp4
+trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
     url: /movie-websites/absurdistan/index.html

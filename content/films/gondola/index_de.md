@@ -29,6 +29,7 @@ crew:
     name: jip film & verleih
 poster_image: poster.jpg
 trailer_video: trailer.mp4
+trailer_poster: trailer.jpg
 ---
 In den Bergen Georgiens verbindet eine Seilbahn ein abgelegenes Dorf mit der Stadt im Tal. Iva arbeitet als Seilbahnschaffnerin an der oberen Station, während Nino die Gondel von der unteren Station aus bedient. Alle halbe Stunde kreuzen sich ihre Kabinen auf halber Strecke und bieten kurze Momente der Verbindung.
 

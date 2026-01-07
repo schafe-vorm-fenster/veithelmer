@@ -35,6 +35,7 @@ crew:
     name: Jürgen Knieper
 poster_image: poster.jpg
 trailer_video: trailer.mp4
+trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
     url: /movie-websites/tuvalu/de/index.html

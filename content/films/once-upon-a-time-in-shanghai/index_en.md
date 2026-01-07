@@ -15,6 +15,7 @@ crew:
     name: Felix Leiberg
 poster_image: poster.jpg
 trailer_video: trailer.mp4
+trailer_poster: trailer.jpg
 ---
 ONCE UPON A TIME IN SHANGHAI documents a vanishing world: a densely populated neighborhood in Baku, Azerbaijan, known locally as "Shanghai," where the railway tracks pass mere meters from residential buildings. Here, life takes place in the intimate space between home and train—laundry hanging across the tracks, children playing on the rails, and neighbors socializing in the path of passing locomotives.
 

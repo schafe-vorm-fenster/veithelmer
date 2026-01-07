@@ -289,3 +289,76 @@ Example entry:
 Created comprehensive guide: `project-management/phase-4-2-2-transcode-guide.md`
 
 **Phase Status**: ✅ Complete - All legacy videos transcoded to H.264 MP4
+
+## Phase 5.1.7: Final Video Standardization & Integration
+
+[2026-01-07T11:33:19.807Z] === Phase 5.1.7: Final Video Standardization & Integration ===
+[2026-01-07T11:33:19.810Z] Started at: 2026-01-07T11:33:19.810Z
+[2026-01-07T11:33:19.810Z] 
+[2026-01-07T11:33:19.810Z] Step 1: Collecting all valid MP4 files...
+[2026-01-07T11:33:19.810Z] Found 11 trailer.mp4 files
+[2026-01-07T11:33:19.810Z] 
+[2026-01-07T11:33:19.810Z] Step 2: Generating poster frames from videos...
+[2026-01-07T11:33:19.810Z]   → Generating poster for absurdistan...
+[2026-01-07T11:33:20.000Z]   ✓ Generated absurdistan/trailer.jpg
+[2026-01-07T11:33:20.000Z]   → Generating poster for akiko...
+[2026-01-07T11:33:20.038Z]   ✓ Generated akiko/trailer.jpg
+[2026-01-07T11:33:20.038Z]   → Generating poster for baikonur...
+[2026-01-07T11:33:20.076Z]   ✓ Generated baikonur/trailer.jpg
+[2026-01-07T11:33:20.077Z]   → Generating poster for caspian-bride...
+[2026-01-07T11:33:20.118Z]   ✓ Generated caspian-bride/trailer.jpg
+[2026-01-07T11:33:20.118Z]   → Generating poster for fiddlesticks...
+[2026-01-07T11:33:20.170Z]   ✓ Generated fiddlesticks/trailer.jpg
+[2026-01-07T11:33:20.170Z]   → Generating poster for gate-to-heaven...
+[2026-01-07T11:33:20.207Z]   ✓ Generated gate-to-heaven/trailer.jpg
+[2026-01-07T11:33:20.207Z]   → Generating poster for gondola...
+[2026-01-07T11:33:20.249Z]   ✓ Generated gondola/trailer.jpg
+[2026-01-07T11:33:20.249Z]   → Generating poster for once-upon-a-time-in-shanghai...
+[2026-01-07T11:33:20.286Z]   ✓ Generated once-upon-a-time-in-shanghai/trailer.jpg
+[2026-01-07T11:33:20.286Z]   → Generating poster for the-bra...
+[2026-01-07T11:33:20.327Z]   ✓ Generated the-bra/trailer.jpg
+[2026-01-07T11:33:20.327Z]   → Generating poster for tuvalu...
+[2026-01-07T11:33:20.365Z]   ✓ Generated tuvalu/trailer.jpg
+[2026-01-07T11:33:20.365Z]   → Generating poster for uzbek-express...
+[2026-01-07T11:33:20.406Z]   ✓ Generated uzbek-express/trailer.jpg
+[2026-01-07T11:33:20.406Z] 
+[2026-01-07T11:33:20.406Z] Poster generation complete: 11 generated, 0 skipped
+[2026-01-07T11:33:20.406Z] 
+[2026-01-07T11:33:20.406Z] Step 3: Updating frontmatter in markdown files...
+[2026-01-07T11:33:20.407Z]   ✓ Added trailer_poster to absurdistan/index_de.md
+[2026-01-07T11:33:20.407Z]   ✓ Added trailer_poster to absurdistan/index_en.md
+[2026-01-07T11:33:20.407Z]   ✓ Added trailer_poster to akiko/index_de.md
+[2026-01-07T11:33:20.407Z]   ✓ Added trailer_poster to akiko/index_en.md
+[2026-01-07T11:33:20.409Z]   ✓ Added trailer_poster to baikonur/index_de.md
+[2026-01-07T11:33:20.409Z]   ✓ Added trailer_poster to baikonur/index_en.md
+[2026-01-07T11:33:20.409Z]   ✓ Added trailer_poster to caspian-bride/index_de.md
+[2026-01-07T11:33:20.409Z]   ✓ Added trailer_poster to caspian-bride/index_en.md
+[2026-01-07T11:33:20.409Z]   ✓ Added trailer_poster to fiddlesticks/index_de.md
+[2026-01-07T11:33:20.410Z]   ✓ Added trailer_poster to fiddlesticks/index_en.md
+[2026-01-07T11:33:20.410Z]   ✓ Added trailer_poster to gate-to-heaven/index_de.md
+[2026-01-07T11:33:20.410Z]   ✓ Added trailer_poster to gate-to-heaven/index_en.md
+[2026-01-07T11:33:20.411Z]   ✓ Added trailer_poster to gondola/index_de.md
+[2026-01-07T11:33:20.411Z]   ✓ Added trailer_poster to gondola/index_en.md
+[2026-01-07T11:33:20.411Z]   ✓ Added trailer_poster to once-upon-a-time-in-shanghai/index_de.md
+[2026-01-07T11:33:20.411Z]   ✓ Added trailer_poster to once-upon-a-time-in-shanghai/index_en.md
+[2026-01-07T11:33:20.411Z]   ✓ Added trailer_poster to the-bra/index_de.md
+[2026-01-07T11:33:20.411Z]   ✓ Added trailer_poster to the-bra/index_en.md
+[2026-01-07T11:33:20.412Z]   ✓ Added trailer_poster to tuvalu/index_de.md
+[2026-01-07T11:33:20.412Z]   ✓ Added trailer_poster to tuvalu/index_en.md
+[2026-01-07T11:33:20.412Z]   ✓ Added trailer_poster to uzbek-express/index_de.md
+[2026-01-07T11:33:20.412Z]   ✓ Added trailer_poster to uzbek-express/index_en.md
+[2026-01-07T11:33:20.412Z] 
+[2026-01-07T11:33:20.412Z] Frontmatter updates complete: 22 files updated
+[2026-01-07T11:33:20.412Z] 
+[2026-01-07T11:33:20.412Z] === Summary ===
+[2026-01-07T11:33:20.412Z] Total films processed: 11
+[2026-01-07T11:33:20.412Z] Poster frames generated: 11
+[2026-01-07T11:33:20.412Z] Poster frames skipped: 0
+[2026-01-07T11:33:20.412Z] Frontmatter files updated: 22
+[2026-01-07T11:33:20.412Z] 
+[2026-01-07T11:33:20.412Z] ✅ Phase 5.1.7 Complete!
+[2026-01-07T11:33:20.412Z] 
+[2026-01-07T11:33:20.412Z] File structure achieved:
+[2026-01-07T11:33:20.412Z]   content/films/[slug]/trailer.mp4
+[2026-01-07T11:33:20.412Z]   content/films/[slug]/trailer.jpg (poster frame)
+[2026-01-07T11:33:20.412Z]   content/films/[slug]/index_*.md (with trailer_video: trailer.mp4)
