@@ -1,0 +1,87 @@
+{# 
+  Button Components
+  Phase 6.2.2: Minimalist Icon-Driven Controls
+  
+  Monochrome, icon-driven button styles
+#}
+
+{# 
+  Icon Button
+  @param {string} icon - Icon name/SVG path
+  @param {string} [label] - Accessible label
+  @param {string} [url] - Link URL (if link, not button)
+  @param {string} [size] - Size variant: 'sm', 'md', 'lg' (default: 'md')
+#}
+{% macro iconButton(icon, label, url, size='md') %}
+  {% set sizeClasses = {
+    'sm': 'w-8 h-8 text-sm',
+    'md': 'w-10 h-10 text-base',
+    'lg': 'w-12 h-12 text-lg'
+  } %}
+  
+  {% set baseClasses = "inline-flex items-center justify-center border border-white/20 bg-black text-white hover:bg-white hover:text-black transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black" %}
+  
+  {% if url %}
+    <a 
+      href="{{ url }}" 
+      class="{{ baseClasses }} {{ sizeClasses[size] }} no-underline"
+      aria-label="{{ label }}"
+      title="{{ label }}"
+    >
+      {{ icon | safe }}
+    </a>
+  {% else %}
+    <button 
+      type="button"
+      class="{{ baseClasses }} {{ sizeClasses[size] }}"
+      aria-label="{{ label }}"
+      title="{{ label }}"
+    >
+      {{ icon | safe }}
+    </button>
+  {% endif %}
+{% endmacro %}
+
+{# 
+  Arrow Button (Right Arrow)
+  Common use case for navigation
+#}
+{% macro arrowButton(url, label='View more', direction='right') %}
+  {% set arrowSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' if direction == 'right' else '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>' %}
+  
+  {{ iconButton(arrowSVG, label, url) }}
+{% endmacro %}
+
+{# 
+  Play Button
+  For video/trailer links
+#}
+{% macro playButton(url, label='Play video') %}
+  {% set playSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>' %}
+  
+  {{ iconButton(playSVG, label, url, 'lg') }}
+{% endmacro %}
+
+{# 
+  Text Button
+  Minimal text-based button with optional icon
+#}
+{% macro textButton(text, url, icon='') %}
+  <a 
+    href="{{ url }}" 
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider border border-white/20 hover:bg-white hover:text-black transition-all duration-200 ease-out no-underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+  >
+    {% if icon %}{{ icon | safe }}{% endif %}
+    <span>{{ text }}</span>
+  </a>
+{% endmacro %}
+
+{# 
+  Close Button
+  For modals/overlays
+#}
+{% macro closeButton(label='Close') %}
+  {% set closeSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' %}
+  
+  {{ iconButton(closeSVG, label) }}
+{% endmacro %}

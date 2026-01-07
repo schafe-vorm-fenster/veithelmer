@@ -1,0 +1,59 @@
+{# 
+  Language Toggle Component
+  Phase 6.2.2: Bilingual Site Support
+  
+  @param {string} currentLang - Current language code (de or en)
+  @param {string} [currentPath] - Current page path for language switching
+#}
+
+{% macro languageToggle(currentLang='en', currentPath='/') %}
+<nav class="language-toggle" aria-label="Language selection">
+  <ul class="flex items-center gap-1 text-sm font-bold uppercase">
+    <li>
+      <a 
+        href="/de{{ currentPath }}"
+        class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline {{ 'text-white bg-white/10' if currentLang == 'de' else 'text-white/60 hover:text-white hover:bg-white/5' }}"
+        aria-label="Deutsch"
+        {% if currentLang == 'de' %}aria-current="true"{% endif %}
+      >
+        DE
+      </a>
+    </li>
+    <li class="text-white/30">|</li>
+    <li>
+      <a 
+        href="/en{{ currentPath }}"
+        class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline {{ 'text-white bg-white/10' if currentLang == 'en' else 'text-white/60 hover:text-white hover:bg-white/5' }}"
+        aria-label="English"
+        {% if currentLang == 'en' %}aria-current="true"{% endif %}
+      >
+        EN
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endmacro %}
+
+{# 
+  Compact Language Toggle
+  For use in header or tight spaces
+#}
+{% macro languageToggleCompact(currentLang='en') %}
+<div class="language-toggle-compact inline-flex items-center gap-2 text-xs font-bold uppercase">
+  <a 
+    href="/de/"
+    class="transition-opacity duration-200 no-underline {{ 'opacity-100' if currentLang == 'de' else 'opacity-40 hover:opacity-70' }}"
+    aria-label="Deutsch"
+  >
+    DE
+  </a>
+  <span class="opacity-30">/</span>
+  <a 
+    href="/en/"
+    class="transition-opacity duration-200 no-underline {{ 'opacity-100' if currentLang == 'en' else 'opacity-40 hover:opacity-70' }}"
+    aria-label="English"
+  >
+    EN
+  </a>
+</div>
+{% endmacro %}
