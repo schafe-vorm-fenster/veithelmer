@@ -30,10 +30,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/js");
   
-  // Copy film assets preserving directory structure
-  eleventyConfig.addPassthroughCopy("content/films/**/poster.jpg");
-  eleventyConfig.addPassthroughCopy("content/films/**/trailer.mp4");
-  eleventyConfig.addPassthroughCopy("content/films/**/trailer.jpg");
+  // Passthrough copy for film assets (posters, trailers, images)
+  eleventyConfig.addPassthroughCopy({
+    "content/films": "assets/films"
+  });
   
   // Films collection (all locales)
   eleventyConfig.addCollection("films", function(collectionApi) {
