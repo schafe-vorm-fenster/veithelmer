@@ -35,6 +35,14 @@ module.exports = function(eleventyConfig) {
     "content/films": "assets/films"
   });
   
+  // Passthrough copy for film microsites
+  eleventyConfig.addPassthroughCopy({
+    "content/films/the-bra/site": "movie-websites/the-bra"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/site": "movie-websites/gate-to-heaven"
+  });
+  
   // Films collection (all locales)
   eleventyConfig.addCollection("films", function(collectionApi) {
     return collectionApi.getFilteredByGlob("content/films/*/index_*.md");
@@ -245,7 +253,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("scripts/**");
   eleventyConfig.ignores.add("**/TRAILER_SOURCE.md");
   eleventyConfig.ignores.add("**/POSTER_SOURCES.md");
-  eleventyConfig.ignores.add("**/site/**");
+  eleventyConfig.ignores.add("content/films/*/site/**");
   
   // Set input/output directories
   return {
