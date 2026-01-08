@@ -33,20 +33,20 @@ layout: page.njk
       {# Priority 1: Video Player #}
       <video 
         class="w-full h-full object-cover"
-        poster="{{ '/content/films/' + filmSlug + '/' + (trailer_poster or poster_image) if trailer_poster or poster_image else '' }}"
+        poster="{{ '/assets/films/' + filmSlug + '/' + (trailer_poster or poster_image) if trailer_poster or poster_image else '' }}"
         autoplay
         muted
         loop
         playsinline
         preload="auto"
       >
-        <source src="{{ '/content/films/' + filmSlug + '/' + trailer_video }}" type="video/mp4">
+        <source src="{{ '/assets/films/' + filmSlug + '/' + trailer_video }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% elif poster_image %}
       {# Priority 2: Poster Image #}
       <img 
-        src="{{ '/content/films/' + filmSlug + '/' + poster_image }}" 
+        src="{{ '/assets/films/' + filmSlug + '/' + poster_image }}" 
         alt="{{ title }}"
         class="w-full h-full object-cover"
       />
