@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
     
     // Run PostCSS with Tailwind v4
     try {
-      execSync(`npx postcss ${inputCss} -o ${outputCss} --verbose`, {
+      execSync(`npx postcss "${inputCss}" -o "${outputCss}" --verbose`, {
         stdio: 'inherit'
       });
       console.log('✅ CSS processed with Tailwind v4 via PostCSS');
