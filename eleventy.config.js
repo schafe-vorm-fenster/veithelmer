@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
   });
   
   // Passthrough copy for static assets
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   
   // Passthrough copy for film assets (posters, trailers, images)
