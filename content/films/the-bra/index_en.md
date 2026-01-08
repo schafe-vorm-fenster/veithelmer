@@ -39,7 +39,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
-    url: /movie-websites/the-bra/html/index.html
+    url: /movie-websites/the-bra/index.html
 ---
 A freight train rolls through a vast grassy landscape that stretches along the Caucasian mountains. At the wheel: Nurlan, the train driver. Day in, day out, he steers his train through a densely populated suburb of Baku, where the tracks are so close to the houses that Nurlan practically drives through the inhabitants' anterooms and gardens.
 
