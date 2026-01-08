@@ -22,10 +22,11 @@ permalink: /en/
       <div class="flex gap-6 w-max">
         {% for film in categorizedFilms.feature %}
         <div class="w-80 flex-shrink-0">
+          {% set filmSlug = film.filePathStem.split('/').slice(-2)[0] %}
           {{ filmTile(
             title=film.data.title,
             year=film.data.release_year,
-            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            image="/assets/films/" + filmSlug + "/" + film.data.poster_image,
             url=film.url,
             category="Feature"
           ) }}
@@ -45,10 +46,11 @@ permalink: /en/
       <div class="flex gap-6 w-max">
         {% for film in categorizedFilms.documentary %}
         <div class="w-80 flex-shrink-0">
+          {% set filmSlug = film.filePathStem.split('/').slice(-2)[0] %}
           {{ filmTile(
             title=film.data.title,
             year=film.data.release_year,
-            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            image="/assets/films/" + filmSlug + "/" + film.data.poster_image,
             url=film.url,
             category="Documentary"
           ) }}
@@ -68,10 +70,11 @@ permalink: /en/
       <div class="flex gap-6 w-max">
         {% for film in categorizedFilms.short %}
         <div class="w-80 flex-shrink-0">
+          {% set filmSlug = film.filePathStem.split('/').slice(-2)[0] %}
           {{ filmTile(
             title=film.data.title,
             year=film.data.release_year,
-            image="/assets/films/" + film.fileSlug + "/" + film.data.poster_image,
+            image="/assets/films/" + filmSlug + "/" + film.data.poster_image,
             url=film.url,
             category="Short"
           ) }}
