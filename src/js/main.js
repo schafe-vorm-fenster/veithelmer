@@ -11,6 +11,9 @@
 // Video Player - Phase 6.2.3
 import { initVideoPlayers } from './videoPlayer.js';
 
+// Horizontal Scroll Navigation
+import { initHorizontalScrollNav } from './horizontalScrollNav.js';
+
 // GSAP Hook - Import and initialize when needed
 let gsap = null;
 
@@ -40,6 +43,9 @@ export async function initRuffle() {
 document.addEventListener('DOMContentLoaded', async () => {
   // Initialize video players (Phase 6.2.3)
   initVideoPlayers();
+  
+  // Initialize horizontal scroll navigation
+  initHorizontalScrollNav();
   
   // Check for Flash/SWF embeds
   const flashElements = document.querySelectorAll('embed[type="application/x-shockwave-flash"], object[type="application/x-shockwave-flash"]');
