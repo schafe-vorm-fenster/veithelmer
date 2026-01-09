@@ -1,7 +1,10 @@
 ---
+layout: content.njk
 title: Biografie
 image: portrait.jpg
 alt: Veit Helmer, Copyright by Boryana Pandova
+locale: de
+permalink: /de/biography/
 ---
 
 Veit Helmer drehte seinen ersten Film im Alter von 14 Jahren.

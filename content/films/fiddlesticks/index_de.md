@@ -1,6 +1,7 @@
 ---
 title: Quatsch und die Nasenbärbande
 type: film
+category: feature
 language: de
 description: Bullerbü war gestern, jetzt kommt Bollersdorf! Die Nasenbärbande und ihr pfiffiger Nasenbär Quatsch wehren sich gegen die Konsumforscher, die ihren Ort als Durchschnitts-Testmarkt missbrauchen wollen.
 director: Veit Helmer

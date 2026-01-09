@@ -24,7 +24,7 @@ let gsap = null;
 
 export async function initGSAP() {
   if (!gsap) {
-    const { gsap: gsapCore } = await import('gsap');
+    const { gsap: gsapCore } = await import('https://cdn.skypack.dev/gsap');
     gsap = gsapCore;
     console.log('GSAP initialized');
   }
@@ -36,7 +36,7 @@ let ruffle = null;
 
 export async function initRuffle() {
   if (!ruffle) {
-    const { default: RufflePlayer } = await import('@ruffle-rs/ruffle');
+    const { default: RufflePlayer } = await import('https://cdn.skypack.dev/@ruffle-rs/ruffle');
     ruffle = RufflePlayer.newest();
     window.RufflePlayer = ruffle;
     console.log('Ruffle initialized for Flash emulation');
@@ -51,6 +51,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Initialize horizontal scroll navigation
   initHorizontalScrollNav();
+  
+  // Add scroll shadow to navigation
+  const nav = document.getElementById('main-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.5)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    });
+  }
   
   // Initialize burger menu
   initBurgerMenu();

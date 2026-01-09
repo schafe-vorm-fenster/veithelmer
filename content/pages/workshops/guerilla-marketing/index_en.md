@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Guerilla Film Marketing
-image: teaser.jpg
+image: guerilla_film_marketing_mg_1439_kopie.jpg
+language: en
+permalink: /en/workshops/guerilla-marketing/
+tags: workshop
 ---
 
 This one-day workshop is about the international distribution of independent feature films.

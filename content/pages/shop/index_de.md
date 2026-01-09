@@ -1,6 +1,9 @@
 ---
+layout: content.njk
 title: Shop
 image: shop2009.jpg
+locale: de
+permalink: /de/shop/
 ---
 
 ## Spielfilme

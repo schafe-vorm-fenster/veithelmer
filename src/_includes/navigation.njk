@@ -1,13 +1,17 @@
 {% set currentLocale = locale or page | getLocale %}
 {% set alternateLocale = 'de' if currentLocale == 'en' else 'en' %}
 
+{# Hidden checkboxes for menu state (CSS-only approach) #}
+<input type="checkbox" id="menu-toggle-desktop" class="hidden peer/desktop">
+<input type="checkbox" id="menu-toggle-mobile" class="hidden peer/mobile">
+
 {# Sticky Top Navigation #}
-<nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800" role="navigation" aria-label="Main navigation">
-  <div class="container mx-auto max-w-6xl px-6 py-4">
+<nav id="main-nav" class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm transition-shadow duration-300" role="navigation" aria-label="Main navigation">
+  <div class="container mx-auto max-w-6xl px-6 py-6">
     <div class="flex items-center justify-between">
       {# Logo - Left #}
       <a href="{{ '/' + currentLocale + '/' }}" class="no-underline block" aria-label="Veit Helmer - Home">
-        <img src="/assets/images/veithelmer_logo.gif" alt="VEIT HELMER" class="h-8 hover:opacity-80 transition-opacity duration-200">
+        <img src="/assets/images/veithelmer_logo.gif" alt="VEIT HELMER" class="h-6 hover:opacity-80 transition-opacity duration-200">
       </a>
       
       {# Desktop Navigation - Right #}
@@ -17,47 +21,45 @@
         <a href="{{ '/' + currentLocale + '/#shorts' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.shorts' | t(currentLocale) }}</a>
         
         {# Burger Menu Button - Desktop #}
-        <button 
-          id="burger-btn-desktop" 
-          class="flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity"
+        <label 
+          for="menu-toggle-desktop"
+          class="flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
           aria-label="Open menu"
-          aria-expanded="false"
         >
           <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
           <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
           <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
-        </button>
+        </label>
       </div>
 
       {# Mobile Burger Menu Button #}
-      <button 
-        id="burger-btn-mobile" 
-        class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity"
+      <label 
+        for="menu-toggle-mobile"
+        class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
         aria-label="Open menu"
-        aria-expanded="false"
       >
         <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
         <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
         <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
-      </button>
+      </label>
     </div>
   </div>
 </nav>
 
 {# Desktop Burger Menu - Right Panel #}
-<div id="burger-menu-desktop" class="fixed inset-y-0 right-0 w-80 bg-black border-l border-gray-800 transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto hidden lg:block">
+<div class="fixed inset-y-0 right-0 w-[350px] max-w-[90vw] bg-black border-l border-gray-800 translate-x-full peer-checked/desktop:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto hidden lg:block">
   <div class="p-8">
     {# Close Button #}
-    <button 
-      id="close-btn-desktop" 
-      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity"
+    <label 
+      for="menu-toggle-desktop"
+      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
       aria-label="Close menu"
     >
       <span class="sr-only">Close</span>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
-    </button>
+    </label>
 
     {# Pages Section #}
     <div class="mb-8 pt-8">
@@ -86,27 +88,28 @@
         href="{{ page.url | alternateUrl(alternateLocale) }}" 
         class="text-lg font-semibold hover:text-brand-brown transition-colors inline-block"
         hreflang="{{ alternateLocale }}"
+        aria-label="{% if alternateLocale == 'en' %}Switch to English{% else %}Wechseln zu Deutsch{% endif %}"
       >
-        {{ alternateLocale | upper }} — {{ 'nav.switchTo' | t(currentLocale) }} {% if alternateLocale == 'en' %}English{% else %}Deutsch{% endif %}
+        {{ alternateLocale | upper }}
       </a>
     </div>
   </div>
 </div>
 
 {# Mobile Burger Menu - Full Screen #}
-<div id="burger-menu-mobile" class="lg:hidden fixed inset-0 bg-black transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+<div class="lg:hidden fixed inset-0 bg-black translate-x-full peer-checked/mobile:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto">
   <div class="p-8">
     {# Close Button #}
-    <button 
-      id="close-btn-mobile" 
-      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity"
+    <label 
+      for="menu-toggle-mobile"
+      class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer"
       aria-label="Close menu"
     >
       <span class="sr-only">Close</span>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
-    </button>
+    </label>
 
     {# Film Categories Section - Mobile Only #}
     <div class="mb-8 pt-8">
@@ -145,12 +148,13 @@
         href="{{ page.url | alternateUrl(alternateLocale) }}" 
         class="text-lg font-semibold hover:text-brand-brown transition-colors inline-block"
         hreflang="{{ alternateLocale }}"
+        aria-label="{% if alternateLocale == 'en' %}Switch to English{% else %}Wechseln zu Deutsch{% endif %}"
       >
-        {{ alternateLocale | upper }} — {{ 'nav.switchTo' | t(currentLocale) }} {% if alternateLocale == 'en' %}English{% else %}Deutsch{% endif %}
+        {{ alternateLocale | upper }}
       </a>
     </div>
   </div>
 </div>
 
 {# Overlay for desktop menu #}
-<div id="menu-overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 opacity-0"></div>
+<label for="menu-toggle-desktop" class="hidden peer-checked/desktop:block fixed inset-0 bg-black/50 z-40 cursor-pointer"></label>

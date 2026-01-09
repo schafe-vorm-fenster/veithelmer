@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Casting für Schauspieler
-image: teaser.jpg
+image: workshop_2.jpg
+language: de
+permalink: /de/workshops/casting/
+tags: workshop
 ---
 
 Der Workshop richtet sich an Schauspielstudenten und Schauspieler, die noch keine Castingerfahrung haben.

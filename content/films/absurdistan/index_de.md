@@ -1,6 +1,7 @@
 ---
 title: Absurdistan
 type: film
+category: feature
 language: de
 description: Eine ungewöhnliche Liebesgeschichte aus einem abgelegenen Bergdorf, in dem die Frauen in den Sexstreik treten, um die Männer dazu zu bewegen, endlich die Wasserleitung zu reparieren.
 director: Veit Helmer

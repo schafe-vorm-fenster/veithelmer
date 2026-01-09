@@ -1,6 +1,7 @@
 ---
 title: City Lives - Berlin
 type: film
+category: documentary
 language: en
 description: Berlin is changing fast, wrestling with the past in pursuit of its future. This film embarks on a search for the essence of contemporary Berlin – human, exciting, and dynamic.
 director: Veit Helmer

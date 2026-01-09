@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Low Budget Filmproducing
-image: teaser.jpg
+image: workshop_4.jpg
+language: en
+permalink: /en/workshops/low-budget/
+tags: workshop
 ---
 
 The presentation is aimed at production students and young producers just starting out. The presentation will run between one and three days, depending on the subject. 14-18 people may take part in a workshop.

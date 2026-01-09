@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Casting for actors
-image: teaser.jpg
+image: workshop_2.jpg
+language: en
+permalink: /en/workshops/casting/
+tags: workshop
 ---
 
 The workshop is aimed at acting students and actors who as yet have no casting experience.

@@ -1,0 +1,35 @@
+---
+layout: page.njk
+---
+
+{% set currentLocale = locale or language or (page | getLocale) %}
+{% set pageSlug = page.filePathStem.split('/').slice(-2)[0] %}
+{% set isWorkshop = page.filePathStem.includes('/workshops/') and not page.filePathStem.endsWith('/workshops/index_de') and not page.filePathStem.endsWith('/workshops/index_en') %}
+
+{% if image %}
+  {# Two-column layout when image exists #}
+  <div class="grid md:grid-cols-3 gap-12">
+    
+    {# Left Column: Content (2/3 width) #}
+    <div class="md:col-span-2 order-2 md:order-1">
+      <div class="prose prose-invert prose-lg max-w-none leading-relaxed opacity-90">
+        {{ content | safe }}
+      </div>
+    </div>
+    
+    {# Right Column: Image (1/3 width, above content on mobile) #}
+    <aside class="md:col-span-1 order-1 md:order-2">
+      <img 
+        src="{{ '/assets/pages/workshops/' + image if isWorkshop else '/assets/pages/' + pageSlug + '/' + image }}" 
+        alt="{{ title }}"
+        class="w-full h-auto rounded-sm"
+      />
+    </aside>
+    
+  </div>
+{% else %}
+  {# Single column layout when no image #}
+  <div class="max-w-prose-wide">
+    {{ content | safe }}
+  </div>
+{% endif %}

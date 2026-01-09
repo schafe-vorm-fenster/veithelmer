@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Shooting a short film in 7 days
-image: teaser.jpg
+image: workshop_1.jpg
+language: en
+permalink: /en/workshops/7-days/
+tags: workshop
 ---
 
 The workshop is aimed at film students and young filmmakers just starting out. The aim of the workshops is the production of a 35mm short film (5-7 minutes) without dialogue. The workshop will run along the lines of the principle of “learning by doing”. 16-18 people may take part in a workshop.

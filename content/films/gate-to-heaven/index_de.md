@@ -1,6 +1,7 @@
 ---
 title: Tor zum Himmel
 type: film
+category: feature
 language: de
 description: Veit Helmers zweiter Spielfilm, eine amüsante und berührende Geschichte über Menschen, die im Transitbereich des Frankfurter Flughafens leben.
 director: Veit Helmer

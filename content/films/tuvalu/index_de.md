@@ -1,6 +1,7 @@
 ---
 title: Tuvalu
 type: film
+category: feature
 language: de
 description: An einem Ort, weit entfernt von unserer Welt, in einer anderen Zeit ... In einer verlassenen Stadt steht ein verfallenes, opulentes Schwimmbad, in dessen Keller eine alte Maschine stampft. Hier lebt Anton mit seinem blinden Vater Karl.
 director: Veit Helmer

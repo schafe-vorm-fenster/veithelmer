@@ -1,6 +1,9 @@
 ---
+layout: content.njk
 title: Shop
 image: shop2009.jpg
+locale: en
+permalink: /en/shop/
 ---
 
 ## Feature Films
