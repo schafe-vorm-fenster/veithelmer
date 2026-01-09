@@ -6,6 +6,8 @@
  * - GSAP animations
  * - Ruffle Flash emulation
  * - Video Player (Phase 6.2.3)
+ * - Burger Menu
+ * - Horizontal Scroll Navigation
  */
 
 // Video Player - Phase 6.2.3
@@ -13,6 +15,9 @@ import { initVideoPlayers } from './videoPlayer.js';
 
 // Horizontal Scroll Navigation
 import { initHorizontalScrollNav } from './horizontalScrollNav.js';
+
+// Burger Menu
+import { initBurgerMenu } from './burgerMenu.js';
 
 // GSAP Hook - Import and initialize when needed
 let gsap = null;
@@ -46,6 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Initialize horizontal scroll navigation
   initHorizontalScrollNav();
+  
+  // Initialize burger menu
+  initBurgerMenu();
   
   // Check for Flash/SWF embeds
   const flashElements = document.querySelectorAll('embed[type="application/x-shockwave-flash"], object[type="application/x-shockwave-flash"]');

@@ -5,35 +5,7 @@ layout: base.njk
 {% set currentLocale = locale or page | getLocale %}
 {% set alternateLocale = 'de' if currentLocale == 'en' else 'en' %}
 
-{# Sticky Top Navigation #}
-<nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800" role="navigation" aria-label="Main navigation">
-  <div class="container mx-auto max-w-6xl px-6 py-4">
-    <div class="flex items-center justify-between">
-      {# Logo - Left #}
-      <a href="{{ '/' + currentLocale + '/' }}" class="no-underline block" aria-label="Veit Helmer - Home">
-        <img src="/assets/images/veithelmer_logo.gif" alt="VEIT HELMER" class="h-8 hover:opacity-80 transition-opacity duration-200">
-      </a>
-      
-      {# Navigation Links & Language Switcher - Right #}
-      <div class="flex items-center gap-8 text-sm uppercase tracking-wider">
-        <a href="{{ '/' + currentLocale + '/#features' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.features' | t(currentLocale) }}</a>
-        <a href="{{ '/' + currentLocale + '/#documentaries' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.documentaries' | t(currentLocale) }}</a>
-        <a href="{{ '/' + currentLocale + '/#shorts' }}" class="hover:text-brand-brown transition-colors">{{ 'nav.shorts' | t(currentLocale) }}</a>
-        
-        {# Language Switcher #}
-        <span class="text-white/40">|</span>
-        <a 
-          href="{{ page.url | alternateUrl(alternateLocale) }}" 
-          class="font-semibold hover:text-brand-brown transition-colors"
-          hreflang="{{ alternateLocale }}"
-          aria-label="Switch to {{ alternateLocale | upper }}"
-        >
-          {{ alternateLocale | upper }}
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
+{% include "navigation.njk" %}
 
 <main id="main-content" role="main" class="container mx-auto max-w-6xl px-6 py-12 flex-grow">
   {% block content %}
