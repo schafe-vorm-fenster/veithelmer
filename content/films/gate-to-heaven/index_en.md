@@ -37,7 +37,10 @@ poster_image: poster.jpg
 cinema_poster: bild01.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
+full_video_url: https://www.youtube.com/watch?v=b1qW7HEEwf4
 external_links:
+  - name: Watch on YouTube
+    url: https://www.youtube.com/watch?v=b1qW7HEEwf4
   - name: Movie Website
     url: /movie-websites/torzumhimmel/en/index.html
   - name: Microsite

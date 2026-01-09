@@ -22,63 +22,74 @@ export function initHorizontalScrollNav() {
     return;
   }
 
-  containers.forEach(container => {
+  containers.forEach((container, index) => {
     const section = container.closest('section');
     
     if (!section) return;
 
-    // Create buttons with fixed positioning
-    const prevBtn = createButton('prev', '←');
-    const nextBtn = createButton('next', '→');
+    // Give container a unique ID if it doesn't have one
+    if (!container.id) {
+      container.id = `scroll-container-${index}`;
+    }
+
+    // Create wrapper for relative positioning
+    const navWrapper = document.createElement('div');
+    navWrapper.className = 'scroll-nav-wrapper';
+    navWrapper.style.position = 'relative';
     
-    // Append buttons to body for fixed positioning
-    document.body.appendChild(prevBtn);
-    document.body.appendChild(nextBtn);
+    // Create buttons
+    const prevBtn = createButton('prev', '←', container.id);
+    const nextBtn = createButton('next', '→', container.id);
     
-    // Store reference to container on buttons
-    prevBtn.dataset.containerId = container.id || `scroll-container-${Math.random().toString(36).substr(2, 9)}`;
-    nextBtn.dataset.containerId = prevBtn.dataset.containerId;
-    if (!container.id) container.id = prevBtn.dataset.containerId;
+    // Insert wrapper around container
+    container.parentNode.insertBefore(navWrapper, container);
+    navWrapper.appendChild(container);
+    navWrapper.appendChild(prevBtn);
+    navWrapper.appendChild(nextBtn);
     
     // Scroll handler
     const updateButtons = () => {
       const { scrollLeft, scrollWidth, clientWidth } = container;
-      const rect = section.getBoundingClientRect();
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
       
-      if (isVisible) {
-        prevBtn.style.display = 'flex';
-        nextBtn.style.display = 'flex';
-        prevBtn.disabled = scrollLeft <= 0;
-        nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
-      } else {
+      prevBtn.disabled = scrollLeft <= 0;
+      nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
+      
+      // Hide buttons if no overflow
+      if (scrollWidth <= clientWidth) {
         prevBtn.style.display = 'none';
         nextBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
       }
     };
     
     // Scroll by one film tile width (320px + 24px gap)
     const scrollAmount = 344;
     
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
     
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
     
     container.addEventListener('scroll', updateButtons);
-    window.addEventListener('scroll', updateButtons);
     window.addEventListener('resize', updateButtons);
     updateButtons();
   });
 }
 
-function createButton(type, label) {
+function createButton(type, label, containerId) {
   const btn = document.createElement('button');
   btn.className = `scroll-nav-btn scroll-nav-btn-${type}`;
   btn.setAttribute('aria-label', type === 'prev' ? 'Previous' : 'Next');
+  btn.dataset.containerId = containerId;
   btn.textContent = label;
   return btn;
 }

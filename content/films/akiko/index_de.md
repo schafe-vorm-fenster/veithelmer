@@ -31,7 +31,8 @@ crew:
     name: Veit Helmer
   - role: Kamera
     name: Andrés Aguiló
-poster_image: trailer.jpg
+poster_image: poster.jpg
+teaser_poster: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

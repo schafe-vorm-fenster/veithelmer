@@ -46,7 +46,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
-    url: /movie-websites/absurdistan/index.html
+    url: /de/absurdistan/microsite/
 ---
 ABSURDISTAN ist Veit Helmers dritter Spielfilm. Die Idee für den Film basiert auf einem kleinen Zeitungsartikel: Im Jahr 2001 traten die Frauen im türkischen Dorf Sirt in den Streik. Solange die Männer die Wasserleitungen nicht reparierten, weigerten sie sich, Sex zu haben. 
 

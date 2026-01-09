@@ -207,8 +207,12 @@
   }
   
   /* Horizontal Scroll Navigation Arrows */
+  .scroll-nav-wrapper {
+    position: relative;
+  }
+  
   .scroll-nav-btn {
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 3rem;
@@ -224,15 +228,16 @@
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 40;
+    z-index: 10;
+    pointer-events: auto;
   }
   
   .scroll-nav-btn-prev {
-    left: 1rem;
+    left: 0;
   }
   
   .scroll-nav-btn-next {
-    right: 1rem;
+    right: 0;
   }
   
   .scroll-nav-btn:hover:not(:disabled) {
