@@ -41,10 +41,8 @@ full_video_url: https://www.youtube.com/watch?v=b1qW7HEEwf4
 external_links:
   - name: Film ansehen (YouTube)
     url: https://www.youtube.com/watch?v=b1qW7HEEwf4
-  - name: Film-Website
-    url: /movie-websites/torzumhimmel/de/index.html
   - name: Microsite
-    url: /de/gate-to-heaven/site
+    url: /de/gate-to-heaven/microsite/
 ---
 Veit Helmers zweiter Spielfilm "Tor zum Himmel" (mit Udo Kier und Miki Manojlović) entstand 2002 am Flughafen Frankfurt. 
 
