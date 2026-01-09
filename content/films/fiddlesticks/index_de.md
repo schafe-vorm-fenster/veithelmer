@@ -46,7 +46,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
-    url: /movie-websites/quatsch/index.html
+    url: /de/fiddlesticks/microsite/
 ---
 Bullerbü war gestern, jetzt kommt Bollersdorf! 
 

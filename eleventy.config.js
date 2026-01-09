@@ -135,9 +135,40 @@ module.exports = function(eleventyConfig) {
     "content/films/gate-to-heaven/trailer.mp4": "en/gate-to-heaven/microsite/trailer.mp4"
   });
   
-  // After build, copy assets to German version too
+  // Fiddlesticks (Quatsch) microsite - bilingual with shared assets
+  // (Assets are copied in eleventy.after hook below)
+  
+  // After build, copy HTML files and other assets
   eleventyConfig.on('eleventy.after', async () => {
     const fse = require('fs-extra');
+    
+    // Copy German and English HTML versions for Fiddlesticks
+    await fse.copy(
+      'content/films/fiddlesticks/site/de.html',
+      '_site/de/fiddlesticks/microsite/index.html'
+    );
+    
+    await fse.copy(
+      'content/films/fiddlesticks/site/en.html',
+      '_site/en/fiddlesticks/microsite/index.html'
+    );
+    
+    // Copy shared assets to both language versions
+    const sharedAssets = ['imgs', 'vendors', 'downloads', 'examples.css', 'examples.js', 
+                          'jquery.fullPage.css', 'jquery.fullPage.js', 'jquery.fullPage.min.js', 'stylesheet.css'];
+    
+    for (const asset of sharedAssets) {
+      const src = `content/films/fiddlesticks/site/${asset}`;
+      const deDest = `_site/de/fiddlesticks/microsite/${asset}`;
+      const enDest = `_site/en/fiddlesticks/microsite/${asset}`;
+      
+      if (await fse.pathExists(src)) {
+        await fse.copy(src, deDest);
+        await fse.copy(src, enDest);
+      }
+    }
+    
+    console.log('✅ Copied Fiddlesticks bilingual HTML and shared assets');
     
     // Baikonur assets
     const baikonurSrcAssets = path.join(__dirname, 'content/films/baikonur/site/assets');
