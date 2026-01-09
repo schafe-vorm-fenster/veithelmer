@@ -1,6 +1,9 @@
 ---
+layout: content.njk
 title: Werbung
 image: teaser.jpg
+locale: de
+permalink: /de/commercials/
 ---
 
 Veit Helmer hat bei über 30 Werbespots Regie geführt.

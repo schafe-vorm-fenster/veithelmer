@@ -1,6 +1,7 @@
 ---
 title: Tuvalu
 type: film
+category: feature
 language: en
 description: A place, far away from our world, in another time ... The building housing a great, old pool is falling apart. Anton is the young apprentice to the master of the baths.
 director: Veit Helmer

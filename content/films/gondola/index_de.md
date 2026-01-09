@@ -1,6 +1,7 @@
 ---
 title: Gondola
 type: film
+category: feature
 language: de
 description: Eine poetische, dialoglose Romanze über zwei Seilbahnschaffnerinnen in den georgischen Bergen, deren kurze Begegnungen alle halbe Stunde zu einer zarten Liebesgeschichte vor atemberaubender Kulisse erblühen.
 director: Veit Helmer
@@ -27,7 +28,7 @@ crew:
     name: Thomas Holzhausen
   - role: Produktion
     name: jip film & verleih
-poster_image: poster.jpg
+poster_image: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

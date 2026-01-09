@@ -1,6 +1,9 @@
 ---
+layout: content.njk
 title: Imprint
 image: torzumhimmel.jpg
+locale: en
+permalink: /en/legal/imprint/
 ---
 
 Veit Helmer-Filmproduktion

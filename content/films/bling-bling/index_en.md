@@ -1,6 +1,7 @@
 ---
 title: Bling Bling
 type: film
+category: documentary
 language: en
 description: Bling Bling is a filmic diary by three women from Berlin and an authentic inside into the heart of L.A.’s Hip Hop Scene.
 director: Neelesha Barthel, Heike Woosey

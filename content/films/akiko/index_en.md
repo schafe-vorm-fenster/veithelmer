@@ -1,6 +1,7 @@
 ---
 title: Akiko, the Flying Monkey
 type: film
+category: feature
 language: en
 description: A heartwarming family adventure about a young monkey who escapes from the zoo and embarks on an exciting journey through the city, befriending animals along the way in his quest to reunite with his family.
 director: Veit Helmer
@@ -30,7 +31,7 @@ crew:
     name: Veit Helmer
   - role: Cinematography
     name: Andrés Aguiló
-poster_image: poster.jpg
+poster_image: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

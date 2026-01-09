@@ -1,5 +1,6 @@
 ---
 title: Once Upon A Time In Shanghai
+category: short
 type: film
 language: de
 description: Ein intimes dokumentarisches Portrait des Viertels „Schanghai" in Baku, Aserbaidschan—ein einzigartiger Bezirk, in dem die Eisenbahngleise so nah an den Häusern vorbeiführen, dass sich das Leben auf den Schienen selbst abspielt. Das Viertel wurde kurz nach den Dreharbeiten abgerissen.
@@ -13,7 +14,7 @@ crew:
     name: Veit Helmer
   - role: Kamera
     name: Felix Leiberg
-poster_image: poster.jpg
+poster_image: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

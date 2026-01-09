@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Visual Storytelling
-image: teaser.jpg
+image: workshop_3.jpg
+language: de
+permalink: /de/workshops/visual-storytelling/
+tags: workshop
 ---
 
 Der Vortrag wendet sich an Filmstudenten und Nachwuchsfilmemacher. Der Vortrag dauert je nach Umfang zwischen 3 und 6 Stunden. Es können je nach Grösse des Raums und Beschallungstechnik bis zu 200 Zuhörer teilnehmen.

@@ -1,6 +1,7 @@
 ---
 title: Vom Lokführer, der die Liebe suchte...
 type: film
+category: feature
 language: de
 description: Ein Güterzug rollt durch eine weite Graslandschaft... Am Steuer ist Nurlan, der Lokführer. Er findet einen blauen Spitzen-BH an seiner Lok und macht sich auf die Suche nach der Besitzerin.
 director: Veit Helmer
@@ -39,7 +40,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
-    url: /movie-websites/the-bra/index.html
+    url: /de/the-bra/microsite/
 ---
 Ein Güterzug rollt durch eine weite Graslandschaft, die sich vor den kaukasischen Bergen entlangzieht. Am Steuer: Nurlan, der Lokführer. Tagein, tagaus lenkt er seinen Zug durch einen dicht besiedelten Vorort Bakus, in dem die Schienen so dicht an die Häuser grenzen, dass Nurlan quasi durch die Vorzimmer und Gärten der Bewohner fährt. 
 

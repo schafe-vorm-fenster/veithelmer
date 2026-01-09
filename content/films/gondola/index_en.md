@@ -1,6 +1,7 @@
 ---
 title: Gondola
 type: film
+category: feature
 language: en
 description: A poetic, wordless romance about two cable car conductors in the Georgian mountains whose brief encounters every half hour blossom into a tender love story set against breathtaking landscapes.
 director: Veit Helmer
@@ -27,7 +28,7 @@ crew:
     name: Thomas Holzhausen
   - role: Production
     name: jip film & verleih
-poster_image: poster.jpg
+poster_image: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

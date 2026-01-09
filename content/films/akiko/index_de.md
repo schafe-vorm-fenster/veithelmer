@@ -1,6 +1,7 @@
 ---
 title: Akiko, der fliegende Affe
 type: film
+category: feature
 language: de
 description: Ein herzerwärmendes Familienabenteuer über einen jungen Affen, der aus dem Zoo flieht und sich auf eine aufregende Reise durch die Stadt begibt, auf der er Tiere anfreundet, um seine Familie wiederzufinden.
 director: Veit Helmer
@@ -30,7 +31,7 @@ crew:
     name: Veit Helmer
   - role: Kamera
     name: Andrés Aguiló
-poster_image: poster.jpg
+poster_image: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

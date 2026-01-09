@@ -1,6 +1,7 @@
 ---
 title: Baikonur
 type: film
+category: feature
 language: de
 description: „Was vom Himmel fällt, darf man behalten“ ist das Motto der letzten Bewohner eines kleinen Dorfes, nicht weit von der Raumstation Baikonur. Eine poetische Liebesgeschichte zwischen dem kasachischen Dorfbewohner Iskander und einer französischen Weltraumtouristin.
 director: Veit Helmer
@@ -28,7 +29,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
-    url: /movie-websites/baikonur/de/index.html
+    url: /de/baikonur/microsite/
 ---
 „Was vom Himmel fällt, darf man behalten“. Nach diesem Gesetz der kasachischen Steppe sammeln die Bewohner eines kleinen Dorfes, nicht weit von der Raumstation Baikonur, Weltraumschrott.
 

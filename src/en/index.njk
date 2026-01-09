@@ -11,9 +11,7 @@ permalink: /en/
 {# Categorize films by type #}
 {% set categorizedFilms = collections.films_en | categorizeFilms %}
 
-<main id="main-content" class="container mx-auto px-6 pb-20">
-  
-  {# Feature Films Section #}
+{# Feature Films Section #}
   {% if categorizedFilms.feature.length > 0 %}
   <section id="features" class="mb-20 scroll-mt-20">
     <h2 class="text-3xl font-bold mb-8 tracking-tight">{{ 'nav.features' | t(locale) }}</h2>
@@ -83,9 +81,7 @@ permalink: /en/
       </div>
     </div>
   </section>
-  {% endif %}
-  
-</main>
+{% endif %}
 
 <style>
   {# Smooth horizontal scrolling #}

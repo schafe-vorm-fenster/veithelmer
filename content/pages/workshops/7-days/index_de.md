@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Kurzfilm-Dreh in 7 Tagen
-image: teaser.jpg
+image: workshop_1.jpg
+language: de
+permalink: /de/workshops/7-days/
+tags: workshop
 ---
 
 Der Workshop richtet sich an Filmstudenten und Nachwuchsfilmemacher. Ziel des Workshops ist die Produktion eines 35mm-Kurzfilms (5-7 Minuten) ohne Dialog. Der Workshop funktioniert nach dem Prinzip „learning by doing“. Pro Workshop können 16-18 Personen teilnehmen.

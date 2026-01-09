@@ -1,5 +1,6 @@
 ---
 title: City Lives - Berlin
+category: documentary
 description: Berlin befindet sich in ständigem Wandel. Der Film begibt sich auf die Suche nach dem Wesen des zeitgenössischen Berlin – menschlich, aufregend und vielschichtig.
 director: Veit Helmer
 cast:

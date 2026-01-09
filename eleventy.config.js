@@ -35,12 +35,57 @@ module.exports = function(eleventyConfig) {
     "content/films": "assets/films"
   });
   
+  // Passthrough copy for page assets (images)
+  eleventyConfig.addPassthroughCopy({
+    "content/pages": "assets/pages"
+  });
+  
   // Passthrough copy for film microsites
   eleventyConfig.addPassthroughCopy({
     "content/films/the-bra/site": "movie-websites/the-bra"
   });
   eleventyConfig.addPassthroughCopy({
     "content/films/gate-to-heaven/site": "movie-websites/gate-to-heaven"
+  });
+  // Baikonur microsite
+  eleventyConfig.addPassthroughCopy({
+    "content/films/baikonur/site/de": "de/baikonur/microsite"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/baikonur/site/en": "en/baikonur/microsite"
+  });
+  // Copy assets to English version (de will be copied in after hook)
+  eleventyConfig.addPassthroughCopy({
+    "content/films/baikonur/site/assets": "en/baikonur/microsite/assets"
+  });
+  
+  // The Bra microsite
+  eleventyConfig.addPassthroughCopy({
+    "content/films/the-bra/site/de": "de/the-bra/microsite"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/the-bra/site/en": "en/the-bra/microsite"
+  });
+  // Copy assets to English version (de will be copied in after hook)
+  eleventyConfig.addPassthroughCopy({
+    "content/films/the-bra/site/assets": "en/the-bra/microsite/assets"
+  });
+  
+  // After build, copy assets to German version too
+  eleventyConfig.on('eleventy.after', async () => {
+    const fse = require('fs-extra');
+    
+    // Baikonur assets
+    const baikonurSrcAssets = path.join(__dirname, 'content/films/baikonur/site/assets');
+    const baikonurDestAssets = path.join(__dirname, '_site/de/baikonur/microsite/assets');
+    await fse.copy(baikonurSrcAssets, baikonurDestAssets);
+    console.log('✅ Copied Baikonur assets to German microsite');
+    
+    // The Bra assets
+    const braSrcAssets = path.join(__dirname, 'content/films/the-bra/site/assets');
+    const braDestAssets = path.join(__dirname, '_site/de/the-bra/microsite/assets');
+    await fse.copy(braSrcAssets, braDestAssets);
+    console.log('✅ Copied The Bra assets to German microsite');
   });
   
   // Films collection (all locales)
@@ -60,7 +105,24 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => (b.data.release_year || 0) - (a.data.release_year || 0));
   });
   
-  // Filter to categorize films by duration (Feature >60min, Short <=60min)
+  // Workshops collection (all locales)
+  eleventyConfig.addCollection("workshops", function(collectionApi) {
+    return collectionApi.getFilteredByTag("workshop");
+  });
+  
+  // English workshops only
+  eleventyConfig.addCollection("workshops_en", function(collectionApi) {
+    return collectionApi.getFilteredByTag("workshop")
+      .filter(item => item.data.language === 'en');
+  });
+  
+  // German workshops only
+  eleventyConfig.addCollection("workshops_de", function(collectionApi) {
+    return collectionApi.getFilteredByTag("workshop")
+      .filter(item => item.data.language === 'de');
+  });
+  
+  // Filter to categorize films by category field in frontmatter
   eleventyConfig.addFilter("categorizeFilms", function(films) {
     const categories = {
       feature: [],
@@ -69,15 +131,14 @@ module.exports = function(eleventyConfig) {
     };
     
     films.forEach(film => {
-      const duration = film.data.duration || "";
-      const technical = film.data.technical_specs || "";
-      const minutes = parseInt(duration);
+      const category = film.data.category || "";
       
-      if (technical.includes("Documentary") || technical.includes("documentary")) {
+      if (category === "documentary") {
         categories.documentary.push(film);
-      } else if (minutes > 60) {
+      } else if (category === "feature") {
         categories.feature.push(film);
       } else {
+        // Default to short film
         categories.short.push(film);
       }
     });
@@ -253,6 +314,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("scripts/**");
   eleventyConfig.ignores.add("**/TRAILER_SOURCE.md");
   eleventyConfig.ignores.add("**/POSTER_SOURCES.md");
+  // Ignore microsite files since they're handled by passthrough copy
   eleventyConfig.ignores.add("content/films/*/site/**");
   
   // Set input/output directories

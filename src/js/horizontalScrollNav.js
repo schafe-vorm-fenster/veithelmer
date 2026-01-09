@@ -23,30 +23,38 @@ export function initHorizontalScrollNav() {
   }
 
   containers.forEach(container => {
-    const wrapper = container.parentElement;
-    const section = wrapper.closest('section');
+    const section = container.closest('section');
     
     if (!section) return;
 
-    // Create nav container
-    const navContainer = document.createElement('div');
-    navContainer.className = 'scroll-nav-arrows';
-    
-    // Create buttons
+    // Create buttons with fixed positioning
     const prevBtn = createButton('prev', '←');
     const nextBtn = createButton('next', '→');
     
-    navContainer.appendChild(prevBtn);
-    navContainer.appendChild(nextBtn);
+    // Append buttons to body for fixed positioning
+    document.body.appendChild(prevBtn);
+    document.body.appendChild(nextBtn);
     
-    // Insert nav before the scroll container
-    section.insertBefore(navContainer, wrapper);
+    // Store reference to container on buttons
+    prevBtn.dataset.containerId = container.id || `scroll-container-${Math.random().toString(36).substr(2, 9)}`;
+    nextBtn.dataset.containerId = prevBtn.dataset.containerId;
+    if (!container.id) container.id = prevBtn.dataset.containerId;
     
     // Scroll handler
     const updateButtons = () => {
       const { scrollLeft, scrollWidth, clientWidth } = container;
-      prevBtn.disabled = scrollLeft <= 0;
-      nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
+      const rect = section.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (isVisible) {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        prevBtn.disabled = scrollLeft <= 0;
+        nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
+      } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      }
     };
     
     // Scroll by one film tile width (320px + 24px gap)
@@ -61,6 +69,8 @@ export function initHorizontalScrollNav() {
     });
     
     container.addEventListener('scroll', updateButtons);
+    window.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
     updateButtons();
   });
 }

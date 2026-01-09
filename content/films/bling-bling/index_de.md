@@ -1,5 +1,6 @@
 ---
 title: Bling Bling
+category: documentary
 description: Das filmische Tagebuch dreier Frauen aus Berlin gibt einen authentischen Einblick in das Herz der L.A.-Hip Hop Szene.
 director: Neelesha Barthel, Heike Woosey
 release_year: 2001

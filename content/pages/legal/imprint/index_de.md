@@ -1,5 +1,8 @@
 ---
+layout: content.njk
 title: Impressum
+locale: de
+permalink: /de/legal/imprint/
 ---
 
 Veit Helmer-Filmproduktion

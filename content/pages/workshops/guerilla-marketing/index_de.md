@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Guerilla Film Marketing
-image: teaser.jpg
+image: guerilla_film_marketing_mg_1439_kopie.jpg
+language: de
+permalink: /de/workshops/guerilla-marketing/
+tags: workshop
 ---
 
 In diesem eintägigen Workshop geht es um den internationalen Vertrieb von unabhängigen Spielfilmen.

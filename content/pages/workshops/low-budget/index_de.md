@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Low Budget Filmproducing
-image: teaser.jpg
+image: workshop_4.jpg
+language: de
+permalink: /de/workshops/low-budget/
+tags: workshop
 ---
 
 Der Vortrag wendet sich an Produktionsstudenten und Nachwuchsproduzenten. Der Vortrag dauert je nach Umfang zwischen ein und drei Tage. Pro Workshop können 14-18 Personen teilnehmen.

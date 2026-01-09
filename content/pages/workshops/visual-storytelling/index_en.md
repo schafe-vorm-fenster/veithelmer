@@ -1,6 +1,10 @@
 ---
+layout: content.njk
 title: Visual Storytelling
-image: teaser.jpg
+image: workshop_3.jpg
+language: en
+permalink: /en/workshops/visual-storytelling/
+tags: workshop
 ---
 
 The presentation is aimed at film students and young filmmakers just starting out. The presentation will run between 3 and 6 hours, depending on the subject. Depending on the size of the room and the loudspeaker system, there could be potentially a large audience.

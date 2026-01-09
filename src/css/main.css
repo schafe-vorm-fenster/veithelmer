@@ -5,29 +5,29 @@
  * Phase 6.1.2: Brand Identity
  * ============================================ */
 
-/* Font Face Declarations - Inter (Self-hosted) */
+/* Font Face Declarations - League Spartan (Self-hosted) */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'League Spartan';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+  src: url('/assets/fonts/LeagueSpartan-Light.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'League Spartan';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Medium.woff2') format('woff2');
+  src: url('/assets/fonts/LeagueSpartan-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Bold.woff2') format('woff2');
+  src: url('/assets/fonts/LeagueSpartan-Bold.woff2') format('woff2');
 }
 
 /* Design Tokens Extracted from Legacy Assets
@@ -41,14 +41,14 @@
   --color-brand-white: #fff;
   
   /* Extended Palette - Legacy Support */
-  --color-brand-darkgray: #1f1f1f;
+  --color-brand-darkgray: #0a0a0a;
   --color-brand-brown: #8d5315;
   --color-brand-lightgray: #eee;
   --color-brand-mediumgray: #ccc;
   --color-brand-charcoal: #333;
   
   /* Typography */
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: 'League Spartan', ui-sans-serif, system-ui, -apple-system, sans-serif;
   
   /* Effects */
   --shadow-base: -1px 0 8px 2px rgba(0, 0, 0, 0.58);
@@ -71,6 +71,7 @@
     @apply bg-black text-white;
     font-family: var(--font-sans);
     font-size: 16px;
+    font-weight: 300;
     line-height: 1.6;
     letter-spacing: -0.011em;
   }
@@ -87,10 +88,12 @@
   
   h2 {
     font-size: 2rem;
+    font-weight: 500;
   }
   
   h3 {
     font-size: 1.5rem;
+    font-weight: 500;
   }
   
   p {
@@ -113,6 +116,46 @@
   
   em, i {
     font-style: italic;
+  }
+  
+  /* Content page typography */
+  #main-content h1 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #main-content h1:first-child {
+    margin-top: 0;
+  }
+  
+  #main-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #main-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  #main-content hr {
+    display: none;
+  }
+  
+  #main-content p {
+    margin-bottom: 1rem;
+  }
+  
+  #main-content table {
+    margin: 1.5rem 0;
+  }
+  
+  .max-w-prose-wide {
+    max-width: 65ch;
+  }
+  
+  #main-nav {
+    box-shadow: none;
   }
 }
 
@@ -164,14 +207,10 @@
   }
   
   /* Horizontal Scroll Navigation Arrows */
-  .scroll-nav-arrows {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  
   .scroll-nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -182,18 +221,27 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: 40;
+  }
+  
+  .scroll-nav-btn-prev {
+    left: 1rem;
+  }
+  
+  .scroll-nav-btn-next {
+    right: 1rem;
   }
   
   .scroll-nav-btn:hover:not(:disabled) {
     background-color: rgb(161, 100, 25);
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.1);
   }
   
   .scroll-nav-btn:active:not(:disabled) {
-    transform: scale(0.95);
+    transform: translateY(-50%) scale(0.95);
   }
   
   .scroll-nav-btn:disabled {
@@ -201,9 +249,9 @@
     cursor: not-allowed;
   }
   
-  @media (max-width: 768px) {
-    .scroll-nav-arrows {
-      display: none;
+  @media (max-width: 1024px) {
+    .scroll-nav-btn {
+      display: none !important;
     }
   }
 }

@@ -1,5 +1,6 @@
 ---
 title: Once Upon A Time In Shanghai
+category: short
 type: film
 language: en
 description: An intimate documentary portrait of the "Shanghai" neighborhood in Baku, Azerbaijan—a unique district where railway tracks run so close to homes that life unfolds on the tracks themselves. The neighborhood was demolished shortly after filming.
@@ -13,7 +14,7 @@ crew:
     name: Veit Helmer
   - role: Cinematography
     name: Felix Leiberg
-poster_image: poster.jpg
+poster_image: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

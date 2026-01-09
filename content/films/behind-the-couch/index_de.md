@@ -1,6 +1,7 @@
 ---
 title: Behind the Couch - Casting in Hollywood
 type: film
+category: documentary
 language: de
 description: „BEHIND THE COUCH“ wagt einen schonungslosen und äußerst aufschlußreichen Blick hinter die Kulissen des Casting Prozesses in Hollywood.
 director: Veit Helmer

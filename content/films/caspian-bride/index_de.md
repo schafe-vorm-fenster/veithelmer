@@ -1,5 +1,6 @@
 ---
 title: Caspian Bride
+category: short
 description: Ein einsamer Mann findet auf einer Müllkippe eine alte Schaufensterpuppe. Er nimmt sie mit, wäscht und kleidet sie – bis ein Unfall in den Ölfeldern sein Leben verändert.
 director: Veit Helmer
 cast:

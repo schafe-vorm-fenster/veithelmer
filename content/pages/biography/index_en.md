@@ -1,7 +1,10 @@
 ---
+layout: content.njk
 title: CV / Filmography
 image: portrait.jpg
 alt: Veit Helmer, Copyright by Boryana Pandova
+locale: en
+permalink: /en/biography/
 ---
 
 Writer-director-producer Veit Helmer shot his first film at the age of 14.

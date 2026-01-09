@@ -1,5 +1,6 @@
 ---
 title: Surprise!
+category: short
 description: Ein Mann baut um das Bett seiner Geliebten ein Arsenal an Mordinstrumenten. Will er sie umbringen während sie schläft?
 director: Veit Helmer
 cast:

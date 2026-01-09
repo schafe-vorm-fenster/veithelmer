@@ -1,6 +1,7 @@
 ---
 title: Absurdistan
 type: film
+category: feature
 language: en
 description: A love story between two teenagers set in a remote mountain village where the women go on a sex strike to force the men to repair the water pipe.
 director: Veit Helmer

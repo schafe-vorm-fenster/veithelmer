@@ -1,6 +1,9 @@
 ---
+layout: content.njk
 title: Commercials
 image: teaser.jpg
+locale: en
+permalink: /en/commercials/
 ---
 
 Veit Helmer has directed more than 30 commercials.

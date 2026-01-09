@@ -1,6 +1,7 @@
 ---
 title: Baikonur
 type: film
+category: feature
 language: en
 description: "\"Whatever falls from heaven, you may keep.\" So goes the unwritten law of the Kazakh steppes. A poetic love story between the Kazakh villager Iskander and a French space tourist who literally falls from the sky."
 director: Veit Helmer
@@ -28,7 +29,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
-    url: /movie-websites/baikonur/en/index.html
+    url: /en/baikonur/microsite/
 ---
 "Whatever falls from heaven, you may keep." So goes the unwritten law of the Kazakh steppes. A law avidly adhered to by the inhabitants of a small village, who collect the space debris that falls downrange from the nearby Baikonur space station.
 
