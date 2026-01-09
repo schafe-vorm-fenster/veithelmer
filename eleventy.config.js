@@ -71,6 +71,27 @@ module.exports = function(eleventyConfig) {
     "content/films/the-bra/site/assets": "en/the-bra/microsite/assets"
   });
   
+  // Behind the Couch microsite
+  eleventyConfig.addPassthroughCopy({
+    "content/films/behind-the-couch/site/de": "de/behind-the-couch/microsite"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/behind-the-couch/site/en": "en/behind-the-couch/microsite"
+  });
+  // Copy shared files (CSS, JS, img, ruffle) to both language versions
+  eleventyConfig.addPassthroughCopy({
+    "content/films/behind-the-couch/site/behindthecouch.css": "en/behind-the-couch/microsite/behindthecouch.css"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/behind-the-couch/site/behindthecouch.js": "en/behind-the-couch/microsite/behindthecouch.js"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/behind-the-couch/site/img": "en/behind-the-couch/microsite/img"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/behind-the-couch/site/ruffle": "en/behind-the-couch/microsite/ruffle"
+  });
+  
   // After build, copy assets to German version too
   eleventyConfig.on('eleventy.after', async () => {
     const fse = require('fs-extra');
@@ -86,6 +107,24 @@ module.exports = function(eleventyConfig) {
     const braDestAssets = path.join(__dirname, '_site/de/the-bra/microsite/assets');
     await fse.copy(braSrcAssets, braDestAssets);
     console.log('✅ Copied The Bra assets to German microsite');
+    
+    // Behind the Couch shared files
+    const btcSrcCss = path.join(__dirname, 'content/films/behind-the-couch/site/behindthecouch.css');
+    const btcDestCss = path.join(__dirname, '_site/de/behind-the-couch/microsite/behindthecouch.css');
+    await fse.copy(btcSrcCss, btcDestCss);
+    
+    const btcSrcJs = path.join(__dirname, 'content/films/behind-the-couch/site/behindthecouch.js');
+    const btcDestJs = path.join(__dirname, '_site/de/behind-the-couch/microsite/behindthecouch.js');
+    await fse.copy(btcSrcJs, btcDestJs);
+    
+    const btcSrcImg = path.join(__dirname, 'content/films/behind-the-couch/site/img');
+    const btcDestImg = path.join(__dirname, '_site/de/behind-the-couch/microsite/img');
+    await fse.copy(btcSrcImg, btcDestImg);
+    
+    const btcSrcRuffle = path.join(__dirname, 'content/films/behind-the-couch/site/ruffle');
+    const btcDestRuffle = path.join(__dirname, '_site/de/behind-the-couch/microsite/ruffle');
+    await fse.copy(btcSrcRuffle, btcDestRuffle);
+    console.log('✅ Copied Behind the Couch shared files to German microsite');
   });
   
   // Films collection (all locales)

@@ -17,7 +17,7 @@ crew:
 poster_image: poster.jpg
 external_links:
   - name: Movie Website
-    url: /movie-websites/behindthecouch/en/index.html
+    url: /en/behind-the-couch/microsite/
 ---
 "BEHIND THE COUCH" takes an unsparing and extremely revealing look behind the scenes of the casting process in Hollywood. 
 
