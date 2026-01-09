@@ -8,7 +8,18 @@
       "features": "Features",
       "documentaries": "Documentaries",
       "shorts": "Shorts",
-      "home": "Home"
+      "home": "Home",
+      "films": "Films",
+      "pages": "Pages",
+      "biography": "Biography",
+      "workshops": "Workshops",
+      "commercials": "Commercials",
+      "shop": "Shop",
+      "legal": "Legal",
+      "contact": "Contact",
+      "imprint": "Imprint",
+      "language": "Language",
+      "switchTo": "Switch to"
     },
     "footer": {
       "copyright": "All rights reserved.",
@@ -34,7 +45,18 @@
       "features": "Spielfilme",
       "documentaries": "Dokumentarfilme",
       "shorts": "Kurzfilme",
-      "home": "Startseite"
+      "home": "Startseite",
+      "films": "Filme",
+      "pages": "Seiten",
+      "biography": "Biografie",
+      "workshops": "Workshops",
+      "commercials": "Werbespots",
+      "shop": "Shop",
+      "legal": "Rechtliches",
+      "contact": "Kontakt",
+      "imprint": "Impressum",
+      "language": "Sprache",
+      "switchTo": "Wechseln zu"
     },
     "footer": {
       "copyright": "Alle Rechte vorbehalten.",
