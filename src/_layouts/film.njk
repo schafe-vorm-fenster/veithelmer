@@ -84,17 +84,22 @@ layout: page.njk
     {% endif %}
   </div>
   
-  {# Microsite Button #}
+  {# External Links Buttons #}
   {% if external_links and external_links.length > 0 %}
-    {% set microsite = external_links[0] %}
-    <a 
-      href="{{ microsite.url }}" 
-      class="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-brand-brown hover:text-white transition-colors duration-200"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ 'film.visitMicrosite' | t(currentLocale) }} →
-    </a>
+    <div class="flex flex-wrap gap-4">
+      {% for link in external_links %}
+        <a 
+          href="{{ link.url }}" 
+          class="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-brand-brown hover:text-white transition-colors duration-200"
+          {% if link.url.startsWith('http') or link.url.startsWith('//') %}
+            target="_blank"
+            rel="noopener noreferrer"
+          {% endif %}
+        >
+          {{ link.name }} →
+        </a>
+      {% endfor %}
+    </div>
   {% endif %}
 </section>
 

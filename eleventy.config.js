@@ -110,6 +110,31 @@ module.exports = function(eleventyConfig) {
     "content/films/absurdistan/site/img": "en/absurdistan/microsite/img"
   });
   
+  // Gate to Heaven microsite
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/site/de": "de/gate-to-heaven/microsite"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/site/en": "en/gate-to-heaven/microsite"
+  });
+  // Copy shared files (CSS, JS, img) to English version
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/site/styles.css": "en/gate-to-heaven/microsite/styles.css"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/site/script.js": "en/gate-to-heaven/microsite/script.js"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/site/img": "en/gate-to-heaven/microsite/img"
+  });
+  // Copy trailer video to both microsites (for local reference from de/trailer.html)
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/trailer.mp4": "de/gate-to-heaven/microsite/trailer.mp4"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/gate-to-heaven/trailer.mp4": "en/gate-to-heaven/microsite/trailer.mp4"
+  });
+  
   // After build, copy assets to German version too
   eleventyConfig.on('eleventy.after', async () => {
     const fse = require('fs-extra');
@@ -159,6 +184,25 @@ module.exports = function(eleventyConfig) {
     const absDestImg = path.join(__dirname, '_site/de/absurdistan/microsite/img');
     await fse.copy(absSrcImg, absDestImg);
     console.log('✅ Copied Absurdistan shared files to German microsite');
+    
+    // Gate to Heaven shared files
+    const gthSrcCss = path.join(__dirname, 'content/films/gate-to-heaven/site/styles.css');
+    const gthDestCss = path.join(__dirname, '_site/de/gate-to-heaven/microsite/styles.css');
+    await fse.copy(gthSrcCss, gthDestCss);
+    
+    const gthSrcJs = path.join(__dirname, 'content/films/gate-to-heaven/site/script.js');
+    const gthDestJs = path.join(__dirname, '_site/de/gate-to-heaven/microsite/script.js');
+    await fse.copy(gthSrcJs, gthDestJs);
+    
+    const gthSrcImg = path.join(__dirname, 'content/films/gate-to-heaven/site/img');
+    const gthDestImg = path.join(__dirname, '_site/de/gate-to-heaven/microsite/img');
+    await fse.copy(gthSrcImg, gthDestImg);
+    
+    // Copy trailer to German microsite
+    const gthSrcTrailer = path.join(__dirname, 'content/films/gate-to-heaven/trailer.mp4');
+    const gthDestTrailerDe = path.join(__dirname, '_site/de/gate-to-heaven/microsite/trailer.mp4');
+    await fse.copy(gthSrcTrailer, gthDestTrailerDe);
+    console.log('✅ Copied Gate to Heaven shared files to German microsite');
   });
   
   // Films collection (all locales)
