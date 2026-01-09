@@ -14,7 +14,7 @@ crew:
     name: Veit Helmer
   - role: Kamera
     name: Felix Leiberg
-poster_image: trailer.jpg
+poster_image: poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 ---

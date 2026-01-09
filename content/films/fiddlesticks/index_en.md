@@ -46,7 +46,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
-    url: /movie-websites/quatsch/index.html
+    url: /en/fiddlesticks/microsite/
 ---
 The life of the children of Bollersdorf could be so beautiful if the place hadn't been discovered by the Society for Consumer Research because of its averageness. New products are to be tested here. What the people of Bollersdorf like can be sold well everywhere, the market researchers know. 
 
