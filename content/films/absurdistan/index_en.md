@@ -46,7 +46,7 @@ trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
-    url: /movie-websites/absurdistan/index.html
+    url: /en/absurdistan/microsite/
 ---
 ABSURDISTAN is Veit Helmer’s third feature film project. The script was developed with the support of Sources2 and the MFI (Mediterranean Film Institute) and of the MEDIA New Talent programme for project development. 
 

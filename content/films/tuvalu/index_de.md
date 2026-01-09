@@ -37,7 +37,10 @@ crew:
 poster_image: poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
+full_video_url: https://www.youtube.com/watch?v=ZWTbnbm1wnI
 external_links:
+  - name: Film ansehen (YouTube)
+    url: https://www.youtube.com/watch?v=ZWTbnbm1wnI
   - name: Film-Website
     url: /movie-websites/tuvalu/de/index.html
 ---

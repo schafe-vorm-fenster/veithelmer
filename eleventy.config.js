@@ -92,6 +92,24 @@ module.exports = function(eleventyConfig) {
     "content/films/behind-the-couch/site/ruffle": "en/behind-the-couch/microsite/ruffle"
   });
   
+  // Absurdistan microsite
+  eleventyConfig.addPassthroughCopy({
+    "content/films/absurdistan/site/de": "de/absurdistan/microsite"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/absurdistan/site/en": "en/absurdistan/microsite"
+  });
+  // Copy shared files (CSS, JS, img) to English version
+  eleventyConfig.addPassthroughCopy({
+    "content/films/absurdistan/site/gallery.css": "en/absurdistan/microsite/gallery.css"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/absurdistan/site/gallery.js": "en/absurdistan/microsite/gallery.js"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/absurdistan/site/img": "en/absurdistan/microsite/img"
+  });
+  
   // After build, copy assets to German version too
   eleventyConfig.on('eleventy.after', async () => {
     const fse = require('fs-extra');
@@ -123,8 +141,24 @@ module.exports = function(eleventyConfig) {
     
     const btcSrcRuffle = path.join(__dirname, 'content/films/behind-the-couch/site/ruffle');
     const btcDestRuffle = path.join(__dirname, '_site/de/behind-the-couch/microsite/ruffle');
-    await fse.copy(btcSrcRuffle, btcDestRuffle);
+    if (await fse.pathExists(btcSrcRuffle)) {
+      await fse.copy(btcSrcRuffle, btcDestRuffle);
+    }
     console.log('✅ Copied Behind the Couch shared files to German microsite');
+    
+    // Absurdistan shared files
+    const absSrcCss = path.join(__dirname, 'content/films/absurdistan/site/gallery.css');
+    const absDestCss = path.join(__dirname, '_site/de/absurdistan/microsite/gallery.css');
+    await fse.copy(absSrcCss, absDestCss);
+    
+    const absSrcJs = path.join(__dirname, 'content/films/absurdistan/site/gallery.js');
+    const absDestJs = path.join(__dirname, '_site/de/absurdistan/microsite/gallery.js');
+    await fse.copy(absSrcJs, absDestJs);
+    
+    const absSrcImg = path.join(__dirname, 'content/films/absurdistan/site/img');
+    const absDestImg = path.join(__dirname, '_site/de/absurdistan/microsite/img');
+    await fse.copy(absSrcImg, absDestImg);
+    console.log('✅ Copied Absurdistan shared files to German microsite');
   });
   
   // Films collection (all locales)
