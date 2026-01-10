@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /veithelmer/
+Disallow: /de/
+Disallow: /en/
+
+Sitemap: https://schafe-vorm-fenster.github.io/veithelmer/sitemap.xml
