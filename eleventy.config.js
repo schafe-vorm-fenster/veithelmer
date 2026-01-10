@@ -135,6 +135,24 @@ module.exports = function(eleventyConfig) {
     "content/films/gate-to-heaven/trailer.mp4": "en/gate-to-heaven/microsite/trailer.mp4"
   });
   
+  // Tuvalu microsite
+  eleventyConfig.addPassthroughCopy({
+    "content/films/tuvalu/site/de": "de/tuvalu/microsite"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/tuvalu/site/en": "en/tuvalu/microsite"
+  });
+  // Copy shared files (CSS, JS, img) to English version
+  eleventyConfig.addPassthroughCopy({
+    "content/films/tuvalu/site/styles.css": "en/tuvalu/microsite/styles.css"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/tuvalu/site/script.js": "en/tuvalu/microsite/script.js"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "content/films/tuvalu/site/img": "en/tuvalu/microsite/img"
+  });
+  
   // Fiddlesticks (Quatsch) microsite - bilingual with shared assets
   // (Assets are copied in eleventy.after hook below)
   
@@ -234,6 +252,20 @@ module.exports = function(eleventyConfig) {
     const gthDestTrailerDe = path.join(__dirname, '_site/de/gate-to-heaven/microsite/trailer.mp4');
     await fse.copy(gthSrcTrailer, gthDestTrailerDe);
     console.log('✅ Copied Gate to Heaven shared files to German microsite');
+    
+    // Tuvalu shared files
+    const tuvaluSrcCss = path.join(__dirname, 'content/films/tuvalu/site/styles.css');
+    const tuvaluDestCss = path.join(__dirname, '_site/de/tuvalu/microsite/styles.css');
+    await fse.copy(tuvaluSrcCss, tuvaluDestCss);
+    
+    const tuvaluSrcJs = path.join(__dirname, 'content/films/tuvalu/site/script.js');
+    const tuvaluDestJs = path.join(__dirname, '_site/de/tuvalu/microsite/script.js');
+    await fse.copy(tuvaluSrcJs, tuvaluDestJs);
+    
+    const tuvaluSrcImg = path.join(__dirname, 'content/films/tuvalu/site/img');
+    const tuvaluDestImg = path.join(__dirname, '_site/de/tuvalu/microsite/img');
+    await fse.copy(tuvaluSrcImg, tuvaluDestImg);
+    console.log('✅ Copied Tuvalu shared files to German microsite');
   });
   
   // Films collection (all locales)
