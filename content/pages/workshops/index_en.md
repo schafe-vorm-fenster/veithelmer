@@ -15,7 +15,7 @@ permalink: /en/workshops/
         {{ workshopTile(
           workshop.data.title,
           ('/assets/pages/workshops/' + workshop.data.image) | url,
-          workshop.url
+          workshop.url | url
         ) }}
       </div>
       {% endfor %}

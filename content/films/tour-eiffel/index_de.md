@@ -24,5 +24,7 @@ crew:
   - role: Musik
     name: Christoph Oertel
 poster_image: poster.jpg
+trailer_video: trailer.mp4
+trailer_poster: poster.jpg
 ---
 Lulu erfüllt sich seinen Lebenstraum: er kauft sich ein feuerrotes Edelkabrio. Als er auf den Eiffelturm geht, muss er von oben mit ansehen, wie sein neuer Wagen gestohlen und bei einer wilden Verfolgungsjagd mit der Polizei zu Schrott gefahren wird ...
