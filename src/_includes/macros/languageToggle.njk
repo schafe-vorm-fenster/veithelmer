@@ -11,7 +11,7 @@
   <ul class="flex items-center gap-1 text-sm font-bold uppercase">
     <li>
       <a 
-        href="/de{{ currentPath }}"
+        href="{{ ('/de' + currentPath) | url }}"
         class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline {{ 'text-white bg-white/10' if currentLang == 'de' else 'text-white/60 hover:text-white hover:bg-white/5' }}"
         aria-label="Deutsch"
         {% if currentLang == 'de' %}aria-current="true"{% endif %}
@@ -22,7 +22,7 @@
     <li class="text-white/30">|</li>
     <li>
       <a 
-        href="/en{{ currentPath }}"
+        href="{{ ('/en' + currentPath) | url }}"
         class="inline-flex items-center px-3 py-2 transition-all duration-200 no-underline {{ 'text-white bg-white/10' if currentLang == 'en' else 'text-white/60 hover:text-white hover:bg-white/5' }}"
         aria-label="English"
         {% if currentLang == 'en' %}aria-current="true"{% endif %}
@@ -41,7 +41,7 @@
 {% macro languageToggleCompact(currentLang='en') %}
 <div class="language-toggle-compact inline-flex items-center gap-2 text-xs font-bold uppercase">
   <a 
-    href="/de/"
+    href="{{ '/de/' | url }}"
     class="transition-opacity duration-200 no-underline {{ 'opacity-100' if currentLang == 'de' else 'opacity-40 hover:opacity-70' }}"
     aria-label="Deutsch"
   >
@@ -49,7 +49,7 @@
   </a>
   <span class="opacity-30">/</span>
   <a 
-    href="/en/"
+    href="{{ '/en/' | url }}"
     class="transition-opacity duration-200 no-underline {{ 'opacity-100' if currentLang == 'en' else 'opacity-40 hover:opacity-70' }}"
     aria-label="English"
   >
