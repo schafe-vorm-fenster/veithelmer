@@ -20,6 +20,8 @@ crew:
 world_sales: "Interfilm Berlin"
 additional_info: "Produziert vom Bundesverband Jugend und Film e.V., Berndt Güntzel-Lingner, Martin Loew"
 poster_image: "kf_freudenhaus.jpg"
+trailer_video: "trailer.mp4"
+trailer_poster: "poster.jpg"
 ---
 
 Jeder Mensch sollte sich jeden Tag eine kleine Freude gönnen - und für die alte Dame ist es der hübsche junge Zivildienstleistende, der ihr das Mittagessen bringt. Doch damit das Vergnügen nicht allzu schnell vorbei geht, hat sie sich etwas Besonderes ausgedacht ...
