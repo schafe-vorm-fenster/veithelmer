@@ -3,7 +3,10 @@ layout: page.njk
 ---
 
 {% set currentLocale = locale or language or (page | getLocale) %}
-{% set pageSlug = page.filePathStem.split('/').slice(-2)[0] %}
+{# Extract the page path from filePathStem, removing the content/pages prefix and filename #}
+{% set pathParts = page.filePathStem.split('/') %}
+{% set contentIndex = pathParts.indexOf('pages') %}
+{% set pageSlug = pathParts.slice(contentIndex + 1, -1).join('/') %}
 {% set isWorkshop = page.filePathStem.includes('/workshops/') and not page.filePathStem.endsWith('/workshops/index_de') and not page.filePathStem.endsWith('/workshops/index_en') %}
 
 {% if image %}
