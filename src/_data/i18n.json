@@ -23,7 +23,7 @@
     },
     "footer": {
       "copyright": "All rights reserved.",
-      "backToArchive": "Back to Film Archive"
+      "backToArchive": "Back to Film Overview"
     },
     "film": {
       "synopsis": "Synopsis",
@@ -60,7 +60,7 @@
     },
     "footer": {
       "copyright": "Alle Rechte vorbehalten.",
-      "backToArchive": "Zurück zum Filmarchiv"
+      "backToArchive": "Zurück zur Filmübersicht"
     },
     "film": {
       "synopsis": "Synopsis",
