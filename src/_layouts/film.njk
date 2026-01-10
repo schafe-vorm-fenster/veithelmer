@@ -89,7 +89,7 @@ layout: page.njk
     <div class="flex flex-wrap gap-4">
       {% for link in external_links %}
         <a 
-          href="{{ link.url }}" 
+          href="{% if link.url.startsWith('http') or link.url.startsWith('//') %}{{ link.url }}{% else %}{{ link.url | url }}{% endif %}" 
           class="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-brand-brown hover:text-white transition-colors duration-200"
           {% if link.url.startsWith('http') or link.url.startsWith('//') %}
             target="_blank"
@@ -196,7 +196,7 @@ layout: page.njk
 {# Navigation Back to Homepage #}
 <section class="navigation-back mt-16 pt-12 border-t border-white/10" aria-label="Navigation">
   <a 
-    href="{{ '/' + currentLocale + '/' }}"
+    href="{{ ('/' + currentLocale + '/') | url }}"
     class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-200"
   >
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
