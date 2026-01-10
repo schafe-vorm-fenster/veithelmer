@@ -428,7 +428,7 @@ module.exports = function(eleventyConfig) {
     }
 
     if (data.poster_image) {
-      schema.image = `https://veithelmer.com/assets/films/${filmSlug}/${data.poster_image}`;
+      schema.image = `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.poster_image}`;
     }
 
     if (data.trailer_video) {
@@ -436,7 +436,7 @@ module.exports = function(eleventyConfig) {
         "@type": "VideoObject",
         "name": `${data.title} - Trailer`,
         "description": `Trailer for ${data.title}`,
-        "contentUrl": `https://veithelmer.com/assets/films/${filmSlug}/${data.trailer_video}`
+        "contentUrl": `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.trailer_video}`
       };
       
       if (data.release_year) {
@@ -444,9 +444,9 @@ module.exports = function(eleventyConfig) {
       }
       
       if (data.trailer_poster) {
-        videoObject.thumbnailUrl = `https://veithelmer.com/assets/films/${filmSlug}/${data.trailer_poster}`;
+        videoObject.thumbnailUrl = `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.trailer_poster}`;
       } else if (data.poster_image) {
-        videoObject.thumbnailUrl = `https://veithelmer.com/assets/films/${filmSlug}/${data.poster_image}`;
+        videoObject.thumbnailUrl = `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.poster_image}`;
       }
       
       schema.trailer = videoObject;
