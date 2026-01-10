@@ -344,18 +344,28 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("alternateUrl", function(url, targetLocale) {
     if (!url) return '/';
     
+    // Get pathPrefix - use the same value as configured below
+    const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || "/veithelmer/";
+    
+    // Strip pathPrefix from url if present
+    let workingUrl = url;
+    if (pathPrefix && workingUrl.startsWith(pathPrefix)) {
+      workingUrl = workingUrl.substring(pathPrefix.length);
+    }
+    
     // Replace /de/ with /en/ or vice versa
     let alternateUrl;
     if (targetLocale === 'de') {
-      alternateUrl = url.replace(/^\/en\//, '/de/');
+      alternateUrl = workingUrl.replace(/^\/en\//, '/de/');
     } else {
-      alternateUrl = url.replace(/^\/de\//, '/en/');
+      alternateUrl = workingUrl.replace(/^\/de\//, '/en/');
     }
     
-    // Apply pathPrefix if configured
-    const pathPrefix = this.ctx?.eleventy?.env?.config?.pathPrefix || process.env.ELEVENTY_PATH_PREFIX || '';
-    if (pathPrefix && !alternateUrl.startsWith(pathPrefix)) {
-      return pathPrefix + alternateUrl;
+    // Apply pathPrefix back if configured
+    // Remove trailing slash from pathPrefix to avoid double slashes
+    if (pathPrefix) {
+      const cleanPrefix = pathPrefix.replace(/\/$/, '');
+      return cleanPrefix + alternateUrl;
     }
     return alternateUrl;
   });
