@@ -24,7 +24,7 @@ permalink: /en/
           {{ filmTile(
             title=film.data.title,
             year=film.data.release_year,
-            image="/assets/films/" + filmSlug + "/" + film.data.poster_image,
+            image=("/assets/films/" + filmSlug + "/" + film.data.poster_image) | url,
             url=film.url,
             category="Feature"
           ) }}
@@ -48,7 +48,7 @@ permalink: /en/
           {{ filmTile(
             title=film.data.title,
             year=film.data.release_year,
-            image="/assets/films/" + filmSlug + "/" + film.data.poster_image,
+            image=("/assets/films/" + filmSlug + "/" + film.data.poster_image) | url,
             url=film.url,
             category="Documentary"
           ) }}
@@ -72,7 +72,7 @@ permalink: /en/
           {{ filmTile(
             title=film.data.title,
             year=film.data.release_year,
-            image="/assets/films/" + filmSlug + "/" + film.data.poster_image,
+            image=("/assets/films/" + filmSlug + "/" + film.data.poster_image) | url,
             url=film.url,
             category="Short"
           ) }}
