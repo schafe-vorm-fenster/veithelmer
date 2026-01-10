@@ -345,11 +345,19 @@ module.exports = function(eleventyConfig) {
     if (!url) return '/';
     
     // Replace /de/ with /en/ or vice versa
+    let alternateUrl;
     if (targetLocale === 'de') {
-      return url.replace(/^\/en\//, '/de/');
+      alternateUrl = url.replace(/^\/en\//, '/de/');
     } else {
-      return url.replace(/^\/de\//, '/en/');
+      alternateUrl = url.replace(/^\/de\//, '/en/');
     }
+    
+    // Apply pathPrefix if configured
+    const pathPrefix = this.ctx?.eleventy?.env?.config?.pathPrefix || process.env.ELEVENTY_PATH_PREFIX || '';
+    if (pathPrefix && !alternateUrl.startsWith(pathPrefix)) {
+      return pathPrefix + alternateUrl;
+    }
+    return alternateUrl;
   });
   
   // Filter to extract locale from URL or page data

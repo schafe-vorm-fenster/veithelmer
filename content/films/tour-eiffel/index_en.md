@@ -24,5 +24,7 @@ crew:
   - role: Music
     name: Christoph Oertel
 poster_image: poster.jpg
+trailer_video: trailer.mp4
+trailer_poster: poster.jpg
 ---
 Lulu fulfils his life’s dream: he buys a bright red sports car. From the top of the Eiffel Tower, he can only watch as his car is being stolen. The police are soon in hot pursuit but during the chase, his beautiful car is wrecked.
