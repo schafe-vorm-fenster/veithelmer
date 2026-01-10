@@ -5,17 +5,17 @@ description: Films by Veit Helmer — A visual poetry of places, people, and sil
 permalink: /
 ---
 
-{# Redirect root to /en/ - using relative path for GitHub Pages subfolder compatibility #}
+{# Redirect root to /en/ - using url filter for GitHub Pages subfolder compatibility #}
 <script>
-  window.location.href = './en/';
+  window.location.href = '{{ "/en/" | url }}';
 </script>
 
 <noscript>
-  <meta http-equiv="refresh" content="0; url=./en/">
+  <meta http-equiv="refresh" content="0; url={{ '/en/' | url }}">
 </noscript>
 
 <main id="main-content" class="container mx-auto max-w-6xl px-6 py-12 text-center">
   <h1 class="text-4xl font-bold mb-8">Veit Helmer</h1>
-  <p class="mb-4">Redirecting to <a href="./en/" class="underline hover:text-brand-brown">English version</a>...</p>
-  <p><a href="./de/" class="underline hover:text-brand-brown">Deutsche Version</a></p>
+  <p class="mb-4">Redirecting to <a href="{{ '/en/' | url }}" class="underline hover:text-brand-brown">English version</a>...</p>
+  <p><a href="{{ '/de/' | url }}" class="underline hover:text-brand-brown">Deutsche Version</a></p>
 </main>

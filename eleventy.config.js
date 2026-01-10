@@ -467,6 +467,7 @@ module.exports = function(eleventyConfig) {
   
   // Set input/output directories
   return {
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/veithelmer/",
     dir: {
       input: ".",
       output: "_site",
