@@ -14,7 +14,7 @@ permalink: /en/workshops/
       <div class="w-80 flex-shrink-0">
         {{ workshopTile(
           workshop.data.title,
-          '/assets/pages/workshops/' + workshop.data.image,
+          ('/assets/pages/workshops/' + workshop.data.image) | url,
           workshop.url
         ) }}
       </div>
