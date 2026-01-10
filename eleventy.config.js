@@ -1,6 +1,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const siteData = require('./src/_data/site.js');
 
 module.exports = function(eleventyConfig) {
   // CSS processing with Tailwind v4 via eleventy.before hook
@@ -345,8 +346,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("alternateUrl", function(url, targetLocale) {
     if (!url) return '/';
     
-    // Get pathPrefix - use the same value as configured below
-    const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || "/veithelmer/";
+    // Get pathPrefix - use the same value as configured
+    const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || siteData.pathPrefix;
     
     // Strip pathPrefix from url if present
     let workingUrl = url;
@@ -429,7 +430,7 @@ module.exports = function(eleventyConfig) {
     }
 
     if (data.poster_image) {
-      schema.image = `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.poster_image}`;
+      schema.image = `${siteData.url}/assets/films/${filmSlug}/${data.poster_image}`;
     }
 
     if (data.trailer_video) {
@@ -437,7 +438,7 @@ module.exports = function(eleventyConfig) {
         "@type": "VideoObject",
         "name": `${data.title} - Trailer`,
         "description": `Trailer for ${data.title}`,
-        "contentUrl": `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.trailer_video}`
+        "contentUrl": `${siteData.url}/assets/films/${filmSlug}/${data.trailer_video}`
       };
       
       if (data.release_year) {
@@ -445,9 +446,9 @@ module.exports = function(eleventyConfig) {
       }
       
       if (data.trailer_poster) {
-        videoObject.thumbnailUrl = `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.trailer_poster}`;
+        videoObject.thumbnailUrl = `${siteData.url}/assets/films/${filmSlug}/${data.trailer_poster}`;
       } else if (data.poster_image) {
-        videoObject.thumbnailUrl = `https://schafe-vorm-fenster.github.io/veithelmer/assets/films/${filmSlug}/${data.poster_image}`;
+        videoObject.thumbnailUrl = `${siteData.url}/assets/films/${filmSlug}/${data.poster_image}`;
       }
       
       schema.trailer = videoObject;
@@ -486,7 +487,7 @@ module.exports = function(eleventyConfig) {
   
   // Set input/output directories
   return {
-    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/veithelmer/",
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || siteData.pathPrefix,
     dir: {
       input: ".",
       output: "_site",

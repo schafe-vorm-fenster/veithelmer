@@ -15,7 +15,7 @@
   
   {# Open Graph / Facebook #}
   <meta property="og:type" content="{{ ogType | default("website") }}">
-  <meta property="og:url" content="{{ canonicalUrl | default("https://schafe-vorm-fenster.github.io" + (page.url | url)) }}">
+  <meta property="og:url" content="{{ canonicalUrl | default(site.baseUrl + (page.url | url)) }}">
   <meta property="og:title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
   <meta property="og:description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker.") }}">
   <meta property="og:image" content="{{ ogImage | default(("/assets/images/veithelmer-logo.jpg" | url)) }}">
@@ -24,19 +24,19 @@
   
   {# Twitter Card #}
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="{{ canonicalUrl | default("https://schafe-vorm-fenster.github.io" + (page.url | url)) }}">
+  <meta name="twitter:url" content="{{ canonicalUrl | default(site.baseUrl + (page.url | url)) }}">
   <meta name="twitter:title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
   <meta name="twitter:description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker.") }}">
   <meta name="twitter:image" content="{{ ogImage | default(("/assets/images/veithelmer-logo.jpg" | url)) }}">
   
   {# Canonical URL #}
-  <link rel="canonical" href="{{ canonicalUrl | default("https://schafe-vorm-fenster.github.io" + (page.url | url)) }}">
+  <link rel="canonical" href="{{ canonicalUrl | default(site.baseUrl + (page.url | url)) }}">
   
   {# hreflang tags for language alternatives #}
   {% set alternateLocale = 'de' if currentLocale == 'en' else 'en' %}
-  <link rel="alternate" hreflang="{{ currentLocale }}" href="https://schafe-vorm-fenster.github.io{{ page.url | url }}">
-  <link rel="alternate" hreflang="{{ alternateLocale }}" href="https://schafe-vorm-fenster.github.io{{ page.url | alternateUrl(alternateLocale) }}">
-  <link rel="alternate" hreflang="x-default" href="https://schafe-vorm-fenster.github.io/veithelmer/en/"
+  <link rel="alternate" hreflang="{{ currentLocale }}" href="{{ site.baseUrl }}{{ page.url | url }}">
+  <link rel="alternate" hreflang="{{ alternateLocale }}" href="{{ site.baseUrl }}{{ page.url | alternateUrl(alternateLocale) }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en/"
   
   {# Favicon - Using logo as temporary favicon #}
   <link rel="icon" type="image/jpeg" href="{{ '/assets/images/veithelmer-logo.jpg' | url }}">
