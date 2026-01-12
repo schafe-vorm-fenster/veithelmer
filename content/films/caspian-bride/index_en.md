@@ -24,6 +24,7 @@ crew:
 poster_image: poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
+cinema_poster: cinema-poster.jpg
 ---
 A lonesome man takes a ride to a dump in search for usable things.
 
