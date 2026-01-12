@@ -42,7 +42,7 @@ external_links:
   - name: Watch on YouTube
     url: https://www.youtube.com/watch?v=ZWTbnbm1wnI
   - name: Movie Website
-    url: /movie-websites/tuvalu/en/index.html
+    url: /en/tuvalu/microsite/index.html
 ---
 A place, far away from our world, in another time ...
 
