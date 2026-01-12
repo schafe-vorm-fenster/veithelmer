@@ -32,6 +32,7 @@ crew:
   - role: Kamera
     name: Andrés Aguiló
 poster_image: poster.jpg
+cinema_poster: cinema-poster-de.jpg
 teaser_poster: trailer.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
