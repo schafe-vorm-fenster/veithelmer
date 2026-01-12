@@ -22,5 +22,6 @@ crew:
   - role: Musik
     name: Niki Reiser
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 ---
 Ein Mann baut um das Bett seiner Geliebten ein Arsenal an Mordinstrumenten. Die Zutaten lassen nur einen Schluss zu: Er will sie umbringen. Und sie schläft!

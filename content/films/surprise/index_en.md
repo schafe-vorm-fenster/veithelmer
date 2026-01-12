@@ -24,5 +24,6 @@ crew:
   - role: Music
     name: Niki Reiser
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 ---
 A man gathers together an arsenal of lethal weapons around his lover’s bed. It looks as if he wants to kill her, while she is fast asleep!

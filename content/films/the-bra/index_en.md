@@ -36,6 +36,7 @@ crew:
   - role: Original Music
     name: Cyril Morin
 poster_image: poster.jpg
+cinema_poster: cinema-poster-en.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:

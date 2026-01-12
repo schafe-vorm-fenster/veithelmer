@@ -20,6 +20,7 @@ crew:
   - role: Editor
     name: Moritz Steinkohl
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 ---
 ---
 
