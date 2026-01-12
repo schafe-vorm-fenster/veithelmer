@@ -8,6 +8,7 @@ director: Veit Helmer
 release_year: 2004
 country: Deutschland
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 ---
 ---
 
