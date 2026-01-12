@@ -150,6 +150,14 @@
     margin: 1.5rem 0;
   }
   
+  /* Consistent h2 styling in film detail information grid */
+  #main-content section.information-grid h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+  }
+  
   .max-w-prose-wide {
     max-width: 65ch;
   }
