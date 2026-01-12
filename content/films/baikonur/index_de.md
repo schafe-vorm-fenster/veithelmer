@@ -25,6 +25,7 @@ crew:
   - role: Montage
     name: Vincent Assmann
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:

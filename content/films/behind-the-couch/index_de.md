@@ -15,6 +15,7 @@ crew:
   - role: Regie
     name: Veit Helmer
 poster_image: poster.jpg
+cinema_poster: poster.jpg
 trailer_video: trailer.mp4
 external_links:
   - name: Film-Website

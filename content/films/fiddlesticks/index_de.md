@@ -42,6 +42,7 @@ crew:
   - role: Musik
     name: Cherilyn MacNeil, FM Einheit, Ingfried Hoffmann, Lars Löhn, Malcolm Arison, Pit Baumgartner, Shantel
 poster_image: poster.jpg
+cinema_poster: cinema-poster-de.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 external_links:
