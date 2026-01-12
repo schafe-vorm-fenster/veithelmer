@@ -158,6 +158,24 @@
     letter-spacing: -0.025em;
   }
   
+  /* Cinema poster height constraint - match left column height */
+  @media (min-width: 768px) {
+    .quick-info-wrapper {
+      grid-template-rows: auto;
+    }
+    
+    .quick-info-wrapper > aside {
+      max-height: 100%;
+    }
+    
+    .quick-info-wrapper > aside > img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: top right;
+    }
+  }
+  
   .max-w-prose-wide {
     max-width: 65ch;
   }
