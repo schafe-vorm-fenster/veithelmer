@@ -106,13 +106,12 @@ layout: page.njk
     {% endif %}
   </div>
   
-  {# Right Column: Cinema Poster (1/3 width) #}
+  {# Right Column: Cinema Poster (1/3 width) - height constrained by left column #}
   <aside class="md:col-span-1">
     {% if cinema_poster %}
       <img 
         src="{{ ('/assets/films/' + filmSlug + '/' + cinema_poster) | url }}" 
         alt="{{ title }} Cinema Poster"
-        class="w-full h-auto"
       />
     {% endif %}
   </aside>
