@@ -1,0 +1,427 @@
+/* Tuvalu Microsite - Blue-tinted Dreamlike Aesthetic */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --tuvalu-bg: #d9ecf3;
+    --tuvalu-accent: #993300;
+    --tuvalu-text: #000033;
+    --tuvalu-white: #ffffff;
+    --tuvalu-light-blue: #e8f4f8;
+}
+
+body {
+    background-color: var(--tuvalu-bg);
+    background-image: url('img/bg.jpg');
+    background-attachment: fixed;
+    background-repeat: repeat;
+    color: var(--tuvalu-text);
+    font-family: 'Times New Roman', Georgia, Times, serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.site-container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.site-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.site-logo {
+    margin-bottom: 10px;
+}
+
+.site-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.site-title {
+    margin: 20px 0;
+}
+
+.site-title img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(153, 51, 0, 0.2);
+}
+
+.nav-link {
+    color: var(--tuvalu-accent);
+    text-decoration: none;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: #cc4400;
+    border-bottom-color: var(--tuvalu-accent);
+}
+
+.nav-link.active {
+    font-weight: bold;
+    border-bottom-color: var(--tuvalu-accent);
+}
+
+.nav-separator {
+    color: var(--tuvalu-accent);
+    margin: 0 5px;
+}
+
+/* Content sections */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.content-main {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-sidebar {
+    flex: 0 0 220px;
+    min-width: 220px;
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--tuvalu-accent);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.headline {
+    text-align: center;
+    font-size: 28px;
+    color: var(--tuvalu-accent);
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.headline-small {
+    font-size: 16px;
+    color: var(--tuvalu-accent);
+    font-style: italic;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+a {
+    color: var(--tuvalu-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cc4400;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--tuvalu-accent);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.poster-image {
+    width: 200px;
+    border: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cast-photo {
+    width: 100px;
+    height: auto;
+    border: 0;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.scene-image {
+    width: 100px;
+    height: auto;
+    border: 0;
+    margin: 5px;
+}
+
+/* Cast/Crew listings */
+.cast-grid,
+.crew-list {
+    margin: 20px 0;
+}
+
+.cast-member {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.cast-member-photo {
+    flex-shrink: 0;
+}
+
+.cast-member-info {
+    flex: 1;
+}
+
+.cast-member-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--tuvalu-accent);
+    margin-bottom: 5px;
+}
+
+.cast-member-role {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.crew-member {
+    margin-bottom: 15px;
+}
+
+.crew-role {
+    font-weight: bold;
+    color: var(--tuvalu-accent);
+}
+
+/* Awards section */
+.awards-list {
+    list-style: none;
+    padding: 0;
+}
+
+.awards-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.awards-list li:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: var(--tuvalu-accent);
+    font-size: 14px;
+}
+
+/* Press quotes */
+.press-quote {
+    margin: 25px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-left: 4px solid var(--tuvalu-accent);
+    font-style: italic;
+}
+
+.press-quote-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.press-quote-source {
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    color: #666;
+}
+
+/* Credits/Technical data */
+.credits-table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.credits-table td {
+    padding: 8px;
+    vertical-align: top;
+}
+
+.credits-label {
+    font-weight: bold;
+    color: var(--tuvalu-accent);
+    width: 40%;
+}
+
+/* Video embed */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin: 20px 0;
+    background-color: #000;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(153, 51, 0, 0.2);
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.footer-links a {
+    color: var(--tuvalu-accent);
+}
+
+.lang-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.lang-flag {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid var(--tuvalu-accent);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.lang-flag:hover {
+    background-color: var(--tuvalu-accent);
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .site-container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .content-sidebar {
+        flex: 1;
+    }
+    
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .cast-member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .site-container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+    
+    .poster-image {
+        width: 150px;
+    }
+    
+    .nav-link {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+    
+    .press-quote-text {
+        font-size: 16px;
+    }
+}
