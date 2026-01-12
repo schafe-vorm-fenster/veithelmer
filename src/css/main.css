@@ -161,18 +161,25 @@
   /* Cinema poster height constraint - match left column height */
   @media (min-width: 768px) {
     .quick-info-wrapper {
-      grid-template-rows: auto;
+      position: relative;
     }
     
-    .quick-info-wrapper > aside {
-      max-height: 100%;
+    /* Right column: absolute positioning so it doesn't affect row height */
+    .quick-info-wrapper > aside.cinema-poster-aside {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: calc(33.333% - 2rem); /* 1/3 width minus gap */
+      overflow: hidden;
     }
     
-    .quick-info-wrapper > aside > img {
-      max-height: 100%;
+    .quick-info-wrapper > aside.cinema-poster-aside > img {
+      height: 100%;
       width: auto;
+      max-width: 100%;
       object-fit: contain;
-      object-position: top right;
+      object-position: top left;
     }
   }
   
