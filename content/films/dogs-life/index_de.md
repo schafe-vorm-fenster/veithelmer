@@ -28,6 +28,7 @@ awards:
 world_sales: KurzFilmAgentur Hamburg
 additional: Unterstützt vom Goethe Institut Almaty
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 ---
 
 Stas ist ein Straßenkind. Er geht auf den Markt und klaut zwei Würstchen, zwei Teller und eine Kerze. In seinem Versteck bereitet er ein festliches Abendessen vor. Als letztes kämmt er sich die Haare. Sein Gast ist ein kleiner Hund. Beide essen genüsslich und schauen dabei Fernsehen durch das Fenster eines benachbarten Hauses. Die Verkäufer vom Markt kommen. Als sie sehen, wie der Junge und den Hund sich amüsieren, schleichen sie sich leise weg.

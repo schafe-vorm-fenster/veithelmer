@@ -28,6 +28,7 @@ awards:
 world_sales: KurzFilmAgentur Hamburg
 additional: Supported by Goethe Institut Almaty
 poster_image: poster.jpg
+cinema_poster: cinema-poster.jpg
 ---
 
 A homeless boy walks through the market. He steals two sausages, two plates and a candle.
