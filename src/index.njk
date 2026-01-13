@@ -5,9 +5,16 @@ description: Films by Veit Helmer — A visual poetry of places, people, and sil
 permalink: /
 ---
 
-{# Redirect root to /en/ - using url filter for GitHub Pages subfolder compatibility #}
+{# Language-aware redirect based on browser language #}
 <script>
-  window.location.href = '{{ "/en/" | url }}';
+  (function() {
+    var userLangs = navigator.languages || [navigator.language || navigator.userLanguage];
+    var isGerman = userLangs.some(function(lang) {
+      return lang.toLowerCase().startsWith('de');
+    });
+    var targetUrl = isGerman ? '{{ "/de/" | url }}' : '{{ "/en/" | url }}';
+    window.location.href = targetUrl;
+  })();
 </script>
 
 <noscript>
