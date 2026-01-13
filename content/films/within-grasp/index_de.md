@@ -14,7 +14,13 @@ cast:
   - "Jean Wilson"
 crew:
   - role: "Kamera"
-    name: "Janucz Reichenbach"
+    name: "Janusz Reichenbach"
+  - role: "Schnitt"
+    name: "Oliver Gieth"
+  - role: "Musik"
+    name: "Justice Hahn"
+  - role: "Produktion"
+    name: "Veit Helmer"
 world_sales: "KurzFilmAgentur Hamburg"
 awards:
   - "1. Preis Turin"

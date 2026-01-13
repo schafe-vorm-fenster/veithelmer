@@ -13,8 +13,12 @@ cast:
 crew:
   - role: "Kamera"
     name: "Joachim Jung"
+  - role: "Schnitt"
+    name: "Veit Helmer"
   - role: "Musik"
     name: "Christoph Oertel"
+  - role: "Produktion"
+    name: "Veit Helmer"
 world_sales: "KurzFilmAgentur Hamburg"
 awards:
   - "1. Preis Verden"
