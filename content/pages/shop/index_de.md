@@ -39,7 +39,7 @@ Kaufen bei [united One.music &raquo;](http://www.united-one.net/html/shop.html)
 
 ## Kurzfilme
 
-[Kurzfilm Agentur Hamburg &raquo;](http://shop.shortfilm.com/advanced_search_result.php?keywords=veit+helmer&search_in_description=1&x=16&y=1)
+Kurzfilm Agentur Hamburg
 [interfilm berlin &raquo;](http://www.interfilm.de/verleih/filme.php?film=278)
 
 ### Surprise (12 Kurzfilme) - DVD
