@@ -1419,7 +1419,7 @@ screen and (orientation: portrait) {
     width: 100%;
     left: 0;
     height: auto;
-    background: #fcd6e5 url(./bg_1536_ipad.jpg) center bottom no-repeat;
+    background: #fcd6e5 none center bottom no-repeat;
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     -webkit-background-size: 100% auto;

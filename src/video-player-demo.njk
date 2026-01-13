@@ -87,7 +87,7 @@ layout: base
         <div>
           <h3 class="font-bold mb-4">Fiddlesticks Trailer</h3>
           {{ video.videoPlayer(
-            src="/assets/films/fiddlesticks/trailer.mp4",
+            src=("/assets/films/fiddlesticks/trailer.mp4" | url),
             poster="/assets/films/fiddlesticks/poster.jpg",
             aspectRatio="16/9"
           ) }}
