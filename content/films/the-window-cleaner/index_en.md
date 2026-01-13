@@ -13,8 +13,12 @@ cast:
 crew:
   - role: "Cinematographer"
     name: "Joachim Jung"
+  - role: "Editor"
+    name: "Veit Helmer"
   - role: "Music"
     name: "Christoph Oertel"
+  - role: "Producer"
+    name: "Veit Helmer"
 world_sales: "KurzFilmAgentur Hamburg"
 awards:
   - "1st Prize Verden"

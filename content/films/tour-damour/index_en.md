@@ -11,6 +11,13 @@ director: "Veit Helmer"
 cast:
   - "Beate Jensen"
   - "Dominique Horwitz"
+crew:
+  - role: "Cinematographer"
+    name: "Veit Helmer"
+  - role: "Editor"
+    name: "Veit Helmer"
+  - role: "Producer"
+    name: "Veit Helmer"
 world_sales: "KurzFilmAgentur Hamburg"
 awards:
   - "Short Film Prize Society of German Film Theatres"
