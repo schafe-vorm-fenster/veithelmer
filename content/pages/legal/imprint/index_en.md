@@ -6,16 +6,13 @@ locale: en
 permalink: /en/legal/imprint/
 ---
 
-Veit Helmer-Filmproduktion
-Kastanienallee 55
-10119 Berlin
-Germany
-Phone: +49 (30) 217 77 77
+Veit Helmer-Filmproduktion  
+Kastanienallee 55  
+10119 Berlin  
+Germany  
+Email: contact@veithelmer.de  
+Phone: +49 (30) 217 77 77  
 VATIN: DE 136017935
-
-## Production
-
-[J2H|com](http://www.j2h.com/) - Jan-Henrik Hempel
 
 ## Disclaimer
 
