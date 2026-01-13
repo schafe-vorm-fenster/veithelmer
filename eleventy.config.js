@@ -464,8 +464,10 @@ module.exports = function(eleventyConfig) {
       }));
     }
 
-    if (data.poster_image) {
-      schema.image = `${siteData.url}/assets/films/${filmSlug}/${data.poster_image}`;
+    // Use cinema_poster if available, otherwise fall back to poster_image
+    const imageFile = data.cinema_poster || data.poster_image;
+    if (imageFile) {
+      schema.image = `${siteData.url}/assets/films/${filmSlug}/${imageFile}`;
     }
 
     if (data.trailer_video) {
