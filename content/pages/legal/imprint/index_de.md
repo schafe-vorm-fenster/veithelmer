@@ -5,15 +5,12 @@ locale: de
 permalink: /de/legal/imprint/
 ---
 
-Veit Helmer-Filmproduktion
-Kastanienallee 55
-10119 Berlin
-Telefon: +49 (30) 217 77 77
-USt-Ident Nr.: DE 136017935
-
-## Umsetzung
-
-[J2H|com](http://www.j2h.com/) - Jan-Henrik Hempel
+Veit Helmer-Filmproduktion  
+Kastanienallee 55  
+10119 Berlin  
+E-Mail: kontakt@veithelmer.de  
+Telefon: +49 (30) 217 77 77  
+USt-Ident Nr.: DE 136017935  
 
 ## Haftungsausschluss
 

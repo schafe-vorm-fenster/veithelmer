@@ -6,9 +6,10 @@ locale: en
 permalink: /en/legal/contact/
 ---
 
-Veit Helmer-Filmproduktion
-Kastanienallee 55
-10119 Berlin
-Germany
+Veit Helmer-Filmproduktion  
+Kastanienallee 55  
+10119 Berlin  
+Germany  
 
-contact@veithelmer.de
+Email: contact@veithelmer.de  
+Phone: +49 (30) 217 77 77
