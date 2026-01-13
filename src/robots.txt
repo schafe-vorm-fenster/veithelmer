@@ -3,4 +3,4 @@ Allow: /veithelmer/
 Disallow: /de/
 Disallow: /en/
 
-# Note: Update sitemap URL in src/_data/site.js
+Sitemap: https://schafe-vorm-fenster.github.io/veithelmer/sitemap.xml
