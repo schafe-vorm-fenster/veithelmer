@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/assets/fonts/LeagueSpartan-Light.woff2') format('woff2');
+  src: url('../assets/fonts/LeagueSpartan-Light.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/assets/fonts/LeagueSpartan-Medium.woff2') format('woff2');
+  src: url('../assets/fonts/LeagueSpartan-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/LeagueSpartan-Bold.woff2') format('woff2');
+  src: url('../assets/fonts/LeagueSpartan-Bold.woff2') format('woff2');
 }
 
 /* Design Tokens Extracted from Legacy Assets

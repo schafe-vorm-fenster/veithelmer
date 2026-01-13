@@ -32,6 +32,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   
+  // Create a simple favicon.ico (copy from logo for now)
+  eleventyConfig.addPassthroughCopy({ "src/assets/images/veithelmer-logo.jpg": "favicon.ico" });
+  
   // Passthrough copy for film assets (posters, trailers, images)
   eleventyConfig.addPassthroughCopy({
     "content/films": "assets/films"
