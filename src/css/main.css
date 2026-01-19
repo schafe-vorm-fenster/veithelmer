@@ -5,29 +5,29 @@
  * Phase 6.1.2: Brand Identity
  * ============================================ */
 
-/* Font Face Declarations - League Spartan (Self-hosted) */
+/* Noto Sans - Local Font Files */
 @font-face {
-  font-family: 'League Spartan';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('../assets/fonts/LeagueSpartan-Light.woff2') format('woff2');
+  src: url('../assets/fonts/NotoSans-Light.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'League Spartan';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../assets/fonts/LeagueSpartan-Medium.woff2') format('woff2');
+  src: url('../assets/fonts/NotoSans-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'League Spartan';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../assets/fonts/LeagueSpartan-Bold.woff2') format('woff2');
+  src: url('../assets/fonts/NotoSans-Bold.woff2') format('woff2');
 }
 
 /* Design Tokens Extracted from Legacy Assets
@@ -48,7 +48,7 @@
   --color-brand-charcoal: #333;
   
   /* Typography */
-  --font-sans: 'League Spartan', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: 'Noto Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
   
   /* Effects */
   --shadow-base: -1px 0 8px 2px rgba(0, 0, 0, 0.58);
