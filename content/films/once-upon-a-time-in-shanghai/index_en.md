@@ -1,6 +1,6 @@
 ---
 title: Once Upon A Time In Shanghai
-category: short
+category: documentary
 type: film
 language: en
 description: An intimate documentary portrait of the "Shanghai" neighborhood in Baku, Azerbaijan—a unique district where railway tracks run so close to homes that life unfolds on the tracks themselves. The neighborhood was demolished shortly after filming.

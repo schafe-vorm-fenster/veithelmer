@@ -1,5 +1,5 @@
 ---
-title: Akiko, the Flying Monkey
+title: Akiko, the flying monkey
 type: film
 category: feature
 language: en
@@ -39,7 +39,7 @@ trailer_poster: trailer.jpg
 ---
 Young monkey Akiko escapes from the zoo and embarks on an adventurous journey through the city, where he encounters a diverse cast of animals. Together, they help Akiko in his mission to reunite with his family.
 
-Veit Helmer brings his signature visual storytelling to this imaginative family film, creating a colorful and whimsical world that captivates audiences of all ages. With a talented ensemble cast including Heike Makatsch, Benno Fürmann, and Meret Becker, AKIKO, THE FLYING MONKEY delivers a heartwarming tale about friendship, courage, and the universal desire to find one's place in the world.
+Veit Helmer brings his signature visual storytelling to this imaginative family film, creating a colorful and whimsical world that captivates audiences of all ages. With a talented ensemble cast including Heike Makatsch, Benno Fürmann, and Meret Becker, Akiko, the flying monkey delivers a heartwarming tale about friendship, courage, and the universal desire to find one's place in the world.
 
 The film premiered at the Locarno Festival and showcases Helmer's ability to craft enchanting stories that transcend language and cultural barriers, much like his previous works. Through expressive cinematography by Andrés Aguiló, the film creates a vibrant urban landscape where anything seems possible.
 
