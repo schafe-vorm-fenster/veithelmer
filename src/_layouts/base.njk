@@ -18,7 +18,7 @@
   <meta property="og:url" content="{{ canonicalUrl | default(site.baseUrl + (page.url | url)) }}">
   <meta property="og:title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
   <meta property="og:description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker.") }}">
-  <meta property="og:image" content="{{ ogImage | default(("/assets/images/veithelmer-logo.jpg" | url)) }}">
+  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">{% endif %}
   <meta property="og:locale" content="{{ 'de_DE' if currentLocale == 'de' else 'en_US' }}">
   <meta property="og:site_name" content="Veit Helmer">
   
@@ -27,7 +27,7 @@
   <meta name="twitter:url" content="{{ canonicalUrl | default(site.baseUrl + (page.url | url)) }}">
   <meta name="twitter:title" content="{{ title | default("Veit Helmer - Filmmaker") }}">
   <meta name="twitter:description" content="{{ description | default("Official website of Veit Helmer, award-winning filmmaker.") }}">
-  <meta name="twitter:image" content="{{ ogImage | default(("/assets/images/veithelmer-logo.jpg" | url)) }}">
+  {% if ogImage %}<meta name="twitter:image" content="{{ ogImage }}">{% endif %}
   
   {# Canonical URL #}
   <link rel="canonical" href="{{ canonicalUrl | default(site.baseUrl + (page.url | url)) }}">
@@ -37,9 +37,6 @@
   <link rel="alternate" hreflang="{{ currentLocale }}" href="{{ site.baseUrl }}{{ page.url | url }}">
   <link rel="alternate" hreflang="{{ alternateLocale }}" href="{{ site.baseUrl }}{{ page.url | alternateUrl(alternateLocale) }}">
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en/">
-  
-  {# Favicon - Using logo as temporary favicon #}
-  <link rel="icon" type="image/jpeg" href="{{ '/assets/images/veithelmer-logo.jpg' | url }}">
   
   {# Stylesheets #}
   <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
