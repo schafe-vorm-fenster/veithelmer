@@ -59,17 +59,17 @@
 
     {# Films Link #}
     <div class="mb-8 pt-12">
-      <a href="{{ ('/' + currentLocale + '/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.films' | t(currentLocale) }}</a>
+      <a href="{{ ('/' + currentLocale + '/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.films' | t(currentLocale) }}</a>
     </div>
 
     {# Pages Section #}
     <div class="mb-8 border-t border-gray-800 pt-6">
       <h2 class="text-xs uppercase tracking-wider text-white/40 mb-4">{{ 'nav.pages' | t(currentLocale) }}</h2>
       <ul class="space-y-3">
-        <li><a href="{{ ('/' + currentLocale + '/biography/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.biography' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/workshops/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.workshops' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/commercials/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.commercials' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/shop/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.shop' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/biography/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.biography' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/workshops/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.workshops' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/commercials/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.commercials' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/shop/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.shop' | t(currentLocale) }}</a></li>
       </ul>
     </div>
 
@@ -77,8 +77,8 @@
     <div class="mb-8 border-t border-gray-800 pt-6">
       <h2 class="text-xs uppercase tracking-wider text-white/40 mb-4">{{ 'nav.legal' | t(currentLocale) }}</h2>
       <ul class="space-y-3">
-        <li><a href="{{ ('/' + currentLocale + '/legal/contact/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.contact' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/legal/imprint/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.imprint' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/legal/contact/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.contact' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/legal/imprint/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.imprint' | t(currentLocale) }}</a></li>
       </ul>
     </div>
 
@@ -87,7 +87,7 @@
       <h2 class="text-xs uppercase tracking-wider text-white/40 mb-4">{{ 'nav.language' | t(currentLocale) }}</h2>
       <a 
         href="{{ page.url | alternateUrl(alternateLocale) }}" 
-        class="text-lg hover:text-brand-brown transition-colors inline-block no-underline"
+        class="text-lg hover:text-brand-red transition-colors inline-block no-underline"
         hreflang="{{ alternateLocale }}"
         aria-label="{% if alternateLocale == 'en' %}Switch to English{% else %}Wechseln zu Deutsch{% endif %}"
       >
@@ -114,17 +114,17 @@
 
     {# Films Link #}
     <div class="mb-8 pt-8 pb-6 border-b border-gray-800">
-      <a href="{{ ('/' + currentLocale + '/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.films' | t(currentLocale) }}</a>
+      <a href="{{ ('/' + currentLocale + '/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.films' | t(currentLocale) }}</a>
     </div>
 
     {# Pages Section #}
     <div class="mb-8 pt-6">
       <h2 class="text-xs uppercase tracking-wider text-white/40 mb-4">{{ 'nav.pages' | t(currentLocale) }}</h2>
       <ul class="space-y-3">
-        <li><a href="{{ ('/' + currentLocale + '/biography/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.biography' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/workshops/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.workshops' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/commercials/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.commercials' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/shop/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.shop' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/biography/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.biography' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/workshops/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.workshops' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/commercials/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.commercials' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/shop/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.shop' | t(currentLocale) }}</a></li>
       </ul>
     </div>
 
@@ -132,8 +132,8 @@
     <div class="mb-8 border-t border-gray-800 pt-6">
       <h2 class="text-xs uppercase tracking-wider text-white/40 mb-4">{{ 'nav.legal' | t(currentLocale) }}</h2>
       <ul class="space-y-3">
-        <li><a href="{{ ('/' + currentLocale + '/legal/contact/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.contact' | t(currentLocale) }}</a></li>
-        <li><a href="{{ ('/' + currentLocale + '/legal/imprint/') | url }}" class="text-lg hover:text-brand-brown transition-colors no-underline">{{ 'nav.imprint' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/legal/contact/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.contact' | t(currentLocale) }}</a></li>
+        <li><a href="{{ ('/' + currentLocale + '/legal/imprint/') | url }}" class="text-lg hover:text-brand-red transition-colors no-underline">{{ 'nav.imprint' | t(currentLocale) }}</a></li>
       </ul>
     </div>
 
@@ -142,7 +142,7 @@
       <h2 class="text-xs uppercase tracking-wider text-white/40 mb-4">{{ 'nav.language' | t(currentLocale) }}</h2>
       <a 
         href="{{ page.url | alternateUrl(alternateLocale) }}" 
-        class="text-lg hover:text-brand-brown transition-colors inline-block no-underline"
+        class="text-lg hover:text-brand-red transition-colors inline-block no-underline"
         hreflang="{{ alternateLocale }}"
         aria-label="{% if alternateLocale == 'en' %}Switch to English{% else %}Wechseln zu Deutsch{% endif %}"
       >

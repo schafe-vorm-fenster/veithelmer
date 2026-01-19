@@ -94,7 +94,7 @@ layout: page.njk
         {% for link in external_links %}
           <a 
             href="{% if link.url.startsWith('http') or link.url.startsWith('//') %}{{ link.url }}{% else %}{{ link.url | url }}{% endif %}" 
-            class="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-brand-brown hover:text-white transition-colors duration-200"
+            class="inline-block px-8 py-3 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-brand-red hover:text-white transition-colors duration-200"
             {% if link.url.startsWith('http') or link.url.startsWith('//') %}
               target="_blank"
               rel="noopener noreferrer"
