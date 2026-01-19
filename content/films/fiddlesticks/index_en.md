@@ -41,7 +41,7 @@ crew:
     name: Vincent Assmann
   - role: Music
     name: Cherilyn MacNeil, FM Einheit, Ingfried Hoffmann, Lars Löhn, Malcolm Arison, Pit Baumgartner, Shantel
-poster_image: poster.jpg
+poster_image: poster.webp
 cinema_poster: cinema-poster-en.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
