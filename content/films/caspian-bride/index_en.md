@@ -11,20 +11,26 @@ cast:
 release_year: 2005
 duration: 8 minutes
 country: Azerbaijan / Germany
-technical_specs: 35 mm, Color, No dialogue
+film_language: No dialogue
 crew:
   - role: Director
-    name: Veit Helmer
+    name: Veit Helmer and students from Baku
+  - role: Screenplay
+    name: Rena Effendi
   - role: Cinematography
-    name: Elman Aliev
+    name: Elman Aliev, Rasim Nabiyev
   - role: Editing
     name: Moritz Steinkohl
   - role: Music
     name: Rosid Behbudov
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
 poster_image: poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 cinema_poster: cinema-poster.jpg
+awards:
+  - Friedrich-Wilhelm-Murnau-Preis
 ---
 A lonesome man takes a ride to a dump in search for usable things.
 

@@ -3,7 +3,7 @@ title: Dog's Life
 category: short
 type: film
 language: en
-description: A homeless boy walks through the market. He steals two sausages, two plates and a candle. In the evening, he prepares dinner. He spreads a newspaper over a box and sets the plates and candle on the makeshift table. He lights the candle and combs his hair. He takes a puppy out of a box and together they enjoy their delicious meal. Angry market vendors arrive but soon retreat once they see the boy and the puppy.
+description: A homeless boy walks through the market. He steals two sausages, two plates and a candle. In the evening, he prepares dinner. He spreads a newspaper over a box and sets the plates and candle on the makeshift table. He lights the candle and combs his hair. He takes a puppy out of a box and together they enjoy their delicious meal. The market vendors search for him. When they see how he and the dog are enjoying themselves, they quietly sneak away.
 director: Veit Helmer and Students of T. Zhurgenov Art Academy
 cast:
   - Stanislaw Botev
@@ -13,16 +13,18 @@ cast:
 release_year: 2004
 duration: 7 minutes
 country: Kazakhstan / Germany
-technical_specs: 35 mm, 1:1.66, Colour, Dolby-Digital
+film_language: No dialogue
 crew:
-  - role: Director
+  - role: Screenplay and Direction
     name: Veit Helmer and Students of T. Zhurgenov Art Academy
-  - role: Cinematographer
+  - role: Cinematography
     name: Stanislaw Samoilov
   - role: Editing
     name: Moritz Steinkohl
   - role: Music
     name: Enis Rotthoff
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
 awards:
   - Friedrich-Wilhelm-Murnau-Preis 2005
 world_sales: KurzFilmAgentur Hamburg
@@ -35,4 +37,4 @@ A homeless boy walks through the market. He steals two sausages, two plates and 
 
 In the evening, he prepares dinner. He spreads a newspaper over a box and sets the plates and candle on the makeshift table. He lights the candle and combs his hair. He takes a puppy out of a box and together they enjoy their delicious meal.
 
-Angry market vendors arrive but soon retreat once they see the boy and the puppy.
+The market vendors search for him. When they see how he and the dog are enjoying themselves, they quietly sneak away.

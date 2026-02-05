@@ -17,14 +17,22 @@ cast:
 release_year: 1999
 duration: 92 minutes
 country: Germany
-technical_specs: Cinemascope, b/w-colored
+film_language: No dialogue
 awards:
-  - Gent International Film festival: FIPRESCI-Award
-  - Kiev International Film festival: Audience-Award
-  - Hof German Film Festival: Best Film
-  - Bavarian Film Awards: Best New Director
-  - Slamdance Festival Park City: Kodak Vision Award
-  - Montreal Comedy Festival: Best Screenplay
+  - FIPRESCI Award, Flanders Film Festival, Gent
+  - 1st Prize, Salerno Film Festival
+  - Audience Award, Molodist Film Festival Kiev
+  - Best Screenplay, Comedy Film Festival Montreal
+  - Eastman-Kodak Award, Hof Film Festival
+  - Best Production Design, Hof Film Festival
+  - Best New Director, Bavarian Film Awards
+  - Best Director, German Film Awards (Nomination)
+  - Best Discovery, European Film Awards (Nomination)
+  - Best Cinematography, Slamdance Film Festival
+  - Audience Award, Max Ophüls Film Festival Saarbrücken
+  - Best Fantasy Film, Espoo Cine Film Festival
+  - Young Jury Prize, Tbilisi Film Festival
+  - Audience Award, Fantasporto Film Festival, Porto
 crew:
   - role: Screenplay
     name: Michaela Beck, Veit Helmer
@@ -35,7 +43,7 @@ crew:
   - role: Music
     name: Jürgen Knieper
 poster_image: poster.jpg
-cinema_poster: cinema-poster.jpg
+cinema_poster: cinema-poster-en.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 full_video_url: https://www.youtube.com/watch?v=ZWTbnbm1wnI

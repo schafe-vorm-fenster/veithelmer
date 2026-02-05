@@ -3,25 +3,31 @@ title: Georgian Summer
 category: short
 type: film
 language: en
-description: A sentimental donkey obstructs the flow of traffic in a Georgian city. The resulting chaos brings together a grumpy old man and a romantic young woman in an unexpected love story.
+description: A stubborn donkey causes a traffic jam in downtown Tbilisi. In a meadow, a bull chases a girl in a red dress. A boy warns her at the last second. As thanks, she gives him a red flower. This flower lures the donkey off the road, and the boy finds the love of his life.
 director: Veit Helmer
 cast:
   - Ani Amiridze
   - Gaga Chikhradze
 release_year: 2004
-duration: 8 Minuten
-country: Deutschland / Georgien
-technical_specs: 35 mm, 1:1.66, Farbe, Dolby Digital, Ohne Dialog
+duration: 8 minutes
+country: Germany / Georgia
+film_language: No dialogue
 crew:
-  - role: Director
-    name: Veit Helmer
-  - role: Camera
-    name: Piotr Rossakowski
-  - role: Editor
-    name: Moritz Steinkohl
+  - role: Screenplay and Direction
+    name: Veit Helmer and students from Tbilisi
+  - role: Cinematography
+    name: Keti Nosadze
+  - role: Editing
+    name: Paul Murray
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
+  - role: Co-production
+    name: Goethe Institut Tbilisi
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 ---
----
 
-A sentimental donkey obstructs the flow of traffic in a Georgian city. The resulting chaos brings together a grumpy old man and a romantic young woman in an unexpected love story.
+A stubborn donkey causes a traffic jam in downtown Tbilisi.
+In a meadow, a bull chases a girl in a red dress.
+A boy warns her at the last second. As thanks, she gives him a red flower.
+This flower lures the donkey off the road, and the boy finds the love of his life.

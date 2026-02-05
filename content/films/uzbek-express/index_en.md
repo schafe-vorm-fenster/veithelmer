@@ -1,17 +1,18 @@
 ---
 title: Uzbek Express!
-category: short
 type: film
+category: short
 language: en
 description: Passengers rush to the express train. The sight of a couple locked in an intimate kiss inspires the engineer to abandon the train and to make a fundamental change in his life.
-director: Veit Helmer and Students of Mannon Uigur Filmschool
+director: Veit Helmer
 cast:
   - Nigmat Alimov
   - Mahfuza Babatullaeva
 release_year: 2001
 duration: 7 minutes
 country: Germany / Uzbekistan
-technical_specs: 35 mm, Color, No dialogue
+film_language: No dialogue
+technical_specs: 35 mm, Color
 crew:
   - role: Director
     name: Veit Helmer
@@ -21,6 +22,9 @@ crew:
     name: Dagmar Drews
   - role: Sound Design
     name: Martin Frühmorgen
+  - role: Production
+    name: Veit Helmer Film Productions
+co_production: Goethe Institut Tashkent
 poster_image: poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg

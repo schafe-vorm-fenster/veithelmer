@@ -6,31 +6,27 @@ language: de
 description: Ein kleines Mädchen wandert durch einen verlassenen Vergnügungspark in der Wüste. Sie trifft einen alten Mann mit einer Schaufel, der sie zu einer versteckten Entdeckung unter dem Sand führt.
 director: Veit Helmer
 cast:
-  - Agakhan Salmanov als Transvestit
-  - Nigar Tagizade als Junges Mädchen
+  - Agakhan Salmanov
+  - Nigar Tagizade
 release_year: 2017
 duration: 7 Minuten
 country: Aserbaidschan / Deutschland
-technical_specs: 2K
+film_language: Ohne Dialoge
 crew:
   - role: Regie
-    name: Veit Helmer
+    name: Veit Helmer und Studenten aus Baku
   - role: Drehbuch
-    name: Veit Helmer
+    name: Maryam Mirzoeva, Leyli Gafarova
   - role: Kamera
-    name: Giorgi Shvelidze
+    name: Emin Ibrahimov
   - role: Schnitt
-    name: Gesa Jäger
+    name: Nuno Martini
   - role: Ton
-    name: Veit Helmer
-  - role: Produzent
-    name: Veit Helmer
-  - role: Co-Produzent
-    name: Anar Abbasov
-  - role: Produktionsleitung
-    name: Solmaz Salayeva
+    name: Bekir Bekiradze
+  - role: Sounddesign
+    name: Julian Cropp
+  - role: Produktion
+    name: Veit Helmer-Filmproduktion
 poster_image: poster.jpg
 ---
----
-
-Ein kleines Mädchen wandert durch einen verlassenen Vergnügungspark in der Wüste. Sie trifft einen alten Mann mit einer Schaufel, der sie zu einer versteckten Entdeckung unter dem Sand führt.
+Ein Mädchen spielt in einem verlassenen Vergnügungspark. Ein alter Mann kommt mit einer Schaufel. Das Mädchen folgt ihm heimlich, um sein Geheimnis zu lüften …

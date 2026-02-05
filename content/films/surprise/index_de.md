@@ -1,7 +1,7 @@
 ---
 title: Surprise!
 category: short
-description: Ein Mann baut um das Bett seiner Geliebten ein Arsenal an Mordinstrumenten. Will er sie umbringen während sie schläft?
+description: Ein Mann baut um das Bett seiner schlafenden Frau herum ein Vielzahl an tödlichen Apparaturen. Er zündet eine Lunte und verläßt das Haus. Die Maschinerie weckt die Frau, duscht sie, kleidet sie an und serviert ihr ein Frühstück. Doch plötzlich geht alles schief...
 director: Veit Helmer
 cast:
   - Max Tidof
@@ -9,7 +9,7 @@ cast:
 release_year: 1995
 duration: 6 Minuten
 country: Deutschland
-technical_specs: 35 mm, handkoloriert, ohne Dialoge
+film_language: Ohne Dialoge
 awards:
   - 32 Preise
   - Publikumspreis, Cannes 1995
@@ -21,7 +21,12 @@ crew:
     name: Stefan von Borbély
   - role: Musik
     name: Niki Reiser
+  - role: Produktionsdesign
+    name: Meike Urban
+  - role: Handcolorierung
+    name: Nicola Stein, Heike Merker
+production: Veit Helmer-Filmproduktion
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 ---
-Ein Mann baut um das Bett seiner Geliebten ein Arsenal an Mordinstrumenten. Die Zutaten lassen nur einen Schluss zu: Er will sie umbringen. Und sie schläft!
+Ein Mann baut um das Bett seiner schlafenden Frau herum ein Vielzahl an tödlichen Apparaturen. Er zündet eine Lunte und verläßt das Haus. Die Maschinerie weckt die Frau, duscht sie, kleidet sie an und serviert ihr ein Frühstück. Doch plötzlich geht alles schief...

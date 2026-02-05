@@ -10,14 +10,14 @@ duration: 87 minutes
 country: Germany / Japan
 technical_specs: HD, color
 crew:
-  - role: Author and Director
+  - role: Producer
+    name: Heino Deckert
+  - role: Director, Cinematography, Screenplay
     name: Veit Helmer
-  - role: Cinematography
-    name: Veit Helmer
-  - role: Sound Design
-    name: Martin Frühmorgen
   - role: Editing
     name: Sebastian Bonde
+  - role: Sound Design
+    name: Martin Frühmorgen
   - role: Music
     name: Johannes Koeniger
 poster_image: poster.jpg

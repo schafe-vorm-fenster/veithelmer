@@ -1,6 +1,8 @@
 ---
 title: Bling Bling
+type: film
 category: documentary
+language: de
 description: Das filmische Tagebuch dreier Frauen aus Berlin gibt einen authentischen Einblick in das Herz der L.A.-Hip Hop Szene.
 director: Neelesha Barthel, Heike Woosey
 release_year: 2001
@@ -11,10 +13,10 @@ awards:
   - Deutscher Nachwuchsfilmpreis
   - Sehsüchte Festival 2002
 crew:
-  - role: Regie
-    name: Neelesha Barthel, Heike Woosey
-  - role: Kamera
-    name: Neelesha Barthel, Heike Woosey
+  - role: Produzent
+    name: Veit Helmer
+  - role: Buch, Regie, Kamera
+    name: Neelesha Barthel, Heike Woosey, Janna Ji Wonders
   - role: Schnitt
     name: Christopher Chaber, Neelesha Barthel
 poster_image: poster.jpg

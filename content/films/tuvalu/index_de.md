@@ -17,15 +17,25 @@ cast:
 release_year: 1999
 duration: 92 Minuten
 country: Deutschland
-technical_specs: Cinemascope, s/w-coloriert
+film_language: Ohne Dialoge
 awards:
-  - Gent International Film festival: FIPRESCI-Award
-  - Kiev International Film festival: Audience-Award
-  - Hof German Film Festival: Best Film
-  - Bavarian Film Awards: Best New Director
-  - Slamdance Festival Park City: Kodak Vision Award
-  - Montreal Comedy Festival: Best Screenplay
+  - Fipresci-Preis, Flanders Film Festival, Gent
+  - 1. Preis, Salerno Film Festival
+  - Publikumspreis, Molodist Film Festival Kiev
+  - Bestes Drehbuch, Comedy Film Festival Montreal
+  - Eastman-Kodak Förderpreis, Hofer Filmtage
+  - Bestes Szenenbild, Hofer Filmtage
+  - Beste Nachwuchsregie, Bayrischer Filmpreis
+  - Beste Regie, Deutscher Filmpreis (Nominierung)
+  - Beste Neuentdeckung, Europäischer Filmpreis (Nominierung)
+  - Beste Kamera, Slamdance Film Festival
+  - Publikumspreis, Max Ophüls-Filmfestival Saarbrücken
+  - Bester Fantasyfilm, Espoo Cine Film Festival
+  - Preis der jungen Jury, Tiflis Film Festival
+  - Publikumspreis, Fantsporto Film Festival, Porto
 crew:
+  - role: Regie
+    name: Veit Helmer
   - role: Drehbuch
     name: Michaela Beck, Veit Helmer
   - role: Kamera
@@ -35,7 +45,7 @@ crew:
   - role: Musik
     name: Jürgen Knieper
 poster_image: poster.jpg
-cinema_poster: cinema-poster.jpg
+cinema_poster: cinema-poster-de.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 full_video_url: https://www.youtube.com/watch?v=ZWTbnbm1wnI

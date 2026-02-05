@@ -11,17 +11,23 @@ cast:
 release_year: 2004
 duration: 8 Minuten
 country: Deutschland / Georgien
-technical_specs: 35 mm, 1:1.66, Farbe, Dolby Digital, Ohne Dialog
+film_language: Ohne Dialoge
 crew:
-  - role: Regie
-    name: Veit Helmer
+  - role: Buch und Regie
+    name: Veit Helmer und Studenten aus Tiflis
   - role: Kamera
-    name: Piotr Rossakowski
+    name: Keti Nosadze
   - role: Schnitt
-    name: Moritz Steinkohl
+    name: Paul Murray
+  - role: Produktion
+    name: Veit Helmer-Filmproduktion
+  - role: Koproduktion
+    name: Goethe Institut Tiflis
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 ---
----
 
-Ein sentimentaler Esel blockiert den Verkehr in einer georgischen Stadt. Das daraus resultierende Chaos bringt einen mürrischen alten Mann und eine romantische junge Frau in einer unerwarteten Liebesgeschichte zusammen.
+Ein störrischer Esel verursacht einen Stau in der Innenstadt von Tiflis.
+Auf einer Wiese verfolgt ein Stier ein Mädchen im roten Kleid.
+Ein Junge warnt sie in letzter Sekunde. Als Dank schenkt sie ihm eine rote Blume.
+Diese Blume lockt den Esel von der Straße und der Junge findet die Liebe seines Lebens.

@@ -13,10 +13,10 @@ awards:
   - German up-and-coming Award
   - Sehsüchte Festival 2002
 crew:
-  - role: Director
-    name: Neelesha Barthel, Heike Woosey
-  - role: Cinematography
-    name: Neelesha Barthel, Heike Woosey
+  - role: Producer
+    name: Veit Helmer
+  - role: Screenplay, Director, Cinematography
+    name: Neelesha Barthel, Heike Woosey, Janna Ji Wonders
   - role: Editing
     name: Christopher Chaber, Neelesha Barthel
 poster_image: poster.jpg

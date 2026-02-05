@@ -18,7 +18,7 @@ crew:
   - role: "Music"
     name: "Michael Hagenmayer"
 world_sales: "Interfilm Berlin"
-additional_info: "Produced by Bundesverband Jugend und Film e.V., Berndt Güntzel-Lingner, Martin Loew"
+additional_info: "Production: Bundesverband Jugend und Film"
 poster_image: "kf_freudenhaus.jpg"
 trailer_video: "trailer.mp4"
 trailer_poster: "poster.jpg"

@@ -3,7 +3,7 @@ title: Surprise!
 category: short
 type: film
 language: en
-description: A man gathers together an arsenal of lethal weapons around his lover’s bed. It looks as if he wants to kill her, while she is fast asleep!
+description: A man builds a complex array of deadly devices around his sleeping wife's bed. He lights a fuse and leaves the house. The machinery wakes the woman, showers her, dresses her, and serves her breakfast. But suddenly, everything goes wrong...
 director: Veit Helmer
 cast:
   - Max Tidof
@@ -11,7 +11,7 @@ cast:
 release_year: 1995
 duration: 6 minutes
 country: Germany
-technical_specs: 35 mm, hand coloured, no dialogue
+film_language: No dialogue
 awards:
   - 32 awards
   - Audience award, Cannes 1995
@@ -23,7 +23,12 @@ crew:
     name: Stefan von Borbély
   - role: Music
     name: Niki Reiser
+  - role: Production Design
+    name: Meike Urban
+  - role: Hand colouring
+    name: Nicola Stein, Heike Merker
+production: Veit Helmer-Filmproduktion
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 ---
-A man gathers together an arsenal of lethal weapons around his lover’s bed. It looks as if he wants to kill her, while she is fast asleep!
+A man builds a complex array of deadly devices around his sleeping wife's bed. He lights a fuse and leaves the house. The machinery wakes the woman, showers her, dresses her, and serves her breakfast. But suddenly, everything goes wrong...
