@@ -20,8 +20,12 @@ crew:
     name: Sergej Ashkenazy
   - role: Cinematography
     name: Kolya Kano
+  - role: Production Design
+    name: Rustam Odinaev
   - role: Music
     name: Goran Bregovic
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
   - role: Editing
     name: Vincent Assmann
 poster_image: poster.jpg
@@ -31,6 +35,10 @@ trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
     url: /en/baikonur/microsite/
+awards:
+  - Best Feature Film, Mediawave Film Festival Györ
+  - Audience Award, Zadar Film Festival
+  - Audience Award, Regiofun Film Festival Kattowitz
 ---
 "Whatever falls from heaven, you may keep." So goes the unwritten law of the Kazakh steppes. A law avidly adhered to by the inhabitants of a small village, who collect the space debris that falls downrange from the nearby Baikonur space station.
 

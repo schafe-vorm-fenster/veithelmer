@@ -14,7 +14,7 @@ cast:
 release_year: 2023
 duration: 82 Minuten
 country: Deutschland / Georgien
-technical_specs: Sprache - Ohne Dialoge
+film_language: Ohne Dialoge
 crew:
   - role: Buch und Regie
     name: Veit Helmer

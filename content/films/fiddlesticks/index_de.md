@@ -29,7 +29,7 @@ cast:
 release_year: 2014
 duration: 82 Minuten
 country: Deutschland
-technical_specs: Farbe
+film_language: Deutsch
 crew:
   - role: Regie
     name: Veit Helmer
@@ -41,6 +41,8 @@ crew:
     name: Vincent Assmann
   - role: Musik
     name: Cherilyn MacNeil, FM Einheit, Ingfried Hoffmann, Lars Löhn, Malcolm Arison, Pit Baumgartner, Shantel
+  - role: Produktion
+    name: Veit Helmer-Filmproduktion
 poster_image: poster.webp
 cinema_poster: cinema-poster-de.jpg
 trailer_video: trailer.mp4
@@ -48,6 +50,22 @@ trailer_poster: trailer.jpg
 external_links:
   - name: Film-Website
     url: /de/fiddlesticks/microsite/
+awards:
+  - Bester Kinderfilm, Zurich Film Festival
+  - Bester Kinderfilm, Gijon Film Festival
+  - Bester Film, Leeds Young Film Festival
+  - Bester Kinderfilm, Traverse City Film Festival
+  - Publikumspreis, Traverse City Film Festival
+  - Bester Kinderfilm „Goldener Nils“, Festival des Deutschen Films, Ludwigshafen
+  - Bester Spielfilm, Cinemagig Film Festival Belfast
+  - Publikumspreis, Listapad Minsk
+  - Publikumspreis, Plzen, Juniorfest
+  - Publikumspreis, Carrousel Film Festival Rimouski
+  - Bester Film, Sanford Int’l Film Festival
+  - Bester Film, Sousse Int’l Film Festival
+  - Bester Film, Kinderfilmfestival Santo Domingo
+  - Preis der Jury, Roshd Film Festival Teheran
+  - Preis der Kinderjury, Divercine Film Festival, Montevideo
 ---
 Bullerbü war gestern, jetzt kommt Bollersdorf! 
 

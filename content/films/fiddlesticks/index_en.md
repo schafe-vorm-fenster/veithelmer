@@ -29,7 +29,7 @@ cast:
 release_year: 2014
 duration: 82 minutes
 country: Germany
-technical_specs: Color
+film_language: German
 crew:
   - role: Director
     name: Veit Helmer
@@ -41,6 +41,8 @@ crew:
     name: Vincent Assmann
   - role: Music
     name: Cherilyn MacNeil, FM Einheit, Ingfried Hoffmann, Lars Löhn, Malcolm Arison, Pit Baumgartner, Shantel
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
 poster_image: poster.webp
 cinema_poster: cinema-poster-en.jpg
 trailer_video: trailer.mp4
@@ -48,6 +50,22 @@ trailer_poster: trailer.jpg
 external_links:
   - name: Movie Website
     url: /en/fiddlesticks/microsite/
+awards:
+  - Best Children's Film, Zurich Film Festival
+  - Best Children's Film, Gijon Film Festival
+  - Best Film, Leeds Young Film Festival
+  - Best Children's Film, Traverse City Film Festival
+  - Audience Award, Traverse City Film Festival
+  - Best Children's Film "Golden Nils", Festival of German Films, Ludwigshafen
+  - Best Feature Film, Cinemagig Film Festival Belfast
+  - Audience Award, Listapad Minsk
+  - Audience Award, Plzen, Juniorfest
+  - Audience Award, Carrousel Film Festival Rimouski
+  - Best Film, Sanford Int'l Film Festival
+  - Best Film, Sousse Int'l Film Festival
+  - Best Film, Children's Film Festival Santo Domingo
+  - Jury Prize, Roshd Film Festival Tehran
+  - Children's Jury Prize, Divercine Film Festival, Montevideo
 ---
 The life of the children of Bollersdorf could be so beautiful if the place hadn't been discovered by the Society for Consumer Research because of its averageness. New products are to be tested here. What the people of Bollersdorf like can be sold well everywhere, the market researchers know. 
 

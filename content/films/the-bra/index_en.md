@@ -23,7 +23,7 @@ cast:
 release_year: 2018
 duration: 90 minutes
 country: Germany / Azerbaijan / Georgia
-technical_specs: Language - No dialogue
+film_language: No dialogue
 crew:
   - role: Screenplay and Director
     name: Veit Helmer

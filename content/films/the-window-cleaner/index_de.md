@@ -1,16 +1,21 @@
 ---
 title: "Der Fensterputzer"
 category: short
+type: film
 language: de
-release_year: 1994
-duration: "8 min"
-country: "Deutschland"
-format: "35 mm, ohne Dialog"
+description: Anton, der Fensterputzer des Fernsehturms verliebt sich in die Bedienung des Aussichtscafes. Als er sieht, wie ihr Boss sie belästigt, sieht er rot und holt den Vorschlaghammer...
 director: "Veit Helmer"
+release_year: 1994
+duration: 8 Minuten
+country: "Deutschland"
+film_language: Ohne Dialoge
+format: "Super 8-Cinemascope"
 cast:
   - "Diana Abu Samra"
   - "Ercan Inci"
 crew:
+  - role: "Buch und Regie"
+    name: "Veit Helmer"
   - role: "Kamera"
     name: "Joachim Jung"
   - role: "Schnitt"
@@ -18,7 +23,7 @@ crew:
   - role: "Musik"
     name: "Christoph Oertel"
   - role: "Produktion"
-    name: "Veit Helmer"
+    name: "Veit Helmer-Filmproduktion"
 world_sales: "KurzFilmAgentur Hamburg"
 awards:
   - "1. Preis Verden"
@@ -27,4 +32,4 @@ awards:
 poster_image: "kf_der-fensterputzer.jpg"
 ---
 
-Der schüchterne Fensterputzer Anton sieht bei der Arbeit die Bedienung Sophie, es ist Liebe auf den ersten Blick. Ihr rasend eifersüchtiger Boss belästigt seine neue Angestellte. Anton sieht rot und holt einen riesigen Vorschlaghammer ...
+Anton, der Fensterputzer des Fernsehturms verliebt sich in die Bedienung des Aussichtscafes. Als er sieht, wie ihr Boss sie belästigt, sieht er rot und holt den Vorschlaghammer...

@@ -23,7 +23,7 @@ cast:
 release_year: 2018
 duration: 90 Minuten
 country: Deutschland / Aserbaidschan / Georgien
-technical_specs: Sprache - ohne Dialoge
+film_language: Ohne Dialoge
 crew:
   - role: Buch und Regie
     name: Veit Helmer

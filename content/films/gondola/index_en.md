@@ -14,7 +14,7 @@ cast:
 release_year: 2023
 duration: 82 minutes
 country: Germany / Georgia
-technical_specs: Language - No dialogue
+film_language: No dialogue
 crew:
   - role: Screenplay and Director
     name: Veit Helmer
