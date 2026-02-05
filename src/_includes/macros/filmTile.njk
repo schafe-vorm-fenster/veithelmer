@@ -18,13 +18,13 @@
       
       {# Film Image - Responsive with srcset #}
       <img 
-        src="{{ image }}.jpg" 
-        srcset="{{ image }}-300w.webp 300w, {{ image }}-600w.webp 600w, {{ image }}-900w.webp 900w"
+        src="{{ (image + '.jpg') | url }}" 
+        srcset="{{ (image + '-300w.webp') | url }} 300w, {{ (image + '-600w.webp') | url }} 600w, {{ (image + '-900w.webp') | url }} 900w"
         sizes="(min-width: 1024px) 320px, (min-width: 768px) 280px, 90vw"
         alt="{{ title }} ({{ year }})"
         class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         loading="lazy"
-        onerror="this.onerror=null; this.srcset=''; this.src='{{ image }}.jpg'"
+        onerror="this.onerror=null; this.srcset=''; this.src='{{ (image + '.jpg') | url }}'"
       />
       
     </div>

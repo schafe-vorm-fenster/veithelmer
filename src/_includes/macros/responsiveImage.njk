@@ -24,7 +24,7 @@
   {# Generate srcset string #}
   {% set srcsetParts = [] %}
   {% for width in widths %}
-    {% set _ = srcsetParts.push(basePath + "-" + width + "w.webp " + width + "w") %}
+    {% set _ = srcsetParts.push(((basePath + "-" + width + "w.webp") | url) + " " + width + "w") %}
   {% endfor %}
   
   {# Use middle size as fallback src (900w for most cases) #}
@@ -33,7 +33,7 @@
   
   <img 
     src="{{ fallbackSrc | url }}"
-    srcset="{{ srcsetParts.join(', ') | url }}"
+    srcset="{{ srcsetParts.join(', ') }}"
     sizes="{{ sizes }}"
     alt="{{ alt }}"
     {% if className %}class="{{ className }}"{% endif %}
