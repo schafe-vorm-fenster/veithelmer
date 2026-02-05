@@ -12,34 +12,40 @@ cast:
   - Naira Chichinadze
   - Vachagan Papovian
 release_year: 2023
-duration: 90 minutes
+duration: 82 minutes
 country: Germany / Georgia
-technical_specs: Color, No dialogue
+technical_specs: Language - No dialogue
 crew:
-  - role: Director
-    name: Veit Helmer
-  - role: Screenplay
+  - role: Screenplay and Director
     name: Veit Helmer
   - role: Cinematography
     name: Giorgi Devdariani
   - role: Music
-    name: Sóley Stefánsdóttir, Malcolm Arison
+    name: Malcolm Arison, Sóley Stefánsdóttir
   - role: Editing
-    name: Thomas Holzhausen
-  - role: Production
-    name: jip film & verleih
+    name: Danis Karaisaridis
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
+  - role: World Sales
+    name: Coccinelle Film Sales
 poster_image: trailer.jpg
 cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
+awards:
+  - Best director, Bari International Film Festival 2024
+  - Best director, Ischia Film Festival 2024
+  - Best Cinematography, Otranto Film Festival 2024
+  - Best Feature Film, Mumbai Film Festival 2025
 ---
-In the mountains of Georgia, a cable car connects a remote village with the valley town below. Iva works as a cable car attendant at the upper station, while Nino operates the gondola from the lower station. Every half hour, their cabins pass each other mid-journey, offering brief moments of connection.
-
-What begins as casual greetings through the windows gradually transforms into something deeper. Through gestures, glances, and small acts of kindness, Iva and Nino develop a tender romance despite the physical distance that separates them. The cable car becomes both their connection and their constraint, as they find creative ways to communicate and express their growing affection.
-
-GONDOLA is a celebration of visual storytelling, conveying deep emotion entirely without dialogue. Director Veit Helmer, known for his poetic and imaginative approach, crafts a fairytale-like romance that speaks to the universal language of love and longing. Giorgi Devdariani's cinematography captures the stunning Georgian mountain landscapes and the intimate spaces of the cable cars with equal beauty, while the expressive musical score by Sóley Stefánsdóttir and Malcolm Arison enhances the film's dreamlike atmosphere.
-
-Rich in symbolism and atmosphere, GONDOLA proves that the most profound connections often require no words at all.
+A cable car connects a village in the mountains with a small town in the valley. 
+Iva starts working at the cable car as an attendant. 
+The cable car has two gondolas.
+When one gondola goes up, the other goes down.
+The gondolas meet each other half way. 
+The attendant of the other gondola is Nino. 
+Iva and Nino meet each other as they drive past every half hour. 
+And one evening, they meet after hours.
 
 ---
 

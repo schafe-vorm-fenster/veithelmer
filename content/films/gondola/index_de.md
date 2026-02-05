@@ -12,34 +12,40 @@ cast:
   - Naira Chichinadze
   - Vachagan Papovian
 release_year: 2023
-duration: 90 Minuten
+duration: 82 Minuten
 country: Deutschland / Georgien
-technical_specs: Farbe, ohne Dialoge
+technical_specs: Sprache - Ohne Dialoge
 crew:
-  - role: Regie
-    name: Veit Helmer
-  - role: Drehbuch
+  - role: Buch und Regie
     name: Veit Helmer
   - role: Kamera
     name: Giorgi Devdariani
   - role: Musik
-    name: Sóley Stefánsdóttir, Malcolm Arison
+    name: Malcolm Arison, Sóley Stefánsdóttir
   - role: Montage
-    name: Thomas Holzhausen
+    name: Danis Karaisaridis
   - role: Produktion
-    name: jip film & verleih
+    name: Veit Helmer-Filmproduktion
+  - role: Verleih
+    name: JIP Film
 poster_image: trailer.jpg
 cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
+awards:
+  - Beste Regie, Bari International Film Festival 2024
+  - Beste Regie, Ischia Film Festival 2024
+  - Beste Bildgestaltung, Otranto Film Festival 2024
+  - Bester Langfilm, Mumbai Film Festival 2025
 ---
-In den Bergen Georgiens verbindet eine Seilbahn ein abgelegenes Dorf mit der Stadt im Tal. Iva arbeitet als Seilbahnschaffnerin an der oberen Station, während Nino die Gondel von der unteren Station aus bedient. Alle halbe Stunde kreuzen sich ihre Kabinen auf halber Strecke und bieten kurze Momente der Verbindung.
-
-Was als gelegentliche Grüße durch die Fenster beginnt, verwandelt sich allmählich in etwas Tieferes. Durch Gesten, Blicke und kleine Gesten der Freundlichkeit entwickeln Iva und Nino eine zarte Romanze trotz der physischen Distanz, die sie trennt. Die Seilbahn wird sowohl zu ihrer Verbindung als auch zu ihrer Einschränkung, während sie kreative Wege finden, zu kommunizieren und ihre wachsende Zuneigung auszudrücken.
-
-GONDOLA ist ein Fest des visuellen Erzählens, das tiefe Emotionen ganz ohne Dialoge vermittelt. Regisseur Veit Helmer, bekannt für seinen poetischen und fantasievollen Ansatz, erschafft eine märchenhafte Romanze, die die universelle Sprache der Liebe und Sehnsucht spricht. Giorgi Devdarianis Kameraarbeit fängt die atemberaubenden georgischen Berglandschaften und die intimen Räume der Seilbahnen mit gleicher Schönheit ein, während die ausdrucksstarke Filmmusik von Sóley Stefánsdóttir und Malcolm Arison die traumhafte Atmosphäre des Films verstärkt.
-
-Reich an Symbolik und Atmosphäre beweist GONDOLA, dass die tiefsten Verbindungen oft keine Worte benötigen.
+Eine Seilbahn verbindet ein Dorf in den Bergen mit einer kleinen Stadt im Tal.
+Iva beginnt als Seilbahnbegleiterin zu arbeiten.
+Die Seilbahn hat zwei Gondeln.
+Wenn die eine Gondel nach oben fährt, fährt die andere nach unten.
+Die Gondeln treffen sich auf halber Strecke.
+Die Schaffnerin der anderen Gondel heißt Nino.
+Iva und Nino begegnen sich alle halbe Stunde, wenn sie aneinander vorbeifahren.
+Eines Abends treffen sie sich nach Feierabend.
 
 ---
 

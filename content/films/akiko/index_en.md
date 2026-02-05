@@ -7,6 +7,7 @@ description: A heartwarming family adventure about a young monkey who escapes fr
 director: Veit Helmer
 cast:
   - Heike Makatsch
+  - Michael Kind
   - Benno Fürmann
   - Meret Becker
   - Arnel Taci
@@ -23,14 +24,28 @@ cast:
 release_year: 2024
 duration: 70 minutes
 country: Germany
-technical_specs: Color
+awards:
+  - German Film Award 2025 for Best Children's Film
+  - 1st Prize Gijon Film Festival
+  - Best Screenplay Award, China Int'l Children Film Festival
+  - Audience Favorite, Mill Valley Film Festival
 crew:
-  - role: Director
-    name: Veit Helmer
-  - role: Screenplay
+  - role: Screenplay and Director
     name: Veit Helmer
   - role: Cinematography
     name: Andrés Aguiló
+  - role: Production Design
+    name: Yiftach Shapira
+  - role: Music
+    name: Malcolm Arison
+  - role: Editing
+    name: Henning Stöve
+  - role: Sound
+    name: Irma Heinig
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
+  - role: World Sales
+    name: Loco Film Sales
 poster_image: poster.jpg
 cinema_poster: cinema-poster-en.jpg
 teaser_poster: trailer.jpg

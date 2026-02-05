@@ -7,6 +7,7 @@ description: Ein herzerwärmendes Familienabenteuer über einen jungen Affen, de
 director: Veit Helmer
 cast:
   - Heike Makatsch
+  - Michael Kind
   - Benno Fürmann
   - Meret Becker
   - Arnel Taci
@@ -23,14 +24,28 @@ cast:
 release_year: 2024
 duration: 70 Minuten
 country: Deutschland
-technical_specs: Farbe
+awards:
+  - Deutscher Filmpreis 2025 für den besten Kinderfilm
+  - 1. Preis Filmfest Gijon
+  - Preis für das beste Drehbuch, China Int'l Children Film Festival
+  - Publikumsfavorit, Mill Valley Film Festival
 crew:
-  - role: Regie
-    name: Veit Helmer
-  - role: Drehbuch
+  - role: Buch und Regie
     name: Veit Helmer
   - role: Kamera
     name: Andrés Aguiló
+  - role: Szenenbild
+    name: Yiftach Shapira
+  - role: Musik
+    name: Malcolm Arison
+  - role: Montage
+    name: Henning Stöve
+  - role: Ton
+    name: Irma Heinig
+  - role: Produktion
+    name: Veit Helmer-Filmproduktion
+  - role: Verleih
+    name: Farbfilm
 poster_image: poster.jpg
 cinema_poster: cinema-poster-de.jpg
 teaser_poster: trailer.jpg

@@ -12,7 +12,7 @@ cast:
 release_year: 2011
 duration: 95 minutes
 country: Germany / Kazakhstan / Russia
-technical_specs: Color
+film_language: English, Russian
 crew:
   - role: Director
     name: Veit Helmer
@@ -40,4 +40,3 @@ When Julie literally “falls from heaven” in a small space capsule, it’s Is
 
 But even the most romantic lie cannot remain undiscovered forever. And soon “Gagarin” no longer knows where he really belongs nor, more importantly, to whom.
 
-Filmed at fascinating original locations, such as the world's largest rocket launch site in Baikonur, Kazakhstan, Veit Helmer takes the viewer on a journey into a world that could hardly be more contradictory. There, high-tech space travel meets the archaism of the steppe.
