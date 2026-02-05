@@ -347,7 +347,7 @@ module.exports = function(eleventyConfig) {
     if (!url) return '/';
     
     // Get pathPrefix - use the same value as configured
-    const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || siteData.pathPrefix;
+    const pathPrefix = process.env.ELEVENTY_PATH_PREFIX !== undefined ? process.env.ELEVENTY_PATH_PREFIX : siteData.pathPrefix;
     
     // Strip pathPrefix from url if present
     let workingUrl = url;
@@ -489,7 +489,7 @@ module.exports = function(eleventyConfig) {
   
   // Set input/output directories
   return {
-    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || siteData.pathPrefix,
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX !== undefined ? process.env.ELEVENTY_PATH_PREFIX : siteData.pathPrefix,
     dir: {
       input: ".",
       output: "_site",

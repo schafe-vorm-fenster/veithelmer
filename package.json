@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve",
+    "build": "ELEVENTY_PATH_PREFIX= npx @11ty/eleventy",
+    "build:prod": "npx @11ty/eleventy",
+    "dev": "ELEVENTY_PATH_PREFIX= npx @11ty/eleventy --serve",
     "start": "npm run dev",
+    "images:generate": "node scripts/generate-responsive-images.js",
     "kanban:start": "./scripts/start-services.sh",
     "kanban:kill": "./scripts/kill-services.sh",
     "kanban:restart": "pnpm kanban:kill && pnpm kanban:start",

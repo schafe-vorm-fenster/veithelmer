@@ -25,7 +25,7 @@ layout: page.njk
 {% endblock %}
 
 {# Hero Section: Video Player or Poster #}
-<section class="hero-section -mx-6 -mt-12 mb-12" aria-label="Film hero">
+<section class="hero-section -mx-3 md:-mx-6 -mt-12 mb-8" aria-label="Film hero">
   <div class="relative w-full bg-brand-darkgray" style="aspect-ratio: 16/9;">
     
     {% set filmSlug = page.filePathStem.split('/').slice(-2)[0] %}
@@ -49,11 +49,12 @@ layout: page.njk
       {# Priority 2: Poster Image - Responsive #}
       {% set posterBase = poster_image | replace('.jpg', '') | replace('.webp', '') %}
       <img 
-        src="{{ ('/assets/films/' + filmSlug + '/' + posterBase + '-1200w.webp') | url }}" 
-        srcset="{{ ('/assets/films/' + filmSlug + '/' + posterBase + '-600w.webp') | url }} 600w, {{ ('/assets/films/' + filmSlug + '/' + posterBase + '-900w.webp') | url }} 900w, {{ ('/assets/films/' + filmSlug + '/' + posterBase + '-1200w.webp') | url }} 1200w, {{ ('/assets/films/' + filmSlug + '/' + posterBase + '-1500w.webp') | url }} 1500w, {{ ('/assets/films/' + filmSlug + '/' + posterBase + '-1800w.webp') | url }} 1800w"
+        src="{{ ('/assets/films/' + filmSlug + '/' + poster_image) | url }}" 
+        srcset="{{ ('/assets/films/' + filmSlug + '/' + posterBase + '-600w.webp') | url }} 600w, {{ ('/assets/films/' + filmSlug + '/' + posterBase + '-900w.webp') | url }} 900w, {{ ('/assets/films/' + filmSlug + '/' + posterBase + '-1200w.webp') | url }} 1200w"
         sizes="100vw"
         alt="{{ title }}"
         class="w-full h-full object-cover"
+        onerror="this.onerror=null; this.srcset=''; this.src='{{ ('/assets/films/' + filmSlug + '/' + poster_image) | url }}'"
       />
     {% else %}
       {# Fallback: Dark placeholder #}
@@ -68,17 +69,17 @@ layout: page.njk
 </section>
 
 {# Quick Info Block with Cinema Poster #}
-<section class="quick-info-wrapper grid md:grid-cols-3 gap-12 mb-12" aria-label="Film information">
+<section class="quick-info-wrapper grid md:grid-cols-3 gap-12" aria-label="Film information">
   
   {# Left Column: Quick Info (2/3 width) #}
   <div class="md:col-span-2">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-tight">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-tight leading-tight">
       {{ title }}
     </h1>
     
-    <div class="flex flex-wrap items-center gap-4 text-lg opacity-80 mb-8">
+    <div class="flex flex-wrap items-center gap-4 text-lg opacity-80 mb-6">
       {% if release_year %}
-        <span class="font-semibold">{{ release_year }}</span>
+        <span>{{ release_year }}</span>
       {% endif %}
       
       {% if duration %}
@@ -98,7 +99,7 @@ layout: page.njk
         {% for link in external_links %}
           <a 
             href="{% if link.url.startsWith('http') or link.url.startsWith('//') %}{{ link.url }}{% else %}{{ link.url | url }}{% endif %}" 
-            class="inline-block px-6 py-2.5 bg-white text-black font-bold tracking-wide text-sm rounded hover:bg-brand-red hover:text-white transition-colors duration-200"
+            class="inline-block px-6 py-2.5 bg-white text-black font-bold tracking-wide text-sm rounded no-underline hover:opacity-80 transition-opacity duration-200"
             {% if link.url.startsWith('http') or link.url.startsWith('//') %}
               target="_blank"
               rel="noopener noreferrer"
@@ -116,10 +117,11 @@ layout: page.njk
     {% if cinema_poster %}
       {% set cinemaPosterBase = cinema_poster | replace('.jpg', '') | replace('.webp', '') %}
       <img 
-        src="{{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-900w.webp') | url }}" 
-        srcset="{{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-600w.webp') | url }} 600w, {{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-900w.webp') | url }} 900w, {{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-1200w.webp') | url }} 1200w, {{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-1500w.webp') | url }} 1500w"
-        sizes="(min-width: 768px) 33vw, 0px"
+        src="{{ ('/assets/films/' + filmSlug + '/' + cinema_poster) | url }}" 
+        srcset="{{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-600w.webp') | url }} 600w, {{ ('/assets/films/' + filmSlug + '/' + cinemaPosterBase + '-900w.webp') | url }} 900w"
+        sizes="(min-width: 768px) 33vw, 50vw"
         alt="{{ title }} Cinema Poster"
+        onerror="this.onerror=null; this.srcset=''; this.src='{{ ('/assets/films/' + filmSlug + '/' + cinema_poster) | url }}'"
       />
     {% endif %}
   </aside>

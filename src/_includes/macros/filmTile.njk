@@ -10,7 +10,7 @@
 #}
 
 {% macro filmTile(title, year, image, url, category) %}
-<article class="film-tile group relative bg-brand-darkgray transition-all duration-300 ease-out hover:scale-105 hover:z-10">
+<article class="film-tile group relative transition-all duration-300 ease-out hover:scale-105 hover:z-10">
   <a href="{{ url }}" class="block no-underline" aria-label="View {{ title }} ({{ year }})">
     
     {# 3:2 Aspect Ratio Container #}
@@ -18,19 +18,20 @@
       
       {# Film Image - Responsive with srcset #}
       <img 
-        src="{{ image }}-900w.webp" 
-        srcset="{{ image }}-300w.webp 300w, {{ image }}-600w.webp 600w, {{ image }}-900w.webp 900w, {{ image }}-1200w.webp 1200w"
+        src="{{ image }}.jpg" 
+        srcset="{{ image }}-300w.webp 300w, {{ image }}-600w.webp 600w, {{ image }}-900w.webp 900w"
         sizes="(min-width: 1024px) 320px, (min-width: 768px) 280px, 90vw"
         alt="{{ title }} ({{ year }})"
         class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         loading="lazy"
+        onerror="this.onerror=null; this.srcset=''; this.src='{{ image }}.jpg'"
       />
       
     </div>
     
     {# Title and Year - Always Visible #}
-    <div class="px-4 pb-4 pt-3 bg-brand-darkgray">
-      <h3 class="text-lg font-bold tracking-tight">{{ title }} ({{ year }})</h3>
+    <div class="pb-4 pt-3">
+      <h3 class="text-xl font-bold tracking-tight">{{ title }}</h3>
     </div>
     
   </a>
