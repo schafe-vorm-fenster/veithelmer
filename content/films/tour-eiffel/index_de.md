@@ -1,7 +1,7 @@
 ---
 title: Tour Eiffel
 category: short
-description: Lulu erfüllt sich den Traum seines Lebens: Er fährt nach Paris und kauft sich ein rotes Luxus-Cabriolet. Als er vom Eiffelturm das Auto fotografiert, sieht er, wie sein Wagen gestohlen und für den Raub der Mona Lisa benutzt wird. Bei der Verfolgungsjagd mit der Polizei geht das Cabrio zu Schrott. Doch es kommt noch schlimmer...
+description: "Lulu erfüllt sich den Traum seines Lebens: Er fährt nach Paris und kauft sich ein rotes Luxus-Cabriolet. Als er vom Eiffelturm das Auto fotografiert, sieht er, wie sein Wagen gestohlen und für den Raub der Mona Lisa benutzt wird. Bei der Verfolgungsjagd mit der Polizei geht das Cabrio zu Schrott. Doch es kommt noch schlimmer..."
 director: Veit Helmer
 cast:
   - Bruno La Brasca
