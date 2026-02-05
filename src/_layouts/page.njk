@@ -16,7 +16,6 @@ layout: base.njk
 {# Simple Footer #}
 <footer role="contentinfo" class="p-8 mt-16 border-t border-white/10 text-center text-sm opacity-60">
   <div class="container mx-auto max-w-6xl">
-    <p>&copy; {{ year | default(2026) }} Veit Helmer. {{ 'footer.copyright' | t(currentLocale) }}</p>
     {% block footerContent %}{% endblock %}
   </div>
 </footer>

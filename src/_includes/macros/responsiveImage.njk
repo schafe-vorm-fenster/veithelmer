@@ -1,0 +1,42 @@
+{# 
+  Responsive Image Component
+  
+  Generates <img> tag with srcset for responsive loading of WebP images.
+  Automatically generates srcset based on available image sizes.
+  
+  @param {string} basePath - Base path without size suffix (e.g., "/assets/films/tuvalu/poster")
+  @param {string} alt - Alt text for accessibility
+  @param {string} [sizes] - Sizes attribute (default: "100vw")
+  @param {string} [className] - Additional CSS classes
+  @param {string} [loading] - Loading strategy: "lazy" | "eager" (default: "lazy")
+  @param {array} [widths] - Available widths array (default: [300, 600, 900, 1200, 1500, 1800])
+  
+  Example usage:
+  {{ responsiveImage(
+    basePath="/assets/films/tuvalu/poster",
+    alt="Tuvalu (1999)",
+    sizes="(min-width: 1024px) 320px, (min-width: 768px) 280px, 100vw",
+    className="w-full h-full object-cover"
+  ) }}
+#}
+
+{% macro responsiveImage(basePath, alt, sizes="100vw", className="", loading="lazy", widths=[300, 600, 900, 1200, 1500, 1800]) %}
+  {# Generate srcset string #}
+  {% set srcsetParts = [] %}
+  {% for width in widths %}
+    {% set _ = srcsetParts.push(basePath + "-" + width + "w.webp " + width + "w") %}
+  {% endfor %}
+  
+  {# Use middle size as fallback src (900w for most cases) #}
+  {% set fallbackWidth = 900 %}
+  {% set fallbackSrc = basePath + "-" + fallbackWidth + "w.webp" %}
+  
+  <img 
+    src="{{ fallbackSrc | url }}"
+    srcset="{{ srcsetParts.join(', ') | url }}"
+    sizes="{{ sizes }}"
+    alt="{{ alt }}"
+    {% if className %}class="{{ className }}"{% endif %}
+    loading="{{ loading }}"
+  />
+{% endmacro %}

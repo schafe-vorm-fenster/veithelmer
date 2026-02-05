@@ -27,10 +27,11 @@
     },
     "film": {
       "synopsis": "Synopsis",
-      "details": "Details",
+      "details": "Credits",
       "director": "Director",
       "cast": "Cast",
       "crew": "Crew",
+      "language": "Language",
       "technical": "Technical",
       "awards": "Awards",
       "visitMicrosite": "Visit Microsite"
@@ -63,11 +64,12 @@
       "backToArchive": "Zurück zur Filmübersicht"
     },
     "film": {
-      "synopsis": "Synopsis",
-      "details": "Details",
+      "synopsis": "Kurzinhalt",
+      "details": "Credits",
       "director": "Regie",
       "cast": "Besetzung",
       "crew": "Team",
+      "language": "Sprache",
       "technical": "Technisch",
       "awards": "Auszeichnungen",
       "visitMicrosite": "Zur Microsite"

@@ -4,7 +4,7 @@
   
   @param {string} title - Film title
   @param {string} year - Release year
-  @param {string} image - Image URL/path
+  @param {string} image - Image URL/path (base path without size suffix)
   @param {string} url - Link to film detail page
   @param {string} [category] - Optional category badge (Feature, Short, etc.)
 #}
@@ -16,9 +16,11 @@
     {# 3:2 Aspect Ratio Container #}
     <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
       
-      {# Film Image #}
+      {# Film Image - Responsive with srcset #}
       <img 
-        src="{{ image }}" 
+        src="{{ image }}-900w.webp" 
+        srcset="{{ image }}-300w.webp 300w, {{ image }}-600w.webp 600w, {{ image }}-900w.webp 900w, {{ image }}-1200w.webp 1200w"
+        sizes="(min-width: 1024px) 320px, (min-width: 768px) 280px, 90vw"
         alt="{{ title }} ({{ year }})"
         class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         loading="lazy"
@@ -27,9 +29,8 @@
     </div>
     
     {# Title and Year - Always Visible #}
-    <div class="p-4 bg-brand-darkgray">
-      <h3 class="text-lg font-bold mb-1 tracking-tight">{{ title }}</h3>
-      <p class="text-sm opacity-70">{{ year }}</p>
+    <div class="px-4 pb-4 pt-3 bg-brand-darkgray">
+      <h3 class="text-lg font-bold tracking-tight">{{ title }} ({{ year }})</h3>
     </div>
     
   </a>
