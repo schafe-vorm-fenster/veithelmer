@@ -24,13 +24,15 @@ cast:
 release_year: 2008
 duration: 88 Minuten
 country: Deutschland / Aserbaidschan
-technical_specs: Farbe
 awards:
-  - Sundance Film Festival: Weltpremiere
-  - Bayerischer Filmpreis: Spezialpreis der Jury
+  - Melies D'Argent, Fantasporto Film Festival, Porto
+  - Beste Regie, Film Festival Athen
+  - Beste Regie, Bayrischer Filmpreis
+  - Bestes Szenenbild, Deutscher Filmpreis
+  - Bester Film, Mediawave Film Festival Györ
+  - Publikumspreis, Ourense Film Festival
+  - Bester Film, Bari, Levante Film Festival
 crew:
-  - role: Regie
-    name: Veit Helmer
   - role: Drehbuch
     name: Veit Helmer, Gordan Mihić, Zaza Buadze
   - role: Kamera
@@ -41,6 +43,8 @@ crew:
     name: Shigeru Umebayashi
   - role: Szenenbild
     name: Erwin Prib
+  - role: Produktion
+    name: Veit Helmer-Filmproduktion
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4

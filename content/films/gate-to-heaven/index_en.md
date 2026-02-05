@@ -17,6 +17,7 @@ cast:
 release_year: 2003
 duration: 90 minutes
 country: Germany
+film_language: English
 technical_specs: Color, 35mm
 crew:
   - role: Director
@@ -32,7 +33,7 @@ crew:
   - role: Editing
     name: Sylvie Gadmer
 poster_image: poster.jpg
-cinema_poster: bild01.jpg
+cinema_poster: cinema-poster-en.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 full_video_url: https://www.youtube.com/watch?v=b1qW7HEEwf4

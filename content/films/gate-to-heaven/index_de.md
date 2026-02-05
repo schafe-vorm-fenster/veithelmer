@@ -17,22 +17,28 @@ cast:
 release_year: 2003
 duration: 90 Minuten
 country: Deutschland
-technical_specs: Farbe, 35mm
+film_language: Englisch
 crew:
   - role: Regie
     name: Veit Helmer
   - role: Drehbuch
-    name: Veit Helmer
+    name: Gordan Mihic, Veit Helmer
   - role: Kamera
-    name: Annemarie Bridy
-  - role: Produktionsdesign
-    name: Manuel Rigol
+    name: Joachim Jung
+  - role: Szenenbild
+    name: Alexander Manasse
+  - role: Kostümbild
+    name: Tatjana Brecht-Bergen
   - role: Musik
-    name: Ulrich Kodjo Wendt
+    name: Salim & Sulaiman Merchant
   - role: Schnitt
-    name: Sylvie Gadmer
+    name: Silke Botsch, Hansjörg Weissbrich
+  - role: Produktion
+    name: Veit Helmer-Filmproduktion
+  - role: Koproduktion
+    name: ZDF (Daniel Blum), Arte
 poster_image: poster.jpg
-cinema_poster: bild01.jpg
+cinema_poster: cinema-poster-de.jpg
 trailer_video: trailer.mp4
 trailer_poster: trailer.jpg
 full_video_url: https://www.youtube.com/watch?v=b1qW7HEEwf4

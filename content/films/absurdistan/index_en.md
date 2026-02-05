@@ -24,13 +24,15 @@ cast:
 release_year: 2008
 duration: 88 minutes
 country: Germany / Azerbaijan
-technical_specs: Color
 awards:
-  - Sundance Film Festival: World Premiere
-  - Bavarian Film Awards: Special Jury Award
+  - Melies D'Argent, Fantasporto Film Festival, Porto
+  - Best Director, Athens Film Festival
+  - Best Director, Bavarian Film Awards
+  - Best Production Design, German Film Awards
+  - Best Film, Mediawave Film Festival Györ
+  - Audience Award, Ourense Film Festival
+  - Best Film, Bari, Levante Film Festival
 crew:
-  - role: Director
-    name: Veit Helmer
   - role: Screenplay
     name: Veit Helmer, Gordan Mihić, Zaza Buadze
   - role: Cinematography
@@ -41,6 +43,8 @@ crew:
     name: Shigeru Umebayashi
   - role: Production Design
     name: Erwin Prib
+  - role: Production company
+    name: Veit Helmer-Filmproduktion
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4
