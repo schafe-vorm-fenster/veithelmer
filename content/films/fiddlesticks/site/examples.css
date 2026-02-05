@@ -315,15 +315,7 @@ p{
 -o-background-size: cover; 
 	}
 
-#section5{
-		background-size: cover;
-		background-image: url(imgs/quatsch_web_bg_lesen.jpg);
-		padding: 0 0 0 0;
-		
-		-webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover; 
-	}
+
 	
 	#section6{
 		background-size: cover;
