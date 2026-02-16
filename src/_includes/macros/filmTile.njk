@@ -22,15 +22,15 @@
         srcset="{{ (image + '-300w.webp') | url }} 300w, {{ (image + '-600w.webp') | url }} 600w, {{ (image + '-900w.webp') | url }} 900w"
         sizes="(min-width: 1024px) 320px, (min-width: 768px) 280px, 90vw"
         alt="{{ title }} ({{ year }})"
-        class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        class="w-full h-full object-cover transition-all duration-300 ease-out group-hover:scale-105 saturate-[0.7] group-hover:saturate-100"
         loading="lazy"
         onerror="this.onerror=null; this.srcset=''; this.src='{{ (image + '.jpg') | url }}'"
       />
       
     </div>
     
-    {# Title and Year - Always Visible #}
-    <div class="pb-4 pt-3">
+    {# Title and Year - Always Visible, Centered #}
+    <div class="pb-2 pt-2 text-center">
       <h3 class="text-xl font-bold tracking-tight">{{ title }}</h3>
     </div>
     

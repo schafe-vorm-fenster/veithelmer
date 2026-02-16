@@ -14,8 +14,6 @@ duration: 95 minutes
 country: Germany / Kazakhstan / Russia
 film_language: English, Russian
 crew:
-  - role: Director
-    name: Veit Helmer
   - role: Screenplay
     name: Sergej Ashkenazy
   - role: Cinematography

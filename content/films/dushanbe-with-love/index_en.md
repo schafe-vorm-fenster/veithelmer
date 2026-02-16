@@ -9,6 +9,7 @@ cast:
   - Ganjina Sharifova
   - Khurshed Mustafoev
 release_year: 2025
+sort_order: -2008
 duration: 7 minutes
 country: Germany / Tajikistan
 crew:

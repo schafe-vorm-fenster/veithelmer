@@ -19,7 +19,7 @@ crew:
   - role: Buch und Regie
     name: Veit Helmer
   - role: Kamera
-    name: Giorgi Devdariani
+    name: Goga Devdariani
   - role: Musik
     name: Malcolm Arison, Sóley Stefánsdóttir
   - role: Montage
@@ -46,11 +46,3 @@ Die Gondeln treffen sich auf halber Strecke.
 Die Schaffnerin der anderen Gondel heißt Nino.
 Iva und Nino begegnen sich alle halbe Stunde, wenn sie aneinander vorbeifahren.
 Eines Abends treffen sie sich nach Feierabend.
-
----
-
-**Externe Referenzen:**
-- Produktionsfirma: jip film & verleih (Deutschland)
-- Kamera-Informationen verifiziert über ČSFD.cz und Bio Rio Kino-Datenbanken
-- Musik-Soundtrack veröffentlicht von MovieScore Media
-- Film wurde auf internationalen Festivals für seinen einzigartigen wortlosen Erzählansatz gelobt

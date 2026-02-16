@@ -4,7 +4,7 @@ category: short
 type: film
 language: en
 description: A little girl wanders through an abandoned amusement park in the desert. She meets an old man with a shovel who leads her to a hidden discovery beneath the sand.
-director: Veit Helmer
+director: Veit Helmer and students from Baku
 cast:
   - Agakhan Salmanov
   - Nigar Tagizade
@@ -13,8 +13,6 @@ duration: 7 minutes
 country: Azerbaijan / Germany
 film_language: No dialogue
 crew:
-  - role: Director
-    name: Veit Helmer and students from Baku
   - role: Screenplay
     name: Maryam Mirzoeva, Leyli Gafarova
   - role: Cinematography

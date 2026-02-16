@@ -4,7 +4,6 @@ category: short
 type: film
 language: de
 description: Wenn sein Wecker ihn nicht im Stich lässt, steht Anton morgens früh auf, um eine Frau beobachten, die an seinem Fenster vorbei zur Arbeit geht. Als vor seinem Haus eine Telefonzelle errichtet wird, ruft er an und schenkt ihr im Namen der Post eine Reise in den Harz für zwei Personen. Doch am entscheidenden Tag lässt ihn sein Wecker im Stich.
-director: "Veit Helmer"
 release_year: 1989
 duration: 9 Minuten
 country: "Deutschland"

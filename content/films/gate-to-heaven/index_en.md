@@ -40,8 +40,6 @@ full_video_url: https://www.youtube.com/watch?v=b1qW7HEEwf4
 external_links:
   - name: Watch on YouTube
     url: https://www.youtube.com/watch?v=b1qW7HEEwf4
-  - name: Microsite
-    url: /en/gate-to-heaven/microsite/
 ---
 Veit Helmer's second feature film "Gate to Heaven" (starring Miki Manojlović and Udo Kier) was filmed in 2002 at Frankfurt Airport.
 

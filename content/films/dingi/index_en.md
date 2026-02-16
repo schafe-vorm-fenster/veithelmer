@@ -4,7 +4,7 @@ category: short
 type: film
 language: en
 description: Homeless children are chased away from the harbor by boatmen. But the boys know how to get their revenge in a clever way.
-director: Veit Helmer
+director: Veit Helmer with students from Dhaka
 cast:
   - Students of Dhaka University Film Society (DUFS)
   - Students of University of Liberal Arts Bangladesh

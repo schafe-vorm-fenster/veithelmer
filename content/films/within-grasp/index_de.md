@@ -16,8 +16,6 @@ cast:
   - "Antony Paul"
   - "Jean Wilson"
 crew:
-  - role: "Regie"
-    name: "Veit Helmer"
   - role: "Kamera"
     name: "Janucz Reichenbach"
   - role: "Schnitt"

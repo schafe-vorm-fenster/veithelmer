@@ -9,7 +9,6 @@ duration: "9 min"
 country: "Germany"
 film_language: German dialogue
 format: "35 mm, 1:1,66, Colour, Mono"
-director: "Veit Helmer"
 cast:
   - "Beate Jensen"
   - "Dominique Horwitz"

@@ -4,7 +4,7 @@ category: short
 type: film
 language: de
 description: Obdachlose Kinder werden am Hafen von Bootsmännern verscheucht. Doch die Jungs wissen sich auf raffinierte Weise zu rächen.
-director: Veit Helmer
+director: Veit Helmer mit Studenten aus Dhaka
 cast:
   - Studenten der Dhaka University Film Society (DUFS)
   - Studenten der University of Liberal Arts Bangladesh

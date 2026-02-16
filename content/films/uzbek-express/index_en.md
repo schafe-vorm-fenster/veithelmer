@@ -4,7 +4,7 @@ type: film
 category: short
 language: en
 description: Passengers rush to the express train. The sight of a couple locked in an intimate kiss inspires the engineer to abandon the train and to make a fundamental change in his life.
-director: Veit Helmer
+director: Veit Helmer and students from Tashkent
 cast:
   - Nigmat Alimov
   - Mahfuza Babatullaeva
@@ -14,8 +14,6 @@ country: Germany / Uzbekistan
 film_language: No dialogue
 technical_specs: 35 mm, Color
 crew:
-  - role: Director
-    name: Veit Helmer
   - role: Cinematography
     name: Rifkat Ibragimov
   - role: Editing

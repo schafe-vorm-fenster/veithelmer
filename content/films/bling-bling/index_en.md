@@ -4,19 +4,19 @@ type: film
 category: documentary
 language: en
 description: Bling Bling is a filmic diary by three women from Berlin and an authentic inside into the heart of L.A.’s Hip Hop Scene.
-director: Neelesha Barthel, Heike Woosey
+
 release_year: 2001
 duration: 62 minutes
 country: Germany
-technical_specs: Beta SP, color and black and white
+film_language: English
 awards:
   - German up-and-coming Award
   - Sehsüchte Festival 2002
 crew:
-  - role: Producer
-    name: Veit Helmer
   - role: Screenplay, Director, Cinematography
     name: Neelesha Barthel, Heike Woosey, Janna Ji Wonders
+  - role: Producer
+    name: Veit Helmer
   - role: Editing
     name: Christopher Chaber, Neelesha Barthel
 poster_image: poster.jpg

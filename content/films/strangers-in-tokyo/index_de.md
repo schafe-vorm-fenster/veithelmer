@@ -1,8 +1,8 @@
 ---
-title: Strangers in Tokyo (They Call Us Aliens)
+title: "Strangers in Tokyo (They Call Us Aliens)"
+title_display: "Strangers in Tokyo<br>(They Call Us Aliens)"
 category: documentary
 description: Der Film beobachtet, wie Ausländer darum kämpfen, in einer völlig anderen Gesellschaft wie Japan ihren Lebensunterhalt zu verdienen.
-director: Veit Helmer
 release_year: 2008
 duration: 87 Minuten
 country: Deutschland / Japan

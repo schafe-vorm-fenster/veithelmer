@@ -293,12 +293,12 @@ module.exports = function(eleventyConfig) {
       }
     });
     
-    // Sort each category by year (newest first)
+    // Sort each category by sort_order (if set), then by year (newest first)
     Object.keys(categories).forEach(key => {
       categories[key].sort((a, b) => {
-        const yearA = a.data.release_year || 0;
-        const yearB = b.data.release_year || 0;
-        return yearB - yearA;
+        const orderA = a.data.sort_order != null ? a.data.sort_order : -(a.data.release_year || 0);
+        const orderB = b.data.sort_order != null ? b.data.sort_order : -(b.data.release_year || 0);
+        return orderA - orderB;
       });
     });
     

@@ -30,10 +30,10 @@
       "details": "Credits",
       "director": "Director",
       "cast": "Cast",
-      "crew": "Crew",
+      "crew": "",
       "language": "Language",
       "technical": "Technical",
-      "awards": "Awards",
+      "awards": "Awards (Selection)",
       "visitMicrosite": "Visit Microsite"
     }
   },
@@ -68,10 +68,10 @@
       "details": "Credits",
       "director": "Regie",
       "cast": "Besetzung",
-      "crew": "Team",
+      "crew": "",
       "language": "Sprache",
       "technical": "Technisch",
-      "awards": "Auszeichnungen",
+      "awards": "Auszeichnungen (Auswahl)",
       "visitMicrosite": "Zur Microsite"
     }
   }

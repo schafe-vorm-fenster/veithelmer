@@ -4,7 +4,7 @@ type: film
 category: short
 language: de
 description: Reisende beeilen sich, den Zug zu erreichen. Der Anblick eines Liebespaares veranlasst den Lokführer, den Zug stehenzulassen und sein Leben grundsätzlich zu ändern.
-director: Veit Helmer
+director: Veit Helmer und Studenten aus Taschkent
 cast:
   - Nigmat Alimov
   - Mahfuza Babatullaeva
@@ -13,8 +13,6 @@ duration: 7 Minuten
 country: Deutschland / Usbekistan
 film_language: Ohne Dialoge
 crew:
-  - role: Regie
-    name: Veit Helmer
   - role: Kamera
     name: Rifkat Ibragimov
   - role: Schnitt

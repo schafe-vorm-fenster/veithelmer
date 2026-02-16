@@ -4,7 +4,7 @@ category: short
 type: film
 language: de
 description: Ein sentimentaler Esel blockiert den Verkehr in einer georgischen Stadt. Das daraus resultierende Chaos bringt einen mürrischen alten Mann und eine romantische junge Frau in einer unerwarteten Liebesgeschichte zusammen.
-director: Veit Helmer
+director: Veit Helmer und Studenten aus Tiflis
 cast:
   - Ani Amiridze
   - Gaga Chikhradze
@@ -13,8 +13,6 @@ duration: 8 Minuten
 country: Deutschland / Georgien
 film_language: Ohne Dialoge
 crew:
-  - role: Buch und Regie
-    name: Veit Helmer und Studenten aus Tiflis
   - role: Kamera
     name: Keti Nosadze
   - role: Schnitt

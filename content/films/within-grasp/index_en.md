@@ -16,8 +16,6 @@ cast:
   - "Antony Paul"
   - "Jean Wilson"
 crew:
-  - role: "Director"
-    name: "Veit Helmer"
   - role: "Cinematographer"
     name: "Janucz Reichenbach"
   - role: "Editor"

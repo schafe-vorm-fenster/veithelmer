@@ -37,12 +37,12 @@ crew:
     name: Veit Helmer, Gordan Mihić, Zaza Buadze
   - role: Kamera
     name: Giorgi Beridze
+  - role: Szenenbild
+    name: Erwin Prib
   - role: Schnitt
     name: Vincent Assmann
   - role: Musik
     name: Shigeru Umebayashi
-  - role: Szenenbild
-    name: Erwin Prib
   - role: Produktion
     name: Veit Helmer-Filmproduktion
 poster_image: poster.jpg

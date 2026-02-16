@@ -15,8 +15,6 @@ duration: 7 minutes
 country: Kazakhstan / Germany
 film_language: No dialogue
 crew:
-  - role: Screenplay and Direction
-    name: Veit Helmer and Students of T. Zhurgenov Art Academy
   - role: Cinematography
     name: Stanislaw Samoilov
   - role: Editing

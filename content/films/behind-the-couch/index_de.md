@@ -1,5 +1,6 @@
 ---
-title: Behind the Couch - Casting in Hollywood
+title: "Behind the Couch - Casting in Hollywood"
+title_display: "Behind the Couch<br>(Casting in Hollywood)"
 type: film
 category: documentary
 language: de
@@ -10,10 +11,17 @@ duration: 88 Minuten
 country: Deutschland
 technical_specs: Farbe
 awards:
-  - Behind the Couch wurde mehrfach ausgezeichnet und von der BBC sowie 20 weiteren Sendern weltweit ausgestrahlt.
+  - "Hofer Filmtage - Best Sounddesign"
+  - "Hofer Filmtage - Best Music"
+  - "Hofer Filmtage - Best Editing"
+  - "Preis der Deutschen Filmkritik - Bester Dokumentarfilm"
 crew:
-  - role: Regie
-    name: Veit Helmer
+  - role: Kamera
+    name: Bendar Al-Bashir
+  - role: Montage
+    name: Vincent Assmann
+  - role: Musik
+    name: Johannes Koeniger
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4
@@ -25,4 +33,4 @@ external_links:
 
 Der richtige Cast kann zum Schlüssel des Gesamterfolges eines Filmes werden. Valerie Mc Cafrey (Casting Director, L.A.): „80 % eines erfolgreichen Films ist Casting.“
 
-Erfahren Sie mehr über die Arbeit von Casting-Direktoren wie Jane Jenkins, Mike Fenton und vielen anderen, die über den Erfolg oder Misserfolg von Karrieren in der Traumfabrik entscheiden.
+Der Head Shot landet im Müll, bevor der Schauspieler auch nur die Chance zum ersten Vorsprechen bekommen hat. Nach unzähligen, nervenaufreibenden "call-back" Runden wird schließlich nur ein einziger der vielen hoffnungsvollen Bewerber ausgewählt.

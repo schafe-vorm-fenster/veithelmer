@@ -1,5 +1,6 @@
 ---
-title: Behind the Couch - Casting in Hollywood
+title: "Behind the Couch - Casting in Hollywood"
+title_display: "Behind the Couch<br>(Casting in Hollywood)"
 type: film
 category: documentary
 language: en
@@ -10,10 +11,17 @@ duration: 88 minutes
 country: Germany
 technical_specs: Color
 awards:
-  - Behind the Couch was awarded several times and aired by BBC and 20 broadcasters from all continents.
+  - "Hofer Filmtage - Best Sounddesign"
+  - "Hofer Filmtage - Best Music"
+  - "Hofer Filmtage - Best Editing"
+  - "German Film Critic Awards - Best Documentary Film"
 crew:
-  - role: Director
-    name: Veit Helmer
+  - role: Cinematography
+    name: Bendar Al-Bashir
+  - role: Editing
+    name: Vincent Assmann
+  - role: Music
+    name: Johannes Koeniger
 poster_image: poster.jpg
 cinema_poster: cinema-poster.jpg
 trailer_video: trailer.mp4
@@ -25,4 +33,4 @@ external_links:
 
 "90% of directing is casting" (John Huston). The perfect cast can be the key to the overall success of a film. In Hollywood, with more than 290,000 registered and non-registered actors, one of the most efficient casting systems in the world has evolved.
 
-Find out more about the work of casting directors like Jane Jenkins, Mike Fenton, and many others who decide on the success or failure of careers in the Dream Factory.
+The head shot lands in the trash before the actor even gets a chance for the first audition. After countless nerve-wracking "call-back" rounds, only one of the many hopeful applicants is finally selected.

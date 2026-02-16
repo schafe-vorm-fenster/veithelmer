@@ -19,7 +19,7 @@ crew:
   - role: Screenplay and Director
     name: Veit Helmer
   - role: Cinematography
-    name: Giorgi Devdariani
+    name: Goga Devdariani
   - role: Music
     name: Malcolm Arison, Sóley Stefánsdóttir
   - role: Editing
@@ -46,11 +46,3 @@ The gondolas meet each other half way.
 The attendant of the other gondola is Nino. 
 Iva and Nino meet each other as they drive past every half hour. 
 And one evening, they meet after hours.
-
----
-
-**External References:**
-- Production company: jip film & verleih (Germany)
-- Cinematography information verified via ČSFD.cz and Bio Rio cinema databases
-- Music soundtrack released by MovieScore Media
-- Film praised at international festivals for its unique wordless storytelling approach

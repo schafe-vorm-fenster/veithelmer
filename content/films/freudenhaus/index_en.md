@@ -6,7 +6,7 @@ release_year: 2001
 duration: "5:30 min"
 country: "Germany"
 format: "35 mm"
-director: "Veit Helmer + Team"
+director: "Veit Helmer"
 cast:
   - "Vera Kluth"
   - "Sven Philipp"
@@ -17,6 +17,8 @@ crew:
     name: "Sung-Hyung Cho"
   - role: "Music"
     name: "Michael Hagenmayer"
+  - role: "Production"
+    name: "Bundesverband Jugend und Film"
 world_sales: "Interfilm Berlin"
 additional_info: "Production: Bundesverband Jugend und Film"
 poster_image: "kf_freudenhaus.jpg"

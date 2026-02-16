@@ -14,8 +14,6 @@ duration: 95 Minuten
 country: Deutschland / Kasachstan / Russland
 film_language: Englisch, Russisch
 crew:
-  - role: Regie
-    name: Veit Helmer
   - role: Drehbuch
     name: Sergej Ashkenazy
   - role: Kamera

@@ -57,10 +57,3 @@ Young monkey Akiko escapes from the zoo and embarks on an adventurous journey th
 Veit Helmer brings his signature visual storytelling to this imaginative family film, creating a colorful and whimsical world that captivates audiences of all ages. With a talented ensemble cast including Heike Makatsch, Benno Fürmann, and Meret Becker, Akiko, the flying monkey delivers a heartwarming tale about friendship, courage, and the universal desire to find one's place in the world.
 
 The film premiered at the Locarno Festival and showcases Helmer's ability to craft enchanting stories that transcend language and cultural barriers, much like his previous works. Through expressive cinematography by Andrés Aguiló, the film creates a vibrant urban landscape where anything seems possible.
-
----
-
-**External References:**
-- Cast information verified via ČSFD.cz database
-- Festival participation: Locarno Festival 2024
-- Production: German family film, 70 minutes runtime

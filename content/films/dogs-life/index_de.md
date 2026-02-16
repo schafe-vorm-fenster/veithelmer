@@ -15,8 +15,6 @@ duration: 7 Minuten
 country: Kasachstan / Deutschland
 film_language: Ohne Dialoge
 crew:
-  - role: Buch und Regie
-    name: Veit Helmer und Studenten der T. Zhurgenow Kunsthochschule
   - role: Kamera
     name: Stanislaw Samoilow
   - role: Schnitt

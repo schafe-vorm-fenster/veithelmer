@@ -13,8 +13,6 @@ duration: 6 Minuten
 country: Deutschland / Indonesien
 film_language: Bahasa Indonesia
 crew:
-  - role: Regie
-    name: Veit Helmer und Studenten der IKJ
   - role: Kamera
     name: Robertus B.J.B.
   - role: Schnitt

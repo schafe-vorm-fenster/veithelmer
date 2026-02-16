@@ -57,10 +57,3 @@ Der junge Affe Akiko entkommt aus dem Zoo und begibt sich auf eine abenteuerlich
 Veit Helmer bringt seine charakteristische visuelle Erzählweise in diesen fantasievollen Familienfilm ein und erschafft eine farbenfrohe und skurrile Welt, die das Publikum jeden Alters in ihren Bann zieht. Mit einem talentierten Ensemble-Cast, darunter Heike Makatsch, Benno Fürmann und Meret Becker, liefert AKIKO, DER FLIEGENDE AFFE eine herzerwärmende Geschichte über Freundschaft, Mut und den universellen Wunsch, seinen Platz in der Welt zu finden.
 
 Der Film feierte seine Premiere beim Locarno Festival und zeigt Helmers Fähigkeit, bezaubernde Geschichten zu erzählen, die Sprach- und Kulturgrenzen überschreiten, ähnlich wie seine früheren Werke. Durch die ausdrucksstarke Kameraarbeit von Andrés Aguiló entsteht eine lebendige urbane Landschaft, in der alles möglich scheint.
-
----
-
-**Externe Referenzen:**
-- Besetzungsinformationen verifiziert über ČSFD.cz Datenbank
-- Festival-Teilnahme: Locarno Festival 2024
-- Produktion: Deutscher Familienfilm, 70 Minuten Laufzeit

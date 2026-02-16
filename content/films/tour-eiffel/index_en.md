@@ -20,12 +20,14 @@ crew:
     name: Veit Helmer
   - role: Cinematography
     name: Joachim Jung
+  - role: Production Design
+    name: Laurent Dupire-Clement
   - role: Editing
     name: Antje Botschen
   - role: Music
     name: Christoph Oertel
-  - role: Production Design
-    name: Laurent Dupire-Clement
+  - role: Sound Design
+    name: Matthias Lempert
   - role: Production
     name: Veit Helmer-Filmproduktion
 poster_image: poster.jpg

@@ -4,7 +4,7 @@ category: short
 type: film
 language: de
 description: Ein kleines Mädchen wandert durch einen verlassenen Vergnügungspark in der Wüste. Sie trifft einen alten Mann mit einer Schaufel, der sie zu einer versteckten Entdeckung unter dem Sand führt.
-director: Veit Helmer
+director: Veit Helmer und Studenten aus Baku
 cast:
   - Agakhan Salmanov
   - Nigar Tagizade
@@ -13,8 +13,6 @@ duration: 7 Minuten
 country: Aserbaidschan / Deutschland
 film_language: Ohne Dialoge
 crew:
-  - role: Regie
-    name: Veit Helmer und Studenten aus Baku
   - role: Drehbuch
     name: Maryam Mirzoeva, Leyli Gafarova
   - role: Kamera

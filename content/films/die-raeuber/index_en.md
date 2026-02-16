@@ -14,8 +14,6 @@ cast:
   - "Sewan Latchinian"
   - "Gundula Köster"
 crew:
-  - role: "Director"
-    name: "Veit Helmer"
   - role: "Cinematographer"
     name: "Janucz Reichenbach"
   - role: "Production Design"

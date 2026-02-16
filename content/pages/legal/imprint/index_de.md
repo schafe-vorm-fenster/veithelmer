@@ -8,7 +8,7 @@ permalink: /de/legal/imprint/
 Veit Helmer-Filmproduktion  
 Kastanienallee 55  
 10119 Berlin  
-E-Mail: kontakt@veithelmer.de  
+E-Mail: veit.helmer@arcor.de  
 Telefon: +49 (30) 217 77 77  
 USt-Ident Nr.: DE 136017935  
 

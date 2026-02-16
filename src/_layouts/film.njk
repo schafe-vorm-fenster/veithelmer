@@ -26,7 +26,7 @@ layout: page.njk
 
 {# Hero Section: Video Player or Poster #}
 <section class="hero-section -mx-3 md:-mx-6 -mt-12 mb-8" aria-label="Film hero">
-  <div class="relative w-full bg-brand-darkgray" style="aspect-ratio: 16/9;">
+  <div class="relative w-full max-w-4xl mx-auto bg-brand-darkgray" style="aspect-ratio: 16/9;">
     
     {% set filmSlug = page.filePathStem.split('/').slice(-2)[0] %}
     
@@ -74,7 +74,7 @@ layout: page.njk
   {# Left Column: Quick Info (2/3 width) #}
   <div class="md:col-span-2">
     <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-tight leading-tight">
-      {{ title }}
+      {% if title_display %}{{ title_display | safe }}{% else %}{{ title }}{% endif %}
     </h1>
     
     <div class="flex flex-wrap items-center gap-4 text-lg opacity-80 mb-6">
@@ -191,7 +191,10 @@ layout: page.njk
       {# Crew #}
       {% if crew and crew.length > 0 %}
       <div>
-        <dt class="text-white/60 uppercase tracking-wider text-xs mb-2">{{ 'film.crew' | t(currentLocale) }}</dt>
+        {% set crewLabel = 'film.crew' | t(currentLocale) %}
+        {% if crewLabel %}
+        <dt class="text-white/60 uppercase tracking-wider text-xs mb-2">{{ crewLabel }}</dt>
+        {% endif %}
         <dd class="text-base space-y-2">
           {% for member in crew %}
             <div>

@@ -13,8 +13,6 @@ cast:
   - "Sewan Latchinian"
   - "Gundula Köster"
 crew:
-  - role: "Regie"
-    name: "Veit Helmer"
   - role: "Kamera"
     name: "Janucz Reichenbach"
   - role: "Ausstattung"

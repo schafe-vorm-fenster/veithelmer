@@ -4,7 +4,7 @@ category: short
 type: film
 language: en
 description: A stubborn donkey causes a traffic jam in downtown Tbilisi. In a meadow, a bull chases a girl in a red dress. A boy warns her at the last second. As thanks, she gives him a red flower. This flower lures the donkey off the road, and the boy finds the love of his life.
-director: Veit Helmer
+director: Veit Helmer and students from Tbilisi
 cast:
   - Ani Amiridze
   - Gaga Chikhradze
@@ -13,8 +13,6 @@ duration: 8 minutes
 country: Germany / Georgia
 film_language: No dialogue
 crew:
-  - role: Screenplay and Direction
-    name: Veit Helmer and students from Tbilisi
   - role: Cinematography
     name: Keti Nosadze
   - role: Editing
